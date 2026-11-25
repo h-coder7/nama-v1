@@ -1,0 +1,128 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.btn {
+  --h: 44px;
+  --slant: 10px;
+  --label-bg: #{$c-white};
+  --label-fg: #{$c-ink};
+  --chip-bg: #{$c-white};
+  --chip-fg: #{$c-ink};
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  height: var(--h);
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: $f-display;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+  isolation: isolate;
+  @include focus-ring;
+}
+// Long labels (e.g. "Discuss Your Industrial Operations Requirements") wrap on phones instead of overflowing.
+@include down($bp-md) {
+  .btn { max-width: 100%; height: auto; min-height: var(--h); white-space: normal; }
+  .label { padding-block: 8px; line-height: 1.25; }
+}
+.sm { --h: 38px; --slant: 9px; font-size: 0.8125rem; }
+
+// Hover (calm, ~0.6s): the label floods with the accent colour from its start edge,
+// the chip takes the label's original colour (a swap, so it never melts into the
+// background) and the arrow travels out and back in.
+$btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+.label {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 calc(18px + var(--slant)) 0 18px;
+  background: var(--label-bg);
+  color: var(--label-fg);
+  border-radius: 4px 0 0 4px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+  transition: color 0.45s $btn-ease;
+  &::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--hover-bg);
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 0.6s $btn-ease;
+  }
+}
+.chip {
+  display: inline-grid;
+  place-items: center;
+  width: calc(var(--h) - 6px + var(--slant));
+  margin-inline-start: calc(var(--slant) * -1 + 4px);
+  padding-inline-start: calc(var(--slant) * 0.6);
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+  border-radius: 0 4px 4px 0;
+  clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
+  transition: transform 0.6s $btn-ease, background 0.45s $btn-ease, color 0.45s $btn-ease;
+  overflow: hidden;
+}
+:global([dir="rtl"]) .label { clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%); border-radius: 0 4px 4px 0; }
+:global([dir="rtl"]) .chip { clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%); border-radius: 4px 0 0 4px; }
+:global([dir="rtl"]) .label { padding: 0 18px 0 calc(18px + var(--slant)); }
+[dir="rtl"] .label::before { transform-origin: right center; }
+@media (hover: hover) {
+  .btn:hover .label { color: var(--hover-fg); }
+  .btn:hover .label::before { transform: scaleX(1); }
+  .btn:hover .chip { transform: translateX(calc(3px * var(--dir))); background: var(--label-bg); color: var(--label-fg); }
+  .btn:hover .chip svg { animation: btnArrow 0.7s $btn-ease; }
+}
+.btn:focus-visible .label::before { transform: scaleX(1); }
+.btn:focus-visible .label { color: var(--hover-fg); }
+.btn:active { transform: scale(0.985); transition: transform 0.15s; }
+// Arrow leaves through the chip's far edge and slides back in from the near one.
+@keyframes btnArrow {
+  0% { transform: translateX(0); opacity: 1; }
+  42% { transform: translateX(calc(140% * var(--dir, 1))); opacity: 0; }
+  43% { transform: translateX(calc(-140% * var(--dir, 1))); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .label::before, .chip { transition-duration: 0.01s !important; }
+  .btn:hover .chip svg { animation: none; }
+}
+
+// One-piece variant (header "Request a Quote"): no split chip, the arrow rides inside the label
+// and plays the same out-and-back move on hover while the fill floods in.
+.whole {
+  .label, :global([dir="rtl"]) & .label { clip-path: none; border-radius: 4px; padding: 0 16px 0 18px; gap: 10px; }
+  :global([dir="rtl"]) & .label { padding: 0 18px 0 16px; }
+  .wholeArrow { display: inline-grid; place-items: center; overflow: hidden; :global([dir="rtl"]) & svg { transform: scaleX(-1); } }
+  @media (hover: hover) { &:hover .wholeArrow svg { animation: btnArrow 0.7s $btn-ease; } }
+}
+
+.tone-light { --label-bg: #{$c-white}; --label-fg: #{$c-ink}; --hover-bg: #{$c-yellow}; --hover-fg: #{$c-ink}; }
+.tone-yellow { --label-bg: #{$c-yellow}; --label-fg: #{$c-ink}; --hover-bg: #{$c-white}; --hover-fg: #{$c-ink}; }
+.tone-dark { --label-bg: #{$c-ink}; --label-fg: #{$c-white}; --hover-bg: #{$c-yellow}; --hover-fg: #{$c-ink}; }
+.chip-light { --chip-bg: #{$c-white}; --chip-fg: #{$c-ink}; }
+.chip-yellow { --chip-bg: #{$c-yellow}; --chip-fg: #{$c-ink}; }
+.chip-dark { --chip-bg: #{$c-ink}; --chip-fg: #{$c-white}; }
+
+.ghost {
+  align-items: center;
+  padding: 0 18px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  opacity: 0.92;
+  transition: color 0.45s $btn-ease, border-color 0.45s $btn-ease;
+  .label { position: static; padding: 0; background: none; color: inherit; clip-path: none; &::before { display: none; } }
+  // Ghost: a soft fill rises from the bottom and the outline warms to yellow.
+  &::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+    background: currentColor; opacity: 0.08;
+    transform: scaleY(0); transform-origin: bottom center;
+    transition: transform 0.55s $btn-ease;
+  }
+  @media (hover: hover) {
+    &:hover { border-color: $c-yellow; &::before { transform: scaleY(1); } }
+  }
+}

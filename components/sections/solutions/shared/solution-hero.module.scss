@@ -1,0 +1,41 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  background: $c-ink;
+  color: $c-white;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(104px, 9vw, 132px) 0 clamp(56px, 6vw, 80px);
+}
+.grid { position: relative; display: grid; gap: 48px; align-items: center; }
+.copy { display: grid; justify-items: start; }
+.crumbs ol { font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.eyebrow { margin-top: 36px; }
+.title { margin-top: 26px; @include display(clamp(2.375rem, 1.5rem + 2.7vw, 3.5rem)); font-weight: 600; text-wrap: balance; }
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.line > span { display: inline-block; }
+.accent { color: $c-yellow; }
+.foot { display: grid; gap: 28px; margin-top: 26px; }
+.body { display: grid; gap: 12px; max-width: 440px; p { font-size: 0.9375rem; line-height: 1.65; color: rgba(255, 255, 255, 0.82); } }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.split .grid {
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+}
+.visual { position: relative; @include down($bp-lg) { max-width: 560px; } }
+
+// Visual fills the hero; copy sits on a shade.
+.bleedMedia {
+  position: absolute; inset: 0; z-index: -1;
+}
+.bleed .grid { min-height: clamp(440px, 40vw, 560px); align-items: end; }
+.bleed .copy { max-width: 560px; }
+
+// Visual between eyebrow and title (Freight board).
+.stack .copy { justify-items: stretch; }
+.stack .stackVisual { margin-top: 24px; }
+.stack .foot {
+  @include up($bp-lg) { grid-template-columns: 1fr auto; align-items: end; }
+}

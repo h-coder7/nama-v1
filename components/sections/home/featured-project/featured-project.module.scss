@@ -1,0 +1,78 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { background: $c-ink; color: $c-white; }
+.stage { position: relative; isolation: isolate; overflow: hidden; }
+.media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.image { object-fit: cover; object-position: 70% 40%; will-change: transform; }
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(36, 36, 36, 0.9) 0%, rgba(36, 36, 36, 0.62) 40%, rgba(36, 36, 36, 0.05) 75%),
+    linear-gradient(180deg, rgba(36, 36, 36, 0) 60%, rgba(46, 46, 46, 1) 100%);
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(270deg, rgba(36, 36, 36, 0.9) 0%, rgba(36, 36, 36, 0.62) 40%, rgba(36, 36, 36, 0.05) 75%),
+      linear-gradient(180deg, rgba(36, 36, 36, 0) 60%, rgba(46, 46, 46, 1) 100%);
+  }
+  @include down($bp-md) { background: linear-gradient(180deg, rgba(36, 36, 36, 0.55), rgba(36, 36, 36, 0.9) 70%, $c-ink); }
+}
+.content {
+  display: grid;
+  justify-items: start;
+  gap: 0;
+  padding-top: 60px;
+  padding-bottom: 104px;
+  min-height: 760px;
+  align-content: center;
+  @include down($bp-md) { min-height: 620px; padding-top: 80px; padding-bottom: 64px; align-content: end; }
+}
+.title { margin-top: 52px; @include display(clamp(1.625rem, 1.2rem + 1vw, 2rem)); }
+.body { max-width: 420px; margin-top: 22px; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.9); }
+.stat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 120px;
+  margin: 52px 0 26px;
+}
+.statValue {
+  display: flex; align-items: baseline; gap: 6px;
+  font-family: $f-display; font-weight: 600;
+  font-size: clamp(2.5rem, 2rem + 1.4vw, 3.25rem);
+  line-height: 1; letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.statUnit { font-size: 1rem; font-weight: 500; color: $c-yellow; letter-spacing: 0; }
+.statCaption { max-width: 190px; font-size: 0.75rem; line-height: 1.4; color: rgba(255, 255, 255, 0.85); padding-bottom: 20px; }
+
+.band { padding: 54px 0 52px; }
+.cards {
+  display: grid;
+  gap: 24px;
+  @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 200px;
+  padding: 30px 28px;
+  border-radius: 16px;
+  transition: transform $dur $ease-out, box-shadow $dur $ease-out;
+  &:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28); }
+  height: 100%;
+  @include focus-ring;
+}
+.dark { background: #464646; color: $c-white; }
+.yellow { background: $c-yellow; color: $c-ink; }
+.light { background: $c-white; color: $c-ink; }
+.cardTitle { font-family: $f-display; font-weight: 500; font-size: 1.25rem; line-height: 1.3; }
+.cardStat {
+  display: flex; align-items: baseline; gap: 12px;
+  font-family: $f-display; font-weight: 600; font-size: 1.75rem; letter-spacing: -0.02em;
+  small { font-family: $f-body; font-weight: 400; font-size: 0.8125rem; letter-spacing: 0; b { font-weight: 500; color: $c-yellow; } }
+}
+.cardText { font-size: 0.8125rem; max-width: 220px; }

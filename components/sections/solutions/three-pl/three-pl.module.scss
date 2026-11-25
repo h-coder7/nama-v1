@@ -1,0 +1,121 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+/* hero ticket */
+.ticketWrap { position: relative; width: min(100%, 440px); margin-inline-start: auto; padding: 36px 26px 0 0; :global([dir="rtl"]) & { padding: 36px 0 0 26px; } }
+.ticket {
+  background: $c-white; color: $c-ink; transform: rotate(2deg);
+  border-radius: 4px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  @include notch(26px);
+  :global([dir="rtl"]) & { transform: rotate(-2deg); }
+}
+.ticketHead { padding: 14px 22px; background: $c-yellow; font-family: $f-display; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.ticketRows {
+  padding: 6px 22px 24px;
+  > div { display: grid; grid-template-columns: 0.8fr 1fr; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1.5px dashed #c9c9c9; }
+  dt { font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: $c-muted; }
+  dd { font-family: $f-display; font-weight: 700; font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem); line-height: 1.05; }
+  > div:last-child dd { font-size: 1rem; }
+}
+.stamp {
+  position: absolute; top: 0; inset-inline-end: 0; display: grid; place-items: center; width: 84px; height: 84px;
+  border: 4px solid $c-ink; border-radius: 50%; background: $c-yellow; box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  span { width: 40px; height: 40px; background: $c-ink; mask: url("/assets/namma/brand/logo-mark.png") center / contain no-repeat; transform: rotate(-60deg); }
+}
+
+/* one operation */
+.one { padding: $section-y 0; background: $c-paper; color: $c-ink; overflow: hidden; }
+.oneGrid { display: grid; gap: 32px; margin-top: 32px; align-items: center; @include up($bp-lg) { grid-template-columns: 1fr 0.9fr; } }
+.oneArt { position: relative; display: grid; gap: 18px; justify-items: start; }
+.oneSvg { width: 100%; max-width: 620px; height: auto; overflow: visible; }
+.oneText { font-family: $f-display; font-weight: 700; font-size: clamp(7rem, 4rem + 12vw, 15rem); line-height: 1; color: transparent; -webkit-text-stroke: 2px $c-yellow; }
+.oneTag { padding: 8px 14px; border-radius: 6px; background: $c-ink; color: $c-yellow; font-family: $f-display; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.statement {
+  display: grid; gap: 22px; padding: clamp(22px, 2.6vw, 30px); border-radius: 22px; background: $c-ink; color: $c-white;
+  @include notch(30px);
+}
+.statementText { font-family: "Space Grotesk", $f-display; font-weight: 500; font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem); line-height: 1.45; padding-bottom: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+:global(html[lang="ar"]) .statementText { font-family: $f-display; }
+.scope { display: grid; gap: 6px; strong { font-family: $f-display; font-weight: 600; font-size: 0.8125rem; color: $c-yellow; } p { font-size: 0.875rem; line-height: 1.55; color: rgba(255, 255, 255, 0.78); } }
+.statementCtas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* capabilities */
+.caps { padding: $section-y 0; background: $c-yellow; color: $c-ink; scroll-margin-top: 80px; }
+.capsGrid { display: grid; gap: 18px; margin-top: 40px; @include up($bp-lg) { grid-template-columns: 1.15fr 1fr; align-items: start; } }
+.capList { border-radius: 20px; overflow: hidden; background: $c-ink; @include notch(28px); }
+.cap {
+  display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 16px; width: 100%; padding: 22px 24px;
+  border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); background: none; color: $c-white; text-align: start;
+  transition: background $dur;
+  &:hover { background: rgba(255, 255, 255, 0.04); }
+  @include focus-ring;
+}
+.capNum { font-family: "Space Grotesk", $f-display; font-weight: 600; font-size: 1.25rem; color: rgba(255, 255, 255, 0.6); }
+.capTitle { font-family: $f-display; font-weight: 700; font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem); text-transform: uppercase; }
+.switch {
+  position: relative; width: 46px; height: 24px; border-radius: 12px; background: #4a4a4a; transition: background $dur;
+  span { position: absolute; top: 3px; inset-inline-start: 3px; width: 18px; height: 18px; border-radius: 50%; background: $c-white; transition: translate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), rotate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background $dur; }
+}
+.capOn { .capNum { color: $c-yellow; } .switch { background: $c-yellow; span { background: $c-ink; translate: calc(22px * var(--dir)) 0; } } }
+.capDetail {
+  display: grid; align-content: start; gap: 12px; min-height: 100%; padding: clamp(22px, 2.6vw, 28px); border-radius: 20px; background: $c-white;
+  @include notch(28px);
+  small { font-family: $f-display; font-weight: 700; font-size: 0.75rem; color: #b88a12; }
+  h3 { @include display(clamp(1.5rem, 1.2rem + 1vw, 2rem)); }
+  p { font-size: 0.875rem; line-height: 1.6; color: $c-muted; }
+  ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid $c-line; border-radius: 999px; font-size: 0.8125rem; &::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: $c-yellow; } }
+}
+
+/* services */
+.svc { padding: $section-y 0; background: $c-ink; color: $c-white; }
+.svcGrid { display: grid; gap: 14px; margin-top: 40px; grid-template-columns: repeat(2, minmax(0, 1fr)); @include up($bp-lg) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @include down($bp-sm) { grid-template-columns: 1fr; } }
+.svcTile {
+  position: relative; display: flex; flex-direction: column; height: 100%; min-height: 150px; padding: 16px;
+  border-radius: 6px; overflow: hidden;
+  background: #303030 url("/assets/namma/images/solutions/3pl/container-bg-01.webp") center / cover;
+  transition: color $dur, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &::before { content: ""; position: absolute; inset: 0; z-index: -1; background: $c-yellow url("/assets/namma/images/solutions/3pl/container-bg-02.webp") center / cover; opacity: 0; transition: opacity 0.4s; }
+  isolation: isolate;
+  &:hover { color: $c-ink; translate: 0 -4px; &::before { opacity: 1; } .svcGo { background: $c-ink; color: $c-yellow; } .svcDesc { max-height: 60px; opacity: 1; } }
+  @include focus-ring;
+}
+// Client edit NC-79: all tiles start dark; a tile turns yellow and shows its description on hover
+// (or keyboard focus). Touch screens have no hover, so there the descriptions are always shown.
+.svcTile:focus-visible { color: $c-ink; &::before { opacity: 1; } .svcGo { background: $c-ink; color: $c-yellow; } .svcDesc { max-height: 60px; opacity: 1; } }
+@media (hover: none) { .svcDesc { max-height: none; opacity: 0.75; } }
+.svcTop { display: flex; justify-content: space-between; align-items: center; font-family: $f-display; font-weight: 700; font-size: 0.75rem; }
+.svcGo { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; background: $c-yellow; color: $c-ink; transition: background $dur, color $dur; }
+.svcName { margin-top: auto; padding-top: 32px; font-family: $f-display; font-weight: 700; font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1.125rem); text-transform: uppercase; }
+.svcDesc { max-height: 0; opacity: 0; overflow: hidden; font-size: 0.75rem; line-height: 1.45; transition: max-height 0.45s $ease-out, opacity $dur; }
+.svcBar { display: block; height: 8px; margin-top: 14px; background: $c-yellow; transform-origin: var(--start); }
+
+/* coordination */
+.coord { padding: $section-y 0; background: $c-paper; color: $c-ink; overflow: hidden; }
+.coordGrid { display: grid; gap: 40px; margin-top: 40px; align-items: center; @include up($bp-lg) { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.rings { max-width: 520px; svg { width: 100%; height: auto; display: block; overflow: visible; } }
+.ringLabel { font-family: $f-display; font-size: 15px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; fill: #6f6d69; }
+:global(html[lang="ar"]) .ringLabel { letter-spacing: 0; font-size: 17px; }
+.orbitNum { font-family: $f-display; font-size: 13px; font-weight: 700; fill: $c-white; }
+.coreLabel { font-family: $f-display; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; fill: $c-white; }
+.coreNum { font-family: $f-display; font-size: 14px; font-weight: 700; fill: $c-yellow; }
+.coordList {
+  border-bottom: 1px solid $c-line;
+  > li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid $c-line; h3 { @include display(1.25rem); } p { margin-top: 4px; font-size: 0.875rem; color: $c-muted; } }
+}
+.coordNum { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: $c-ink; color: $c-yellow; font-family: $f-display; font-size: 0.75rem; font-weight: 700; }
+.coordLast .coordNum { background: $c-yellow; color: $c-ink; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid $c-line; border-radius: 999px; background: $c-white; font-size: 0.8125rem; &::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: $c-yellow; } } }
+
+/* partner band */
+.band { padding: $section-y 0; background: $c-yellow; color: $c-ink; text-align: center; overflow-x: clip; }
+.bandInner { display: grid; justify-items: center; gap: 16px; }
+.bandWord { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 10px; max-width: 100%; font-family: "Space Grotesk", $f-display; font-weight: 700; line-height: 0.85; }
+:global(html[lang="ar"]) .bandWord { font-family: $f-display; }
+.bandOneWrap { overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.bandOne { display: inline-block; font-size: clamp(5rem, 3rem + 7vw, 10rem); letter-spacing: -0.04em; }
+.bandSlash { flex: none; margin-inline: 4px 34px; width: 6px; height: clamp(90px, 9vw, 150px); background: $c-white; transform: skewX(-18deg); transform-origin: bottom; :global([dir="rtl"]) & { transform: skewX(18deg); } }
+.bandPartner { font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem); padding-bottom: 0.2em; }
+.bandTitle { @include display(clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem)); line-height: 1; }
+.bandMuted { color: rgba(46, 46, 46, 0.55); }
+.bandBody { max-width: 440px; font-size: 0.9375rem; line-height: 1.55; color: rgba(46, 46, 46, 0.85); }

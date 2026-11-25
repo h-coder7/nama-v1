@@ -1,0 +1,17 @@
+@use "tokens" as *;
+
+.art { width: 100%; max-width: 280px; height: auto; overflow: visible; }
+.line { fill: none; stroke: rgba(255, 255, 255, 0.9); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.thin { fill: none; stroke: rgba(255, 255, 255, 0.55); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tick { fill: none; stroke: $c-yellow; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.tickInk { fill: none; stroke: $c-ink; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.arrow { fill: none; stroke: $c-yellow; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ink { fill: $c-ink; }
+.inkLine { fill: none; stroke: $c-ink; stroke-width: 2; stroke-linejoin: round; }
+.box { fill: $c-yellow; }
+.boxLine { fill: none; stroke: $c-yellow; stroke-width: 2; }
+.boxGhost { fill: rgba(255, 255, 255, 0.08); stroke: rgba(255, 255, 255, 0.25); stroke-dasharray: 3 4; }
+.wrap { fill: none; stroke: rgba(46, 46, 46, 0.35); stroke-width: 2; }
+.tag { fill: $c-white; }
+.dot { fill: $c-yellow; }
+.dotGhost { fill: rgba(255, 255, 255, 0.35); }

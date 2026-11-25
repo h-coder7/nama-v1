@@ -1,0 +1,102 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; }
+
+.panels {
+  display: flex;
+  gap: 18px;
+  height: 400px;
+  margin-top: 56px;
+  @include down($bp-lg) { gap: 10px; }
+  @include down($bp-md) { flex-direction: column; height: auto; }
+}
+.panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: $c-ink;
+  color: $c-white;
+  transition: flex-grow 0.7s $ease-out;
+  isolation: isolate;
+  @include down($bp-md) {
+    flex: none;
+    height: 72px;
+    transition: height 0.6s $ease-out;
+  }
+}
+.open {
+  flex-grow: 4;
+  @include down($bp-md) { height: 360px; }
+}
+.trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 0;
+  background: transparent;
+  border-radius: inherit;
+  @include focus-ring;
+}
+.open .trigger { pointer-events: none; }
+.image { object-fit: cover; z-index: -2; transition: transform 1.2s $ease-out; }
+.panel:hover .image { transform: scale(1.05); }
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.05) 30%, rgba(30, 30, 30, 0.85) 100%);
+}
+.vertical {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  writing-mode: vertical-rl;
+  transform: translateX(-50%) rotate(180deg);
+  font-family: $f-display;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  white-space: nowrap;
+  transition: opacity 0.3s $ease-out;
+  @include down($bp-md) {
+    writing-mode: horizontal-tb;
+    transform: none;
+    left: auto;
+    inset-inline-start: 20px;
+    bottom: auto;
+    top: 22px;
+  }
+}
+.open .vertical { opacity: 0; }
+
+.body {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+  padding: 26px 22px 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.open .body { opacity: 1; visibility: visible; }
+.bodyTop { display: flex; justify-content: space-between; align-items: center; }
+.num { font-family: $f-display; font-size: 1rem; color: $c-yellow; }
+.arrow {
+  display: grid; place-items: center;
+  width: 30px; height: 36px;
+  border-radius: 4px;
+  background: $c-yellow;
+  color: $c-ink;
+  transition: transform $dur $ease-out;
+  &:hover { transform: translateX(calc(3px * var(--dir))); }
+  @include focus-ring($c-white);
+}
+.bodyCopy { display: grid; gap: 8px; max-width: 360px; }
+.title { font-family: $f-display; font-weight: 600; font-size: 1.375rem; }
+.text { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.86); line-height: 1.5; }

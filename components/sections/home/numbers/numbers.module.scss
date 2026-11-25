@@ -1,0 +1,104 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: 0 0 $section-y; background: $c-paper; }
+
+.card {
+  position: relative;
+  display: grid;
+  gap: 32px;
+  padding: 28px 32px 36px;
+  border-radius: 18px;
+  background-color: $c-yellow;
+  @include stripes(rgba(46, 46, 46, 0.035), 26px);
+  color: $c-ink;
+  @include notch(56px);
+  overflow: hidden;
+  @include up($bp-lg) {
+    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 352px;
+    padding-block: 28px 36px; padding-inline: 30px 40px;
+  }
+}
+.top {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+  @include up($bp-lg) {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.eyebrow { background: $c-white !important; border-color: transparent !important; }
+.intro { font-size: 0.9375rem; line-height: 1.5; max-width: 300px; @include up($bp-lg) { justify-self: end; margin-inline-end: 18px; } }
+
+.list { display: grid; gap: 22px; margin: 0; align-content: start; }
+.item dd { margin: 4px 0 0; font-size: 0.75rem; max-width: 140px; line-height: 1.35; }
+.value {
+  font-family: $f-display;
+  font-weight: 600;
+  font-size: clamp(2rem, 1.6rem + 1vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.suffix { :global(html[lang="ar"]) & { font-size: 0.5em; margin-inline-start: 4px; } }
+.outline .suffix { :global(html[lang="ar"]) & { -webkit-text-stroke: 0; color: $c-ink; font-weight: 600; } }
+.plus { font-size: 0.55em; margin-inline-start: 2px; vertical-align: 0.35em; }
+
+.logo {
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 300px);
+  @include down($bp-lg) { width: 170px; justify-self: start; }
+}
+.logo { perspective: 900px; }
+.mark { display: block; width: 100%; height: auto; overflow: visible; transform-style: preserve-3d; will-change: transform; }
+.markDepth { fill: rgba(46, 46, 46, 0.16); }
+.markFill { fill: $c-ink; }
+.markSheen { fill: #fff; opacity: 0; mix-blend-mode: soft-light; }
+.markLine { fill: none; stroke: $c-ink; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+
+.highlight { align-self: end; display: grid; gap: 8px; justify-items: start; @include up($bp-lg) { justify-self: end; margin-inline-end: 28px; } }
+.big { display: flex; align-items: baseline; gap: 8px; }
+.outline {
+  font-family: $f-display;
+  font-weight: 400;
+  font-size: clamp(4rem, 3rem + 3vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.6px $c-ink;
+}
+.unit { font-family: $f-display; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; }
+.highlightLabel { font-size: 0.8125rem; }
+
+/* 2026 to date — current-year figures under the cumulative ones */
+.year {
+  display: grid; gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(46, 46, 46, 0.28);
+  @include up($bp-lg) {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 2.25fr;
+    align-items: center;
+    padding-inline-end: 40px; // clear of the notch
+  }
+}
+.yearHead {
+  display: grid; gap: 4px;
+  strong { font-family: $f-display; font-weight: 700; font-size: 1.125rem; letter-spacing: -0.01em; }
+  span { font-size: 0.75rem; }
+}
+.yearList {
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px clamp(20px, 4vw, 56px); margin: 0;
+  @include down($bp-sm) { grid-template-columns: 1fr 1fr; }
+}
+.yearItem dd { margin: 2px 0 0; font-size: 0.75rem; }
+.yearValue {
+  font-family: $f-display; font-weight: 600;
+  font-size: clamp(1.5rem, 1.2rem + 0.8vw, 1.875rem); line-height: 1; letter-spacing: -0.02em;
+  direction: ltr; unicode-bidi: isolate;
+  :global([dir="rtl"]) & { text-align: right; }
+}

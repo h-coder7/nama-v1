@@ -1,0 +1,54 @@
+// Namma Cargo design tokens — from the approved Home design (Figma, Nov 2026)
+// Container 1200 / gutter 24 / Space Grotesk + Manrope / #2E2E2E + #FFC54A
+
+// Colour
+$c-ink: #2e2e2e;          // primary dark (brand)
+$c-ink-deep: #242424;     // darker dark bands
+$c-ink-raise: #383838;    // raised surfaces on dark
+$c-yellow: #ffc54a;       // brand yellow
+$c-yellow-deep: #f5b52e;
+$c-paper: #faf9f7;        // light section ground
+$c-white: #ffffff;
+$c-muted: rgba(46, 46, 46, 0.6);
+$c-muted-on-dark: rgba(255, 255, 255, 0.62);
+$c-line: rgba(46, 46, 46, 0.12);
+$c-line-on-dark: rgba(255, 255, 255, 0.12);
+
+// Type
+// Font stacks are CSS variables so Arabic pages can swap them (see globals.scss).
+// Latin glyphs (numbers, brand terms) always render in the brand fonts; Arabic
+// glyphs fall through to Readex Pro (display) / IBM Plex Sans Arabic (body).
+$f-display: var(--f-display);
+$f-body: var(--f-body);
+$lh-display: var(--lh-display);
+
+$fs-hero: clamp(2.5rem, 1.2rem + 3.6vw, 4rem);      // 64
+$fs-h2: clamp(1.875rem, 1.2rem + 1.6vw, 2.5rem);    // 40
+$fs-h3: clamp(1.25rem, 1rem + 0.6vw, 1.5rem);       // 24
+$fs-stat: clamp(2.5rem, 1.6rem + 2.2vw, 3.5rem);    // 56
+$fs-lead: clamp(1.0625rem, 0.95rem + 0.35vw, 1.25rem);
+$fs-body: 1rem;
+$fs-small: 0.875rem;
+$fs-label: 0.75rem;
+
+// Layout
+$container: 1200px;
+$gutter: 24px;
+$section-y: clamp(72px, 6vw + 32px, 120px);
+$radius-sm: 8px;
+$radius: 14px;
+$radius-lg: 24px;
+$notch: 36px; // the cut corner used across cards
+
+// Motion (CSS side — GSAP equivalents live in lib/motion.ts)
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+$dur-fast: 180ms;
+$dur: 320ms;
+$dur-slow: 640ms;
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;

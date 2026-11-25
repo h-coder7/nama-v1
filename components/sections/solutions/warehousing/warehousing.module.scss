@@ -1,0 +1,116 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+/* hero visual */
+.dock { padding: 10px; border-radius: 4px; background: #3a3a3a; }
+.dockScene { position: relative; aspect-ratio: 2274 / 1824; max-height: 560px; overflow: hidden; width: 100%; img { object-fit: cover; } }
+.shutter {
+  position: absolute; left: 0; right: 0; top: 0; height: 91%;
+  transform-origin: top;
+  background: repeating-linear-gradient(180deg, #c9c9c7 0 18px, #b4b4b2 18px 20px, #d6d6d4 20px 21px);
+  box-shadow: inset 0 -8px 0 #7d7d7b, 0 6px 18px rgba(0, 0, 0, 0.35);
+  &::after {
+    content: ""; position: absolute; left: 50%; top: 22px; width: 54px; height: 26px; margin-left: -27px;
+    border-radius: 6px; background: $c-ink url("/assets/namma/brand/logo-mark.png") center / 30px auto no-repeat;
+  }
+}
+
+/* inside */
+.inside { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+.cells {
+  display: grid; gap: 16px; margin-top: 40px;
+  @include up($bp-md) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    .cell1 { grid-column: span 7; } .cell2 { grid-column: span 5; }
+    .cell3, .cell4, .cell5 { grid-column: span 4; }
+    .cell6 { grid-column: 1 / -1; grid-template-columns: auto auto 1fr; align-items: center; gap: 24px; h3 { margin: 0; } }
+  }
+}
+.cell {
+  display: grid; align-content: start; gap: 8px;
+  padding: 20px 18px 22px;
+  border: 2px dashed rgba(46, 46, 46, 0.35); border-radius: 6px;
+  transition: background $dur $ease-out, border-color $dur, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  outline: none;
+  h3 { margin-top: 6px; font-family: $f-display; font-weight: 700; font-size: 1.0625rem; text-transform: uppercase; }
+  p { font-size: 0.8125rem; line-height: 1.55; color: $c-muted; max-width: 420px; }
+  &:focus-visible { outline: 2px solid $c-ink; outline-offset: 3px; }
+}
+.cellNum { display: block; overflow: hidden; font-family: "Space Grotesk", $f-display; font-weight: 600; font-size: clamp(2.25rem, 1.8rem + 1.2vw, 2.75rem); line-height: 1; > span { display: inline-block; } }
+.cellOn { background: $c-yellow; border-color: $c-ink; p { color: rgba(46, 46, 46, 0.85); } }
+
+/* flow */
+.flow { padding: $section-y 0; background: $c-yellow; color: $c-ink; }
+.flowGrid { display: grid; gap: 24px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 0.62fr 1fr; align-items: start; } }
+.flowSteps { display: grid; gap: 10px; }
+.flowStep {
+  display: flex; align-items: center; gap: 18px; width: 100%;
+  padding: 14px 18px; border: 2px solid $c-ink; border-radius: 8px; background: transparent; color: $c-ink; text-align: start;
+  font-family: $f-display; font-weight: 700; font-size: 0.9375rem; text-transform: uppercase;
+  transition: background $dur, color $dur, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &:hover { translate: calc(4px * var(--dir)) 0; }
+  @include focus-ring($c-ink);
+}
+.flowNum { font-family: "Space Grotesk", $f-display; font-size: 1.375rem; font-weight: 600; }
+.chev { margin-inline-start: auto; flex: none; :global([dir="rtl"]) & { transform: scaleX(-1); } }
+.flowStepOn { background: $c-ink; color: $c-white; .flowNum { color: $c-yellow; } }
+.flowPanel { padding: 26px clamp(20px, 3vw, 30px) 28px; border-radius: 18px; background: $c-ink; color: $c-white; min-height: 340px; display: flex; flex-direction: column; }
+.flowTop { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.flowBars { display: flex; gap: 4px; span { width: clamp(34px, 4vw, 50px); height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.22); transition: background 0.5s; } .barOn { background: $c-yellow; } }
+.flowOf { font-family: $f-display; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: $c-yellow; }
+.flowBody { display: grid; gap: 24px; margin-top: auto; padding-top: 40px; @include up($bp-md) { grid-template-columns: 1fr 0.85fr; align-items: end; } }
+.flowCopy { display: grid; justify-items: start; gap: 14px; h3 { @include display(clamp(1.5rem, 1.2rem + 1vw, 2rem)); } p { font-size: 0.875rem; color: rgba(255, 255, 255, 0.78); max-width: 300px; } }
+.flowNext {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 10px 16px;
+  border: 0; border-radius: 999px; background: $c-yellow; color: $c-ink;
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem;
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &:hover { translate: calc(4px * var(--dir)) 0; }
+  @include focus-ring;
+}
+.flowArt { display: grid; place-items: end center; min-height: 160px; img { width: 100%; max-width: 230px; height: auto; } }
+
+/* beyond */
+.beyond { padding: $section-y 0; background: $c-ink; color: $c-white; }
+.beyondGrid { display: grid; gap: 18px; margin-top: 40px; @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.beyondCard {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 48px;
+  min-height: clamp(260px, 22vw, 290px); padding: 20px 18px 22px;
+  position: relative; isolation: isolate; overflow: hidden;
+  border-radius: 4px; color: $c-ink; background: $c-white;
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out, box-shadow $dur $ease-out;
+  // Yellow rises from the base on hover, cut on the brand diagonal.
+  &::before {
+    content: ""; position: absolute; inset: -20% 0 0; z-index: -1;
+    background: $c-yellow;
+    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
+    transform: translateY(101%);
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  h3 { @include display(clamp(1.25rem, 1rem + 0.8vw, 1.625rem)); }
+  p { margin-top: 8px; font-size: 0.8125rem; line-height: 1.55; color: rgba(46, 46, 46, 0.8); }
+  &:hover { translate: 0 -6px; box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.6); &::before { transform: translateY(0); } .beyondIcon { translate: 0 -4px; rotate: -4deg; } }
+}
+.beyondTop { display: flex; justify-content: space-between; gap: 16px; span { max-width: 180px; font-family: $f-display; font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; } }
+.beyondIcon { width: 56px; height: 56px; object-fit: contain; transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+
+/* distribution labels */
+.dist { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+.labels { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: repeat(2, minmax(0, 1fr)); @include up($bp-lg) { grid-template-columns: repeat(4, minmax(0, 1fr)); } @include down($bp-sm) { grid-template-columns: 1fr; } }
+.labelWrap { perspective: 800px; }
+.label {
+  display: grid; grid-template-rows: auto 1fr auto; height: 100%; min-height: 190px;
+  border: 2.5px solid $c-ink; border-radius: 8px; background: $c-white;
+  box-shadow: 0 1px 0 $c-ink;
+  rotate: var(--tilt);
+  transition: translate 0.5s $ease-out, rotate 0.5s $ease-out, scale 0.5s $ease-out, box-shadow $dur;
+  &:hover { rotate: 0deg; translate: 0 -6px; box-shadow: 6px 8px 0 $c-ink; }
+}
+.labelFrom, .labelTo, .labelCode { padding: 10px 12px; }
+.labelFrom { border-bottom: 2.5px solid $c-ink; }
+.labelTo { border-bottom: 2.5px solid $c-ink; transition: background $dur, color $dur; }
+.label small { display: block; font-family: $f-display; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.labelFrom strong { font-family: $f-display; font-weight: 700; font-size: 0.9375rem; text-transform: uppercase; }
+.labelTo strong { display: block; margin-top: 4px; @include display(clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem)); }
+.labelCode img { height: 30px; width: auto; }
+.labelOn .labelTo, .label:hover .labelTo { background: $c-ink; color: $c-white; small { color: $c-yellow; } }

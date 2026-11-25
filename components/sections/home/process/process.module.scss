@@ -1,0 +1,189 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  position: relative;
+  background: $c-ink;
+  color: $c-white;
+  overflow: hidden;
+}
+.pinWrap { padding-bottom: var(--pin-len, 0px); }
+.pin {
+  height: 100vh; height: 100svh;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vh, 32px);
+  padding: clamp(84px, 11vh, 120px) 0 clamp(20px, 4vh, 40px);
+  @include down($bp-md) { padding-top: 84px; }
+}
+
+/* head */
+.head {
+  display: flex; align-items: end; justify-content: space-between; gap: 24px;
+}
+.lead { display: grid; justify-items: start; gap: 16px; }
+.title { @include display(clamp(1.75rem, 1.1rem + 2vw, 3rem)); color: $c-white; }
+.accent { color: $c-yellow; }
+.hint {
+  padding-bottom: 6px;
+  font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55); white-space: nowrap;
+  @include down($bp-md) { display: none; }
+}
+
+/* the film: a full-width band of stacked frames */
+.film {
+  position: relative; min-height: 0;
+  overflow: hidden; isolation: isolate;
+  background: #1f1f1f;
+}
+.frame {
+  position: absolute; inset: 0; margin: 0;
+  visibility: hidden;
+  &:first-child { visibility: visible; }
+}
+.frameMedia {
+  position: absolute; inset: 0; overflow: hidden;
+  // Fit, not crop: the band is far wider than the photos, so each photo is shown whole.
+  img { z-index: 1; object-fit: contain; object-position: center !important; will-change: transform; }
+  img.frameBlur { z-index: 0; object-fit: cover; filter: blur(26px) brightness(0.5) saturate(1.1); transform: scale(1.15); will-change: auto; }
+}
+// Per-frame captions are for assistive tech while the film plays; shown in the static list.
+.frameCap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.seam {
+  position: absolute; inset: 0; z-index: 20; width: 100%; height: 100%; pointer-events: none;
+  line { stroke: $c-yellow; stroke-width: 3px; opacity: 0; filter: drop-shadow(0 0 6px rgba(255, 197, 74, 0.6)); }
+}
+// Reading shade under the subtitle: from the bottom and the start edge.
+.shade {
+  position: absolute; inset: 0; z-index: 21; pointer-events: none;
+  background:
+    linear-gradient(0deg, rgba(20, 20, 20, 0.82) 0%, rgba(20, 20, 20, 0.35) 38%, transparent 62%),
+    linear-gradient(90deg, rgba(20, 20, 20, 0.5) 0%, transparent 55%);
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(0deg, rgba(20, 20, 20, 0.82) 0%, rgba(20, 20, 20, 0.35) 38%, transparent 62%),
+      linear-gradient(270deg, rgba(20, 20, 20, 0.5) 0%, transparent 55%);
+  }
+}
+.caption {
+  position: absolute; inset-inline: 0; bottom: clamp(20px, 5vh, 48px); z-index: 22;
+  display: grid; gap: 10px; justify-items: start; align-content: end;
+  min-height: 150px;
+  > * { max-width: 620px; }
+  @include down($bp-md) { min-height: 170px; gap: 8px; }
+}
+.capMeta {
+  font-family: $f-display; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  b { color: $c-yellow; font-weight: 700; }
+}
+.capTitle { @include display(clamp(1.5rem, 1rem + 1.8vw, 2.75rem)); line-height: 1.05; color: $c-white; }
+.capLine { font-size: clamp(0.9375rem, 0.88rem + 0.25vw, 1.0625rem); line-height: 1.55; color: rgba(255, 255, 255, 0.85); }
+
+/* the contact sheet: act labels, nine thumbnails, the travelling box */
+.strip {
+  --p: 0;
+  position: relative; display: grid; gap: 10px;
+  padding-bottom: 18px;
+}
+.acts {
+  display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 10px;
+  span {
+    position: relative; padding-top: 8px;
+    font-family: $f-display; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    transition: color 0.35s ease, border-color 0.35s ease;
+    &:global(.is-on) { color: $c-yellow; border-top-color: $c-yellow; }
+  }
+  @include down($bp-md) { display: none; }
+}
+.thumbs {
+  display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 10px;
+  @include down($bp-md) { gap: 5px; }
+}
+.dot { position: relative; min-width: 0; }
+.thumb {
+  position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: 6px; overflow: hidden; cursor: pointer; background: #1f1f1f;
+  outline: 1px solid rgba(255, 255, 255, 0.1); outline-offset: -1px;
+  transition: transform 0.5s $ease-out, outline-color 0.4s, box-shadow 0.5s $ease-out;
+  img { object-fit: cover; filter: grayscale(1) brightness(0.42); transition: filter 0.6s $ease-out, transform 0.8s $ease-out; }
+  &::after { // reading wash under the number
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(20, 20, 20, 0.75), transparent 60%);
+  }
+  &:hover img { filter: grayscale(0.2) brightness(0.8); transform: scale(1.06); }
+  &:focus-visible { outline: 2px solid $c-yellow; outline-offset: 2px; }
+  @include down($bp-md) { aspect-ratio: 1; border-radius: 4px; }
+}
+.thumbNum {
+  position: absolute; inset-inline-start: 8px; bottom: 6px; z-index: 1;
+  font-family: $f-display; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6); transition: color 0.4s;
+  @include down($bp-md) { inset-inline-start: 0; inset-inline-end: 0; text-align: center; bottom: 3px; font-size: 0.5625rem; }
+}
+:global(.is-reached) .thumb img { filter: grayscale(0.15) brightness(0.72); }
+:global(.is-reached) .thumbNum { color: $c-yellow; }
+.dot:global(.is-now) .thumb {
+  transform: translateY(-4px);
+  outline: 2px solid $c-yellow; outline-offset: -2px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  img { filter: none; }
+  .thumbNum { color: $c-white; }
+}
+// Track under the thumbnails, centre of the first to centre of the last.
+.railTrack {
+  --g: 10px;
+  position: absolute; bottom: 0; height: 2px;
+  inset-inline: calc(#{$gutter} + (100% - #{$gutter * 2} - 8 * var(--g)) / 18);
+  background: rgba(255, 255, 255, 0.14);
+  @include down($bp-md) { --g: 5px; }
+}
+.railFill {
+  position: absolute; inset: 0; background: $c-yellow;
+  transform: scaleX(var(--p)); transform-origin: left center;
+  :global([dir="rtl"]) & { transform-origin: right center; }
+}
+.box {
+  position: absolute; top: 1px; inset-inline-start: calc(var(--p) * 100%); z-index: 2;
+  display: grid; place-items: center;
+  width: 30px; height: 20px; translate: -50% -50%;
+  border-radius: 3px; background: $c-yellow;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  :global([dir="rtl"]) & { translate: 50% -50%; }
+  svg { width: 16px; height: auto; fill: $c-ink; }
+}
+
+/* services along the way */
+.also {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;
+  padding-block: clamp(24px, 4vw, 40px) clamp(56px, 7vw, 96px);
+  ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  li {
+    padding: 8px 14px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px;
+    font-family: $f-display; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
+  }
+}
+.alsoLabel { font-family: $f-display; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: $c-yellow; }
+
+/* reduced motion: nothing pins; every frame is shown with its caption */
+.section:global(.is-static) {
+  .pinWrap { padding-bottom: 0; }
+  .pin { height: auto; grid-template-rows: auto; }
+  .hint, .seam, .shade, .caption, .strip { display: none; }
+  .film {
+    display: grid; gap: 28px; background: none; overflow: visible;
+    padding-inline: max(16px, calc((100% - #{$container}) / 2));
+    @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .frame { position: relative; visibility: visible; display: grid; gap: 12px; }
+  .frameMedia { position: relative; aspect-ratio: 4 / 3; border-radius: $radius; }
+  .frameCap {
+    position: static; width: auto; height: auto; clip: auto; white-space: normal;
+    display: grid; gap: 4px; font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6);
+    b { color: $c-yellow; }
+    span:first-of-type { font-size: 1rem; letter-spacing: 0; color: $c-white; }
+    span:last-of-type { font-family: $f-body; font-size: 0.875rem; letter-spacing: 0; text-transform: none; color: rgba(255, 255, 255, 0.75); }
+  }
+}

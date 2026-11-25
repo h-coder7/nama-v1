@@ -1,0 +1,71 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  padding: clamp(72px, 7vw, 104px) 0;
+  background-color: $c-yellow;
+  @include stripes(rgba(46, 46, 46, 0.035), 26px);
+  color: $c-ink;
+  overflow: hidden;
+}
+.grid { display: grid; gap: 56px; align-items: center; @include up($bp-lg) { grid-template-columns: 1fr 0.95fr; gap: 48px; } }
+.copy { display: grid; justify-items: start; }
+.pill {
+  padding: 8px 16px;
+  border: 1px solid $c-ink;
+  border-radius: 999px;
+  font-family: $f-display;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.year {
+  margin-top: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: clamp(5rem, 3rem + 6vw, 9.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1.4px $c-ink;
+  font-variant-numeric: tabular-nums;
+}
+.title { margin-top: 22px; @include display(clamp(1.625rem, 1.2rem + 1.1vw, 2.25rem)); font-weight: 500; }
+.body { margin-top: 16px; max-width: 420px; font-size: 0.875rem; line-height: 1.6; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 44px; }
+.ghost { color: $c-ink; border-color: $c-ink !important; &:hover { background: rgba(46, 46, 46, 0.08) !important; } }
+
+.visual { position: relative; padding-inline-start: 0; @include up($bp-lg) { padding-inline-start: 0; } }
+.frame {
+  position: relative;
+  aspect-ratio: 470 / 573;
+  max-width: 470px;
+  margin-inline-start: auto;
+  border: 3px solid $c-ink;
+  border-radius: 20px;
+  overflow: hidden;
+  background: $c-ink;
+  @include down($bp-lg) { margin-inline: auto; }
+}
+.image { object-fit: cover; will-change: transform; }
+.badge {
+  position: absolute;
+  inset-inline-start: clamp(-24px, 3vw - 50px, 0px);
+  bottom: 9%;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  width: clamp(150px, 13vw, 186px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $c-ink;
+  color: $c-white;
+  text-align: center;
+  transform: rotate(-8deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  @include down($bp-lg) { inset-inline-start: 4%; }
+}
+.badgeValue { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: clamp(1.75rem, 1.3rem + 1vw, 2.25rem); color: $c-yellow; letter-spacing: -0.02em; line-height: 1; }
+.badgeUnit { margin-top: 8px; font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.badgeApprox { font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }

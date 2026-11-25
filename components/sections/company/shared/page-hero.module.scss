@@ -1,0 +1,49 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: $c-ink;
+  color: $c-white;
+  padding: clamp(112px, 9vw, 132px) 0 clamp(56px, 6vw, 72px);
+}
+.md { min-height: clamp(460px, 34vw, 520px); }
+.lg { min-height: clamp(520px, 42vw, 600px); }
+.media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.photo { position: absolute; inset: -6% 0 0; img { object-fit: cover; } }
+.shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 34%, rgba(46, 46, 46, 0.18) 70%, rgba(46, 46, 46, 0.32) 100%),
+    linear-gradient(180deg, rgba(46, 46, 46, 0.5), transparent 32%);
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(270deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 34%, rgba(46, 46, 46, 0.18) 70%, rgba(46, 46, 46, 0.32) 100%),
+      linear-gradient(180deg, rgba(46, 46, 46, 0.5), transparent 32%);
+  }
+  @include down($bp-md) { background: linear-gradient(180deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.86)) !important; }
+}
+.inner { display: flex; flex-direction: column; min-height: inherit; }
+.crumbs ol { font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+:global([dir="rtl"]) .crumbs ol { letter-spacing: 0; }
+.row {
+  display: grid; gap: 28px;
+  margin-top: auto; padding-top: clamp(56px, 7vw, 84px);
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) minmax(0, 400px); align-items: end; gap: 48px; }
+}
+.copy { display: grid; justify-items: start; gap: 26px; }
+.title { @include display(clamp(2.5rem, 1.5rem + 2.8vw, 3.5rem)); font-weight: 600; line-height: 1; }
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.line > span { display: inline-block; }
+.accent { color: $c-yellow; }
+.aside {
+  position: relative;
+  display: block;
+  padding-inline-start: 20px;
+  margin-bottom: 4px;
+  font-size: 0.9375rem; line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+}
+.rule { position: absolute; inset-block: -6px; inset-inline-start: 0; width: 2px; background: $c-yellow; transform-origin: top; }

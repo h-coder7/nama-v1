@@ -1,0 +1,120 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: 72px 0 64px; }
+.grid { display: grid; gap: 40px; @include up($bp-lg) { grid-template-columns: 0.75fr 1fr; gap: 24px; align-items: start; } }
+.left { display: grid; justify-items: start; padding-top: 2px; @include up($bp-lg) { padding-inline-start: 8px; } }
+.title { margin-top: 20px; @include display(clamp(1.625rem, 1.2rem + 1vw, 2rem)); }
+.accent { color: $c-yellow; }
+.options { width: 100%; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid $c-line-on-dark;
+  background: none;
+  text-align: start;
+  strong { display: block; font-family: $f-display; font-weight: 500; font-size: 1rem; text-transform: uppercase; }
+  small { display: block; margin-top: 4px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+  &:hover .optArrow { background: $c-yellow; border-color: $c-yellow; color: $c-ink; transform: translateX(calc(3px * var(--dir))); }
+  @include focus-ring;
+}
+.optArrow {
+  flex: none;
+  display: grid; place-items: center;
+  width: 22px; height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  transition: background $dur, border-color $dur, color $dur, transform $dur $ease-out;
+}
+.optArrowActive { background: $c-yellow; border-color: $c-yellow; color: $c-ink; }
+
+.panel {
+  position: relative;
+  padding-block: 30px 28px; padding-inline: 30px 26px;
+  border: 1px solid $c-line-on-dark;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  @include notch(44px);
+}
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; @include down($bp-sm) { grid-template-columns: 1fr; } }
+.full { grid-column: 1 / -1; }
+.formTitle { grid-column: 1 / -1; @include display(1.25rem); }
+.formIntro { grid-column: 1 / -1; margin: -8px 0 8px; max-width: 360px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+.field {
+  display: grid;
+  gap: 10px;
+  > span:first-child { font-family: $f-display; font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; }
+  input, select, textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    color: $c-white;
+    font: 400 1rem/1.4 $f-body;
+    transition: border-color $dur-fast, background $dur-fast, box-shadow $dur-fast;
+    &::placeholder { color: rgba(255, 255, 255, 0.5); font-size: 0.8125rem; }
+    &:hover { border-color: rgba(255, 255, 255, 0.22); }
+    &:focus { outline: none; border-color: $c-yellow; background: rgba(255, 255, 255, 0.06); box-shadow: 0 0 0 3px rgba(255, 197, 74, 0.18); }
+    &[aria-invalid="true"] { border-color: #ff8a7a; }
+  }
+  select { appearance: none; font-size: 0.8125rem; cursor: pointer; option { color: $c-ink; } }
+  textarea { padding: 14px 16px; min-height: 64px; resize: vertical; }
+}
+.dashed { border-style: dashed !important; }
+.selectWrap {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 18px; top: 50%;
+    width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+.phoneWrap {
+  direction: ltr; // numbers stay LTR in Arabic
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  &:focus-within { border-color: $c-yellow; box-shadow: 0 0 0 3px rgba(255, 197, 74, 0.18); }
+  input { border: 0 !important; background: transparent !important; box-shadow: none !important; padding-inline-start: 12px; }
+}
+.prefix { padding: 0 12px 0 16px; border-inline-end: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.8125rem; color: rgba(255, 255, 255, 0.6); }
+.error { font-size: 0.75rem; color: #ffb3a8; }
+.submitRow {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px;
+  small { font-size: 0.6875rem; color: rgba(255, 255, 255, 0.75); margin-inline-end: 22px; }
+}
+.success { display: grid; justify-items: start; gap: 16px; min-height: 420px; align-content: center; }
+.successIcon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: $c-yellow; color: $c-ink; }
+
+// Home (Nov 2026): yellow band, ink copy on the left, the form on a solid dark card.
+.yellow {
+  padding: clamp(64px, 6vw, 96px) 0;
+  background-color: $c-yellow;
+  @include stripes(rgba(46, 46, 46, 0.035), 26px);
+  color: $c-ink;
+  .accent { color: $c-ink; text-decoration: underline; text-decoration-thickness: 0.08em; text-underline-offset: 0.12em; }
+  .options { border-top-color: rgba(46, 46, 46, 0.35); }
+  .option {
+    border-bottom-color: rgba(46, 46, 46, 0.22);
+    small { color: rgba(46, 46, 46, 0.75); }
+    &:hover .optArrow { background: $c-ink; border-color: $c-ink; color: $c-yellow; }
+  }
+  .optArrow { border-color: rgba(46, 46, 46, 0.45); }
+  .option { @include focus-ring($c-ink); }
+  .optArrowActive { background: $c-ink; border-color: $c-ink; color: $c-yellow; }
+  .panel { background: $c-ink; border-color: $c-ink; color: $c-white; box-shadow: 0 30px 60px -30px rgba(46, 46, 46, 0.55); }
+}

@@ -1,0 +1,32 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+.header { display: grid; gap: 24px; align-items: end; @include up($bp-lg) { grid-template-columns: 1fr 1fr; } }
+.lead { display: grid; justify-items: start; gap: 20px; }
+.title { @include display(clamp(2.25rem, 1.5rem + 2.4vw, 3.5rem)); }
+.accent { color: $c-yellow; }
+.meta { display: grid; gap: 14px; max-width: 400px; p { font-size: $fs-body; line-height: 1.55; color: $c-muted; } @include up($bp-lg) { justify-self: end; } }
+.preset {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem !important; color: $c-ink !important;
+  &::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 3px; border-radius: 50%; background: $c-yellow; box-shadow: 0 0 0 1.5px $c-ink; }
+}
+.cards { display: grid; gap: 16px; margin-top: 40px; @include up($bp-md) { grid-template-columns: 2fr 1fr 1fr; } }
+.card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 48px;
+  height: 100%; min-height: clamp(200px, 18vw, 270px);
+  padding: 22px 20px 24px;
+  border-radius: 20px;
+  background: $c-ink; color: $c-white;
+  @include notch(34px);
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &:hover { translate: 0 -5px; .arrow { rotate: calc(-45deg * var(--dir)); } }
+  @include focus-ring;
+}
+.main { background: $c-yellow; color: $c-ink; .label { color: $c-ink; } .arrow { background: $c-ink; color: $c-yellow; } }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.label { font-family: $f-display; font-size: 0.875rem; font-weight: 600; color: $c-yellow; }
+.arrow { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; background: $c-yellow; color: $c-ink; transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+.cardTitle { @include display(clamp(1.375rem, 1rem + 1vw, 1.875rem)); }
+.mainItem .cardTitle { font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem); }

@@ -1,0 +1,44 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: clamp(64px, 7vw, 96px) 0 clamp(56px, 6vw, 80px); }
+.dark { color: $c-white; }
+.light { background: $c-paper; color: $c-ink; }
+.grid { display: grid; gap: 48px; @include up($bp-lg) { grid-template-columns: 1fr 0.8fr; gap: 64px; } }
+.lead { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.title { @include display(clamp(2.5rem, 1.6rem + 2.8vw, 3.75rem)); font-weight: 600; text-wrap: balance; }
+.accent { color: $c-yellow; }
+.muted { color: rgba(46, 46, 46, 0.5); }
+.dark .muted { color: rgba(255, 255, 255, 0.55); }
+.note { margin-top: auto; max-width: 440px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
+.light .note { color: $c-muted; }
+.side { display: grid; gap: 18px; align-content: start; }
+.card {
+  display: grid; justify-items: start; gap: 18px;
+  padding: 24px clamp(18px, 2vw, 24px) 26px;
+  border-radius: 20px;
+  background: $c-yellow; color: $c-ink;
+  @include notch(42px);
+  p { font-size: 0.875rem; line-height: 1.55; max-width: 380px; }
+}
+.preset {
+  display: flex; align-items: center; gap: 8px;
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem !important;
+  &::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: $c-ink; flex: none; }
+}
+.rows li + li .row { border-top: 0; }
+.row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 0;
+  border-block: 1px solid rgba(255, 255, 255, 0.16);
+  strong { display: block; font-family: $f-display; font-weight: 600; font-size: 1.125rem; text-transform: uppercase; }
+  small { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.75); }
+  @include focus-ring;
+}
+.light .row { border-color: $c-line; small { color: $c-muted; } }
+.rowArrow {
+  display: grid; place-items: center; width: 30px; height: 30px; flex: none;
+  border: 1px solid currentColor; border-radius: 6px;
+  transition: background $dur-fast, color $dur-fast, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+}
+.row:hover .rowArrow { background: $c-yellow; border-color: $c-yellow; color: $c-ink; translate: calc(3px * var(--dir)) 0; }

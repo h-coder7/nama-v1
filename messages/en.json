@@ -1,0 +1,3219 @@
+{
+  "meta": {
+    "title": "Namma Cargo | Integrated logistics & supply chain solutions in Saudi Arabia",
+    "description": "Freight management, transportation, warehousing, distribution and customs clearance across Saudi Arabia and the GCC, with logistics expertise since 1983."
+  },
+  "common": {
+    "skip": "Skip to content",
+    "requestQuote": "Request a Quote",
+    "shipmentTracking": "Track",
+    "copy": "Copy",
+    "copied": "Copied",
+    "previous": "Previous",
+    "next": "Next",
+    "menu": "Menu",
+    "close": "Close",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you are looking for has moved or no longer exists.",
+    "backHome": "Back to Home",
+    "breadcrumb": "Breadcrumb",
+    "inThisSection": "In this section",
+    "pendingTitle": "Page design in progress",
+    "pendingBody": "This page is part of the approved sitemap. Its approved design will be implemented here.",
+    "allSolutions": "All Services",
+    "homeLabel": "Namma Cargo home",
+    "primaryNav": "Primary",
+    "prevMilestone": "Previous milestone",
+    "nextMilestone": "Next milestone",
+    "companyName": "Namma Cargo Services Co. Ltd.",
+    "brand": "Namma Cargo",
+    "language": "Language",
+    "switchTo": "العربية",
+    "switchToShort": "ع",
+    "sending": "Sending…",
+    "talkToExpert": "Talk to an Expert"
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Services",
+    "about": "About Namma",
+    "industries": "Industries",
+    "projects": "Projects",
+    "network": "Our Network",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Logistics expertise in Saudi Arabia since 1983",
+    "titleLines": [
+      "Integrated",
+      "logistics & supply",
+      "chain solutions."
+    ],
+    "kicker": "Across Saudi Arabia and the GCC",
+    "body": "Freight management, transportation, warehousing, distribution and customs clearance, coordinated end to end by one experienced team, with visibility at every stage.",
+    "primary": "Request a Quote",
+    "secondary": "Explore Our Services",
+    "trackCta": "Track Shipment",
+    "trackLabel": "Shipment reference number",
+    "trackPlaceholder": "Enter tracking number",
+    "trackSubmit": "Track",
+    "film": {
+      "since": "Since",
+      "beatOne": "Logistics expertise in Saudi Arabia",
+      "trucks": "Domestic and international truck movements",
+      "air": "Air shipments",
+      "projects": "Complex projects handled",
+      "sea": "Sea shipments",
+      "freight": "Freight tons handled over 10 years",
+      "track": "Track a Shipment",
+      "pause": "Pause the hero video",
+      "play": "Play the hero video"
+    },
+    "stats": [
+      {
+        "label": "Freight tons handled over 10 years"
+      },
+      {
+        "label": "Complex projects handled"
+      },
+      {
+        "label": "Active customers"
+      },
+      {
+        "label": "Offices",
+        "text": "Al Khobar, Riyadh, Jeddah"
+      }
+    ]
+  },
+  "solutions": {
+    "eyebrow": "Services",
+    "title": "Services built around\nyour *supply chain*",
+    "intro": "Connected service lines managed within one agreed scope of work, from a single shipment to complete project cargo moving from origin to site.",
+    "items": [
+      {
+        "tag": "Air · Sea · LCL · Road",
+        "title": "International Freight",
+        "body": "Moving goods by air, sea and road, whether imported into Saudi Arabia, exported from the Kingdom or transported across its borders.",
+        "cta": "Explore International Freight",
+        "chips": [
+          "Air Freight",
+          "Sea Freight",
+          "LCL Shipments",
+          "Road Freight & Cross-Border"
+        ]
+      },
+      {
+        "tag": "Import & export",
+        "title": "Customs Clearance",
+        "body": "Customs procedures for imports and exports handled with the relevant authorities, so goods move on to their next stage.",
+        "cta": "Explore Customs Clearance",
+        "chips": []
+      },
+      {
+        "tag": "Storage to delivery",
+        "title": "Contract Logistics Solutions",
+        "body": "Warehousing, distribution, transportation and value-added services managed together within one agreed scope of work.",
+        "cta": "Explore Contract Logistics",
+        "chips": [
+          "Warehousing & Distribution",
+          "Transportation",
+          "Value-Added Services"
+        ]
+      },
+      {
+        "tag": "Where Namma began",
+        "title": "Relocations & Exhibitions",
+        "body": "Services for household goods, office and facility relocations, and the logistics requirements of exhibitions and events.",
+        "chips": [],
+        "cta": "Explore Relocation & Exhibitions"
+      },
+      {
+        "tag": "Heavy & oversized cargo",
+        "title": "Project Logistics",
+        "body": "For heavy equipment, oversized cargo and projects requiring planning and coordination across multiple stages, from origin to project site.",
+        "chips": [
+          "Heavy Lift Cargo Solutions",
+          "Oversized Cargo Transport"
+        ],
+        "cta": "Explore Project Logistics"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About Namma Cargo",
+    "title": "Logistics expertise,\nevolving *since 1983*",
+    "yearCaption": "The year Namma began",
+    "lead": "Namma began in 1983 with relocation services. Today, we deliver integrated logistics and supply chain solutions: freight management, transportation, warehousing, distribution and customs clearance for enterprise and industrial customers across Saudi Arabia and the GCC.",
+    "body": [
+      "Four decades of operating in the Kingdom have built our understanding of its ports, borders, regulations and project sites, and how complex cargo moves through them.",
+      "That experience, combined with certified management systems and an international partner network, supports reliable operations for the businesses we serve."
+    ],
+    "primary": "More About Namma",
+    "secondary": "Download Company Profile",
+    "timelineLabel": "Namma milestones",
+    "milestones": [
+      {
+        "year": "1983",
+        "title": "The\nbeginning",
+        "body": "Namma began with relocation and personal effects services, starting a journey that would later expand into a wider range of logistics services."
+      },
+      {
+        "year": "1989",
+        "title": "Expanding international\nrelationships",
+        "body": "A new phase of international relationships began through work with Air Express International (AEI)."
+      },
+      {
+        "year": "1990",
+        "title": "Greater expertise\nin air freight",
+        "body": "Clearance operations for the air shipments of a major national energy company began through Dhahran Airport, continuing until 1995."
+      },
+      {
+        "year": "1995",
+        "title": "Larger-scale\nprojects",
+        "body": "Namma participated in logistics activities associated with the expansion of SADAF, with a recorded cargo volume of approximately 200,000 freight tons."
+      },
+      {
+        "year": "1999",
+        "title": "A new step in\nproject logistics",
+        "body": "The IBN-ZAHR PP-II project marked an important milestone in the development of Namma’s expertise in integrated project logistics management."
+      },
+      {
+        "year": "2000",
+        "title": "Continued international\nexpansion",
+        "body": "The relationship continued within the Danzas AEI network following Danzas’s acquisition of AEI."
+      },
+      {
+        "year": "2001",
+        "title": "Expanding customs\nclearance operations",
+        "body": "Clearance operations for the same energy company’s air and sea shipments in Riyadh and Jeddah began, continuing until 2006."
+      },
+      {
+        "year": "2002",
+        "title": "275,000\nfreight tons",
+        "body": "Namma participated in logistics activities associated with the Qatif Gas-Oil Separation Project, with a recorded cargo volume of approximately 275,000 freight tons."
+      },
+      {
+        "year": "2003",
+        "title": "A new\noperational phase",
+        "body": "The operational relationship developed with DHL Danzas Air & Ocean as part of the expansion of freight and logistics activities."
+      },
+      {
+        "year": "2006",
+        "title": "Expanding project\nactivities",
+        "body": "Experience extended to work associated with DHL Global Forwarding and DHL Industrial Projects, alongside customs clearance activities through ports and land border crossings."
+      },
+      {
+        "year": "2010",
+        "title": "800,000\nfreight tons",
+        "body": "Namma participated in logistics activities associated with the aluminium smelter project in Ras Al Zour, with a recorded cargo volume of approximately 800,000 freight tons."
+      },
+      {
+        "year": "2020",
+        "title": "Expanding operational\ncapabilities",
+        "body": "A container yard covering 10,000 m² was added near Dammam Port, as part of the development of the company’s operational capabilities."
+      }
+    ]
+  },
+  "numbers": {
+    "eyebrow": "Namma in numbers",
+    "intro": "Measurable experience across freight, project and transport operations.",
+    "items": [
+      {
+        "label": "Air shipments"
+      },
+      {
+        "label": "Sea shipments"
+      },
+      {
+        "label": "Domestic and international truck movements"
+      }
+    ],
+    "highlightLabel": "Freight tons handled over 10 years",
+    "yearTitle": "2026 to date",
+    "yearNote": "Across 16 key customer accounts",
+    "yearItems": [
+      {
+        "label": "Shipments"
+      },
+      {
+        "label": "Containers"
+      },
+      {
+        "label": "Tonnes gross weight"
+      }
+    ]
+  },
+  "featured": {
+    "eyebrow": "Featured project",
+    "title": "Ras Al Zour Aluminium\nSmelter Project",
+    "body": "Namma participated in logistics activities associated with the aluminium smelter project in Ras Al Zour, with a recorded cargo volume of approximately 800,000 freight tons.",
+    "statCaption": "Approximate recorded cargo volume, freight tons",
+    "cta": "View Project Details",
+    "cards": [
+      {
+        "title": "Qatif Gas-Oil\nSeparation Project",
+        "unit": "FT approx."
+      },
+      {
+        "title": "IBN-ZAHR PP-II\nProject",
+        "text": "Integrated project logistics management milestone."
+      },
+      {
+        "title": "SADAF Expansion\nProject",
+        "unit": "FT approx."
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "Sectors",
+    "title": "Industries we *serve*",
+    "intro": "Our logistics experience spans industries with different operational, cargo and site requirements.",
+    "items": [
+      {
+        "title": "Oil & Gas",
+        "body": "Solutions for moving equipment and materials associated with projects and operations, taking site and handling requirements into account."
+      },
+      {
+        "title": "Industrial",
+        "body": "Logistics solutions supporting the movement of materials and equipment for operations, maintenance and production."
+      },
+      {
+        "title": "Chemicals",
+        "body": "Moving chemical cargo with packing, documentation and handling suited to its classification."
+      },
+      {
+        "title": "Energy",
+        "body": "Solutions for moving components and equipment, aligning transport and handling stages with project requirements."
+      },
+      {
+        "title": "Pharma & Healthcare",
+        "body": "Coordinating time-sensitive medical and pharmaceutical shipments, from arrival to delivery."
+      },
+      {
+        "title": "Exhibitions & Events",
+        "body": "Coordinating the movement of exhibition materials and supplies in line with schedules and venue requirements."
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Credibility",
+    "titleLines": [
+      "Why Namma",
+      "Local expertise.",
+      "Operational capability."
+    ],
+    "intro": "The knowledge of a Saudi operator, the capabilities to execute, and the network to extend beyond the Kingdom.",
+    "items": [
+      {
+        "label": "Experience",
+        "title": "Decades of logistics experience",
+        "body": "Experience across freight, relocation and industrial project logistics helps us understand the requirements behind each movement."
+      },
+      {
+        "label": "Reach",
+        "title": "Local expertise, global connections",
+        "body": "Our knowledge of Saudi Arabia is supported by international agency relationships that help coordinate shipments across borders."
+      },
+      {
+        "label": "Integration",
+        "title": "Integrated logistics capabilities",
+        "body": "Freight, packing, warehousing, customs services and site delivery can be coordinated within an agreed scope of work."
+      },
+      {
+        "label": "Teams",
+        "title": "Experienced teams & operational coordination",
+        "body": "Our teams combine practical logistics knowledge with planning, transport capabilities and customer communication throughout the assignment."
+      }
+    ]
+  },
+  "anniversary": {
+    "kicker": "Namma Cargo Services",
+    "years": "Years",
+    "title": "A legacy that\n*moves the world*",
+    "body": "Integrated logistics across air, sea, land and warehousing.",
+    "imageAlt": "Container ship, Namma truck, aircraft and warehouse"
+  },
+  "technology": {
+    "eyebrow": "Technology & digital capabilities",
+    "title": "Visibility across your\n*logistics operations*",
+    "intro": "Digital tools that support a clearer customer experience, from the warehouse floor to shipment delivery, and data-driven decisions across your supply chain.",
+    "items": [
+      {
+        "title": "Warehouse Management",
+        "body": "Receiving, put-away and dispatch managed through one warehouse system.",
+        "status": "Inbound · received",
+        "stage": "Warehouse floor",
+        "imageAlt": "Forklift moving crated goods across the warehouse floor"
+      },
+      {
+        "title": "Inventory Management",
+        "body": "Stock levels, locations and movements recorded for every item you store with us.",
+        "status": "Stock · updated",
+        "stage": "Storage",
+        "imageAlt": "Team moving pallets between storage racks"
+      },
+      {
+        "title": "Real-time Stock Visibility",
+        "body": "See what is available, reserved or on the move across your stored inventory.",
+        "status": "Available · live",
+        "stage": "Live stock",
+        "imageAlt": "Scanning a carton against live stock"
+      },
+      {
+        "title": "Upcoming Shipments",
+        "body": "Plan ahead with a clear view of shipments scheduled to arrive or depart.",
+        "status": "Scheduled · next week",
+        "stage": "Dispatch",
+        "imageAlt": "Namma truck leaving the port beside a container ship"
+      },
+      {
+        "title": "Shipment Tracking",
+        "body": "Follow shipment status and milestones using your shipment reference.",
+        "status": "Milestone · in transit",
+        "stage": "Shipment delivery",
+        "imageAlt": "Namma truck loading cargo beside an aircraft"
+      }
+    ],
+    "progressLabel": "Step"
+  },
+  "projects": {
+    "eyebrow": "Proof of experience",
+    "title": "Projects & success *stories*",
+    "intro": "Explore selected projects that show the scale and range of Namma's industrial logistics experience.",
+    "cta": "Explore Our Projects",
+    "items": [
+      {
+        "tag": "Recorded project",
+        "title": "Ras Al Zour Aluminium Smelter Project",
+        "body": "Namma participated in logistics activities associated with the aluminium smelter project in Ras Al Zour.",
+        "stat": "800,000",
+        "statLabel": "Freight tons, approx. recorded volume"
+      },
+      {
+        "tag": "Recorded project",
+        "title": "Qatif Gas-Oil Separation Project",
+        "body": "Namma participated in logistics activities associated with the Qatif Gas-Oil Separation Project.",
+        "stat": "275,000",
+        "statLabel": "Freight tons, approx. recorded volume"
+      },
+      {
+        "tag": "Project logistics milestone",
+        "title": "IBN-ZAHR PP-II Project",
+        "body": "An important milestone in the development of Namma's expertise in integrated project logistics management.",
+        "stat": "35,000",
+        "statLabel": "Freight tons, approx. recorded volume"
+      },
+      {
+        "tag": "Recorded project",
+        "title": "SADAF Expansion Project",
+        "body": "Namma participated in logistics activities associated with the expansion of SADAF.",
+        "stat": "200,000",
+        "statLabel": "Freight tons, approx. recorded volume"
+      }
+    ]
+  },
+  "network": {
+    "eyebrow": "Our network",
+    "title": "Local expertise.\n*International reach.*",
+    "body": "Three offices and a container yard in the Kingdom, supported by an overseas agency network that coordinates the international legs of your shipments.",
+    "legend": [
+      "Offices",
+      "Container yard",
+      "Recorded project sites"
+    ],
+    "table": {
+      "code": "Code",
+      "office": "Office",
+      "phone": "Phone"
+    },
+    "offices": [
+      {
+        "code": "KHB",
+        "city": "Al Khobar",
+        "role": "Head office",
+        "phone": "+966 13 330 8800",
+        "email": "namma@nammacargo.com"
+      },
+      {
+        "code": "RUH",
+        "city": "Riyadh",
+        "role": "Office",
+        "phone": "+966 11 465 4200",
+        "email": "nammaruh@nammacargo.com"
+      },
+      {
+        "code": "JED",
+        "city": "Jeddah",
+        "role": "Office",
+        "phone": "+966 12 220 3400",
+        "email": "nammajed@nammacargo.com"
+      }
+    ],
+    "mapAlt": "Map of Saudi Arabia showing Namma offices in Al Khobar, Riyadh and Jeddah",
+    "stats": [
+      {
+        "label": "Offices in Saudi Arabia",
+        "value": "03",
+        "caption": "Al Khobar (HQ), Riyadh, Jeddah"
+      },
+      {
+        "label": "Container yard",
+        "value": "10,000",
+        "unit": "m²",
+        "caption": "Near Dammam Port, added in 2020"
+      },
+      {
+        "label": "Unified number",
+        "value": "920009582",
+        "caption": "For enquiries to any office"
+      }
+    ],
+    "agencyLead": "Overseas agency network.",
+    "agencyBody": "An overseas agency network complements our Saudi operational presence and helps coordinate international freight movements."
+  },
+  "process": {
+    "eyebrow": "End-to-end",
+    "title": "The end-to-end\n*logistics journey*",
+    "intro": "One partner from the first document to final delivery. Each stage connects to the next, with visibility and coordination maintained throughout.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Document Verification & Expediting Services"
+      },
+      {
+        "title": "Factory Pickup"
+      },
+      {
+        "title": "Warehouse (Packing)"
+      },
+      {
+        "title": "Export Customs Clearance & Port Handling"
+      },
+      {
+        "title": "Air and Ocean Freight Forwarding"
+      },
+      {
+        "title": "Multi-Modal Transportation"
+      },
+      {
+        "title": "Customs Clearance at Destination Port"
+      },
+      {
+        "title": "Warehouse Storage & Distribution"
+      },
+      {
+        "title": "Final Delivery"
+      },
+      {
+        "title": "Air & Ocean Chartering Services"
+      },
+      {
+        "title": "Project Forwarding"
+      },
+      {
+        "title": "Household Goods Relocation Services"
+      },
+      {
+        "title": "Renewable Logistics"
+      },
+      {
+        "title": "Intercity & Intra-Kingdom Transportation"
+      }
+    ],
+    "acts": [
+      "Origin",
+      "On the way",
+      "Destination"
+    ],
+    "lines": [
+      "Paperwork is checked and prepared before anything moves.",
+      "Your cargo is collected straight from the factory.",
+      "Packed and crated to suit the journey ahead.",
+      "Cleared for export and handled at the port of loading.",
+      "Booked on the right vessel or flight for the main leg.",
+      "Carried on by road, rail or sea, as the route requires.",
+      "Cleared on arrival and released from the port.",
+      "Stored, prepared and dispatched when you need it.",
+      "Delivered to your door, site or warehouse."
+    ],
+    "alsoLabel": "Also along the way",
+    "scrollHint": "Scroll to follow the shipment"
+  },
+  "quote": {
+    "eyebrow": "Next step",
+    "title": "Start with\nwhat you *need*",
+    "options": [
+      {
+        "title": "Have a new shipment or project?",
+        "body": "Request a quote"
+      },
+      {
+        "title": "Have an existing shipment?",
+        "body": "Track your shipment"
+      },
+      {
+        "title": "Need assistance?",
+        "body": "Contact our team"
+      }
+    ],
+    "formTitle": "Request a quote",
+    "formIntro": "Share the essential details of your requirements, and we will direct your request to the right team.",
+    "fields": {
+      "service": "Service",
+      "servicePlaceholder": "Select a service",
+      "origin": "Origin",
+      "originPlaceholder": "City or country",
+      "destination": "Destination",
+      "destinationPlaceholder": "City, port or project site",
+      "cargo": "Cargo and requirements",
+      "cargoPlaceholder": "Type of cargo, approximate size or weight, timing",
+      "name": "Full name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "submit": "Send request",
+    "privacy": "We use these details only to respond to your request.",
+    "errors": {
+      "required": "This field is required",
+      "email": "Enter a valid email address",
+      "phone": "Enter a valid phone number"
+    },
+    "successTitle": "Request received",
+    "successBody": "Thank you. Our team will review your requirements and get back to you shortly.",
+    "again": "Send another request",
+    "sending": "Sending…",
+    "serviceOptions": [
+      {
+        "key": "freightTransport",
+        "label": "International Freight"
+      },
+      {
+        "key": "airFreight",
+        "label": "Air Freight"
+      },
+      {
+        "key": "seaFreight",
+        "label": "Sea Freight"
+      },
+      {
+        "key": "lclShipments",
+        "label": "LCL Shipments"
+      },
+      {
+        "key": "roadFreight",
+        "label": "Road Freight & Cross-Border"
+      },
+      {
+        "key": "customsClearance",
+        "label": "Customs Clearance"
+      },
+      {
+        "key": "threePl",
+        "label": "Contract Logistics Solutions"
+      },
+      {
+        "key": "warehousingDistribution",
+        "label": "Warehousing & Distribution"
+      },
+      {
+        "key": "transportation",
+        "label": "Transportation"
+      },
+      {
+        "key": "industrialEquipmentPacking",
+        "label": "Value-Added Services"
+      },
+      {
+        "key": "relocationExhibitions",
+        "label": "Relocations & Exhibitions"
+      },
+      {
+        "key": "projectLogistics",
+        "label": "Project Logistics"
+      },
+      {
+        "key": "heavyLift",
+        "label": "Heavy Lift Cargo Solutions"
+      },
+      {
+        "key": "oversizedCargo",
+        "label": "Oversized Cargo Transport"
+      },
+      {
+        "key": "notSure",
+        "label": "Not sure"
+      }
+    ],
+    "contact": {
+      "formTitle": "Send us a message",
+      "formIntro": "Tell us what your enquiry is about and our team will get back to you.",
+      "type": "Enquiry type",
+      "typePlaceholder": "Select a type",
+      "types": [
+        "General enquiry",
+        "Existing shipment",
+        "Partnership or agency",
+        "Supplier",
+        "Media",
+        "Other"
+      ],
+      "office": "Office",
+      "officePlaceholder": "Any office",
+      "offices": [
+        "Al Khobar, Head office",
+        "Riyadh",
+        "Jeddah"
+      ],
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "How can we help?",
+      "submit": "Send message",
+      "successTitle": "Message received",
+      "successBody": "Thank you. Our team will review your message and get back to you shortly."
+    }
+  },
+  "footer": {
+    "about": "Logistics expertise in Saudi Arabia since 1983. Namma Cargo is part of the Nesma group of companies.",
+    "unified": "Unified number",
+    "profile": "Download Company Profile",
+    "columns": [
+      {
+        "title": "Solutions"
+      },
+      {
+        "title": "Company"
+      },
+      {
+        "title": "Support"
+      }
+    ],
+    "copyright": "© 2026 Namma Cargo Services Co. Ltd.",
+    "linkedin": "LinkedIn"
+  },
+  "routes": {
+    "home": "Home",
+    "solutions": "All Services",
+    "projectLogistics": "Project Logistics",
+    "industrialEquipmentPacking": "Value-Added Services",
+    "freightTransport": "International Freight",
+    "warehousingDistribution": "Warehousing & Distribution",
+    "customsClearance": "Customs Clearance",
+    "relocationExhibitions": "Relocations & Exhibitions",
+    "threePl": "Contract Logistics Solutions",
+    "industries": "Industries",
+    "oilGas": "Oil & Gas",
+    "energy": "Energy",
+    "industrialOperations": "Industrial",
+    "exhibitionsEvents": "Exhibitions & Events",
+    "projects": "Projects & Success Stories",
+    "allProjects": "All Projects",
+    "rasAlZour": "Ras Al Zour Aluminium Smelter Project",
+    "qatifGosp": "Qatif Gas-Oil Separation Project",
+    "ibnZahr": "IBN-ZAHR PP-II Project",
+    "sadafExpansion": "SADAF Expansion Project",
+    "about": "About Namma",
+    "network": "Our Network",
+    "requestQuote": "Request a Quote",
+    "trackShipment": "Track a Shipment",
+    "contact": "Contact Us",
+    "careers": "Careers",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "support": "Support",
+    "airFreight": "Air Freight",
+    "seaFreight": "Sea Freight",
+    "lclShipments": "LCL Shipments",
+    "roadFreight": "Road Freight & Cross-Border",
+    "transportation": "Transportation",
+    "heavyLift": "Heavy Lift Cargo Solutions",
+    "oversizedCargo": "Oversized Cargo Transport",
+    "chemicals": "Chemicals",
+    "pharmaHealthcare": "Pharma & Healthcare"
+  },
+  "units": {
+    "million": "M",
+    "thousand": "K",
+    "frt": "FRT",
+    "ft": "FT",
+    "approx": "approx.",
+    "sqm": "m²"
+  },
+  "industriesPage": {
+    "metaDescription": "Logistics solutions for oil & gas, mining, energy, construction, industrial operations and exhibitions across Saudi Arabia and the GCC.",
+    "hero": {
+      "eyebrow": "Industries we serve",
+      "title": "Logistics solutions that\nunderstand *your industry*",
+      "lead": "Industries differ in their cargo characteristics, locations and operational schedules.",
+      "body": "Our solutions therefore begin with an understanding of the business and project requirements before selecting suitable transport methods and services.",
+      "jumpTo": "Jump to",
+      "tilesLabel": "Choose an industry"
+    },
+    "showcase": {
+      "eyebrow": "Industries we serve",
+      "title": "Six industries,\n*one partner*",
+      "viewIndustry": "View industry"
+    },
+    "items": [
+      {
+        "body": "Oil and gas projects require equipment and material movements to be coordinated with site requirements and operational schedules.",
+        "services": [
+          "Project Logistics",
+          "International Freight",
+          "Heavy & Oversized Cargo",
+          "Customs Clearance",
+          "Industrial Packing",
+          "Transport to Site"
+        ]
+      },
+      {
+        "body": "Solutions for moving equipment, spare parts and materials that support factories, facilities, operations and maintenance.",
+        "services": [
+          "Freight & Transport",
+          "Warehousing & Distribution",
+          "Industrial Equipment Packing"
+        ]
+      },
+      {
+        "body": "Chemical cargo requires packing, documentation and handling suited to its classification, with storage and transport arranged around the applicable regulations.",
+        "services": [
+          "International Freight",
+          "Customs Clearance",
+          "Warehousing",
+          "Value-Added Services"
+        ]
+      },
+      {
+        "body": "Logistics solutions support the movement of equipment and components for energy projects, from shipping through to arrival at the project site.",
+        "services": [
+          "Project Logistics",
+          "Sea Freight",
+          "Customs Clearance"
+        ]
+      },
+      {
+        "body": "Pharmaceutical and healthcare shipments depend on timing, documentation and careful handling, from arrival in the Kingdom to final delivery.",
+        "services": [
+          "Air Freight",
+          "Customs Clearance",
+          "Warehousing",
+          "Transportation"
+        ]
+      },
+      {
+        "body": "Coordinating the movement of exhibition and event materials and equipment in line with fixed schedules and venue requirements.",
+        "services": [
+          "Relocation & Exhibitions",
+          "Customs Clearance"
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Next move",
+      "title": "Working in another *industry?*",
+      "body": "Tell us about your business and requirements, and we will help you identify the right solution.",
+      "yours": "+ Yours",
+      "ribbon": "Tell us about your requirements"
+    }
+  },
+  "industryDetail": {
+    "common": {
+      "industryOf": "Industry {n} / {total}",
+      "discussCta": "Discuss Your {industry} Requirements",
+      "viewProjects": "View Projects",
+      "requirementsEyebrow": "Logistics requirements",
+      "requirementsTitle": "What the sector\n*asks of logistics*",
+      "requirementsIntro": "The requirements below shape how transport methods and services are selected for this sector.",
+      "requirementLabel": "Requirement {n} / {total}",
+      "requirementsCount": "{n} requirements · {industry}",
+      "solutionsEyebrow": "Solutions",
+      "solutionsTitle": "Solutions suited\nto *{industry}*",
+      "solutionsIntro": "These requirements can involve the following Namma services, combined within an agreed scope of work.",
+      "deliveredEyebrow": "Delivered in this sector",
+      "viewProjectDetails": "View Project Details",
+      "freightTons": "Freight tons",
+      "approx": "Approx.",
+      "exploreEyebrow": "Industries",
+      "exploreTitle": "Explore other\n*industries*",
+      "exploreIntro": "Each sector page sets out its logistics requirements, the solutions that typically apply and the projects Namma has delivered in it.",
+      "current": "Current",
+      "previousIndustry": "Previous industry",
+      "nextIndustry": "Next industry",
+      "formTitle": "Discuss your project",
+      "formBody": "Share the essential details of your requirements, and we will direct your request to the right team.",
+      "formIndustry": "Industry",
+      "formService": "Service preselected",
+      "formCta": "Discuss Your Requirements",
+      "formNote": "Opens the Request a Quote form with {service} preselected.",
+      "inScope": "In scope",
+      "addToScope": "Add to scope",
+      "exploreService": "Explore service",
+      "factYear": "Year",
+      "factSector": "Sector",
+      "factVolume": "Volume",
+      "factRole": "Namma role",
+      "volumeValue": "~{n} freight tons",
+      "youAreHere": "You are here",
+      "nextTag": "Next",
+      "serviceShort": {
+        "projectLogistics": "Heavy equipment and oversized cargo, planned from origin to project site.",
+        "freightTransport": "Air, sea and land freight booked around your cargo, route and schedule.",
+        "customsClearance": "Clearance, duty exemptions and permits handled to keep goods moving.",
+        "industrialEquipmentPacking": "Export-grade packing and crating that protects equipment in transit.",
+        "airSeaChartering": "Dedicated aircraft and vessels chartered for cargo that cannot wait or fit scheduled services.",
+        "warehousingDistribution": "Storage near the build, with materials released to site as each stage needs them.",
+        "seaFreight": "Full containers, breakbulk and project cargo by sea.",
+        "airFreight": "Scheduled and charter air cargo for time-critical shipments.",
+        "transportation": "Planned distribution and dedicated transport across the Kingdom."
+      },
+      "sectorCovers": "Each sector page covers",
+      "coversItems": [
+        "Logistics requirements",
+        "Solutions that apply",
+        "Projects delivered"
+      ],
+      "openIndustry": "Open the {industry} page",
+      "nextService": "Next · {service}",
+      "exploreNamed": "Explore {service}",
+      "toggle": "Show details",
+      "switchOn": "On",
+      "switchOff": "Off",
+      "scopeReadout": "Scope readout",
+      "servicesOn": "services switched on",
+      "requestScope": "Request this scope",
+      "scopeEmpty": "Switch on at least one service to build a scope.",
+      "nextIndustryOf": "Next industry · {n} / {total}",
+      "openSector": "Open sector page",
+      "serviceWord": {
+        "projectLogistics": "Project",
+        "freightTransport": "Freight",
+        "customsClearance": "Customs",
+        "industrialEquipmentPacking": "Packing"
+      },
+      "selected": "Selected",
+      "previousOption": "Previous industry",
+      "nextOption": "Next industry",
+      "wheelHint": "Use the arrows to browse sectors"
+    },
+    "oilGas": {
+      "body": "Oil and gas projects require equipment and material movements to be coordinated with site requirements and operational schedules.",
+      "requirements": [
+        {
+          "title": "Site requirements",
+          "body": "Movements planned around access, handling and delivery conditions at each site."
+        },
+        {
+          "title": "Operational schedules",
+          "body": "Deliveries timed around shutdowns, start-ups and the working windows on site."
+        },
+        {
+          "title": "Heavy & oversized items",
+          "body": "Route surveys, permits and specialized trailers for loads beyond standard limits."
+        }
+      ],
+      "featuredSolutionBody": "Heavy equipment and oversized cargo, planned from origin to project site.",
+      "delivered": {
+        "title": "Qatif Gas-Oil\nSeparation Project",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    },
+    "energy": {
+      "body": "Logistics solutions support the movement of equipment and components for energy projects, from shipping through to arrival at the project site.",
+      "requirements": [
+        {
+          "title": "Shipping to site",
+          "tag": "Site requirements",
+          "body": "A single journey from international origin to project site."
+        },
+        {
+          "title": "Capacity & timing",
+          "tag": "Schedules",
+          "body": "Vessel, trailer and crane capacity booked around delivery windows on site."
+        },
+        {
+          "title": "Clearance",
+          "tag": "Customs",
+          "body": "Import clearance and duty exemptions arranged before components reach the port."
+        }
+      ],
+      "featuredSolutionBody": "Heavy equipment and oversized cargo, planned from origin to project site.",
+      "delivered": {
+        "title": "Qatif Gas-Oil Separation Project",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    },
+    "industrialOperations": {
+      "body": "Solutions for moving equipment, spare parts and materials that support factories, facilities, operations and maintenance.",
+      "requirements": [
+        {
+          "title": "Spare parts flow",
+          "body": "Critical spares moved fast enough to keep lines running and shutdowns short."
+        },
+        {
+          "title": "Facility support",
+          "body": "Regular deliveries of materials and consumables to plants and operating sites."
+        },
+        {
+          "title": "Equipment protection",
+          "body": "Packing, handling and storage that protect sensitive machinery in transit."
+        },
+        {
+          "title": "Remote sites",
+          "body": "Routes and last-mile delivery to locations far from main networks.",
+          "tag": "Mining"
+        },
+        {
+          "title": "Specialized handling",
+          "body": "Lifting, securing and transport methods matched to heavy and sensitive mining equipment.",
+          "tag": "Mining"
+        },
+        {
+          "title": "Large projects",
+          "body": "Multi-phase cargo flows coordinated with site schedules from first shipment to final delivery.",
+          "tag": "Mining"
+        },
+        {
+          "title": "Right place, right time",
+          "body": "Deliveries aligned with the build programme.",
+          "tag": "Construction"
+        },
+        {
+          "title": "Storage between stages",
+          "body": "Materials held close to site and released as each construction stage is ready for them.",
+          "tag": "Construction"
+        },
+        {
+          "title": "Site delivery",
+          "body": "Final-mile delivery planned around site access, offloading and safety requirements.",
+          "tag": "Construction"
+        }
+      ],
+      "featuredSolutionBody": "Heavy equipment and oversized cargo, planned from origin to project site.",
+      "delivered": {
+        "title": "Qatif Gas-Oil Separation Project",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    },
+    "exhibitionsEvents": {
+      "body": "Coordinating the movement of exhibition and event materials and equipment in line with fixed schedules and venue requirements.",
+      "requirements": [
+        {
+          "title": "Fixed deadlines",
+          "body": "Arrival timed to build-up and opening dates."
+        },
+        {
+          "title": "Venue requirements",
+          "body": "Deliveries booked around venue access slots, loading docks and handling rules."
+        },
+        {
+          "title": "Temporary imports",
+          "body": "ATA Carnet and temporary admission handled for exhibits that leave after the event."
+        }
+      ],
+      "featuredSolutionBody": "Heavy equipment and oversized cargo, planned from origin to project site.",
+      "delivered": {
+        "title": "Qatif Gas-Oil Separation *Project*",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    },
+    "chemicals": {
+      "body": "Chemical cargo requires packing, documentation and handling suited to its classification, with storage and transport arranged around the applicable regulations.",
+      "requirements": [
+        {
+          "title": "Classified cargo",
+          "body": "Documents, labels and handling matched to the cargo's classification."
+        },
+        {
+          "title": "Suited packing",
+          "body": "Packing and securing that protect the cargo and the people who handle it."
+        },
+        {
+          "title": "Regulated storage",
+          "body": "Storage and onward movement arranged in line with the applicable requirements."
+        }
+      ],
+      "featuredSolutionBody": "Imports and exports of chemical cargo, coordinated from origin to destination.",
+      "delivered": {
+        "title": "Qatif Gas-Oil Separation\n*Project*",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    },
+    "pharmaHealthcare": {
+      "body": "Pharmaceutical and healthcare shipments depend on timing, documentation and careful handling, from arrival in the Kingdom to delivery to hospitals, pharmacies and distributors.",
+      "requirements": [
+        {
+          "title": "Time-sensitive arrival",
+          "body": "Routing and booking planned around the required arrival date."
+        },
+        {
+          "title": "Careful handling",
+          "body": "Handling and storage suited to sensitive and high-value products."
+        },
+        {
+          "title": "Regulated clearance",
+          "body": "Documents and clearance prepared with the relevant authorities."
+        }
+      ],
+      "featuredSolutionBody": "Air freight for time-sensitive medical and pharmaceutical shipments.",
+      "delivered": {
+        "title": "Qatif Gas-Oil Separation Project",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "role": "Cargo movements"
+      }
+    }
+  },
+  "solutionPages": {
+    "common": {
+      "crumbSolutions": "Services",
+      "allSolutions": "All Services",
+      "viewAll": "View all services",
+      "explore": "Explore",
+      "page": "Page",
+      "dedicatedPage": "Dedicated page",
+      "relatedService": "Related service",
+      "scopeEyebrow": "Scope of service",
+      "scopeIntro": "Each element can be provided on its own or combined within an agreed scope of work, according to the cargo and the journey.",
+      "stagesEyebrow": "Stages",
+      "stagesIntro": "The sequence is agreed with you before execution, and each stage is coordinated with the parties involved.",
+      "stage": "Stage",
+      "stageOf": "Stage {n} of {total}",
+      "nextLabel": "Next: {label}",
+      "prevStage": "Previous stage",
+      "nextStage": "Next stage",
+      "connectedEyebrow": "Connected services",
+      "connectedTitle": "Often combined\n*with*",
+      "officesTitle": "Coordinated from\n~three offices~",
+      "officesIntro": "Requests are handled by the team closest to the origin, destination or project site.",
+      "offices": [
+        {
+          "code": "KHB",
+          "city": "Al Khobar",
+          "role": "Head Office",
+          "phone": "+966 13 330 8800"
+        },
+        {
+          "code": "RUH",
+          "city": "Riyadh",
+          "role": "Office",
+          "phone": "+966 11 465 4200"
+        },
+        {
+          "code": "JED",
+          "city": "Jeddah",
+          "role": "Office",
+          "phone": "+966 12 220 3400"
+        }
+      ],
+      "yardLabel": "Container yard",
+      "yardArea": "10,000",
+      "yardUnit": "m²",
+      "yardNote": "Near Dammam Port · added in 2020",
+      "quoteEyebrow": "Next step",
+      "quoteIntro": "Share the essential details of your requirements, and we will direct your request to the right team.",
+      "quotePreselected": "{service} is preselected in the quote form.",
+      "quoteCard": "Request a quote",
+      "existingQ": "Existing shipment?",
+      "trackCard": "Track your\nshipment",
+      "assistQ": "Need assistance?",
+      "contactCard": "Contact our\nteam",
+      "discussEyebrow": "Next step",
+      "discussTitle": "Discuss your\n*{topic}*\nrequirements",
+      "discussBody": "Share the essential details of your requirements, and we will direct your request to the right team.",
+      "discussCta": "Discuss Your Requirements",
+      "trackBody": "Track your shipment",
+      "contactBody": "Contact our team",
+      "authorityNote": "Approvals, inspections, duties and release decisions remain subject to the relevant authorities and applicable regulations.",
+      "serviceDesc": {
+        "projectLogistics": "Heavy equipment and oversized cargo, planned from origin to project site.",
+        "freightTransport": "Air, sea and road freight within Saudi Arabia and internationally.",
+        "warehousingDistribution": "Secure storage, inventory management and planned distribution to your sites and customers.",
+        "customsClearance": "Customs clearance, duty exemptions and import/export permits, handled end to end.",
+        "industrialEquipmentPacking": "Crating, skidding and protection for sensitive equipment.",
+        "relocationExhibitions": "Household, office and facility moves, and exhibition logistics.",
+        "threePl": "Relevant Namma services brought together under coordinated operations.",
+        "airFreight": "Scheduled and charter air cargo for time-critical shipments.",
+        "seaFreight": "Full containers, breakbulk and project cargo by sea.",
+        "lclShipments": "Shared container space for smaller sea shipments.",
+        "roadFreight": "Domestic, GCC and cross-border road freight.",
+        "transportation": "Planned distribution and dedicated transport across the Kingdom.",
+        "heavyLift": "Lifting and moving heavy equipment with engineered planning.",
+        "oversizedCargo": "Out-of-gauge cargo moved with route surveys and permits."
+      }
+    },
+    "hub": {
+      "eyebrow": "Services",
+      "title": "Logistics services\n*built around your needs*",
+      "intro": "Logistics requirements vary from one shipment to another and from one project to the next. Namma brings its services together across five main areas: international freight, customs clearance, contract logistics, relocations and exhibitions, and project logistics.",
+      "legendPage": "Dedicated service page",
+      "legendCapability": "Capability within a page",
+      "groupLabel": "Service group {n}",
+      "integratedLabel": "Integrated solution · 05",
+      "groups": [
+        {
+          "title": "International\n*freight*",
+          "body": "Solutions for moving goods within Saudi Arabia and to international destinations, using the mode of transport suited to the cargo, destination and required timeline.",
+          "items": [
+            "Air Freight",
+            "Sea Freight",
+            "LCL Shipments",
+            "Road Freight & Cross-Border"
+          ]
+        },
+        {
+          "title": "Customs\n~clearance~",
+          "body": "Import and export customs procedures handled with the relevant authorities, so goods can move on to their next stage.",
+          "items": [
+            "Import Clearance",
+            "Export Clearance",
+            "Documentation",
+            "Onward Movement"
+          ]
+        },
+        {
+          "title": "Contract logistics\n*solutions*",
+          "body": "Solutions that help manage goods after arrival, from warehousing and inventory management to transportation and value-added services.",
+          "items": [
+            "Warehousing & Distribution",
+            "Transportation",
+            "Value-Added Services",
+            "Inventory Management"
+          ]
+        },
+        {
+          "title": "Relocations &\n*exhibitions*",
+          "body": "Solutions for individuals and businesses relocating household goods, offices and facilities, alongside logistics services for exhibitions and events.",
+          "items": [
+            "Household Goods",
+            "Office & Facility Relocation",
+            "Exhibitions & Events",
+            "Temporary Storage"
+          ]
+        },
+        {
+          "title": "Project\n~logistics~",
+          "body": "Solutions for projects involving heavy equipment or oversized cargo, requiring careful planning and coordination from origin to project site.",
+          "items": [
+            "Heavy Lift Cargo",
+            "Oversized Cargo",
+            "Route Surveys & Planning",
+            "Port Operations"
+          ]
+        }
+      ],
+      "groupNames": [
+        "International Freight",
+        "Customs Clearance",
+        "Contract Logistics Solutions",
+        "Relocations & Exhibitions",
+        "Project Logistics"
+      ],
+      "integratedTitle": "3PL & integrated\n~logistics~",
+      "integratedBody": "Relevant Namma services brought together under coordinated operations.",
+      "integratedSteps": [
+        "Freight & Transport",
+        "Warehousing",
+        "Inventory Management",
+        "Distribution",
+        "Customs Services"
+      ],
+      "exploreCta": "Explore {name}",
+      "discussTopic": "logistics"
+    },
+    "projectLogistics": {
+      "eyebrow": "Project Logistics in Saudi Arabia",
+      "title": "Complex cargo requires\n*planning from the start*",
+      "body": [
+        "Moving heavy equipment and oversized cargo involves more than simply choosing a mode of transport.",
+        "Cargo dimensions and weight, routing, ports, handling methods and site access requirements are all considered before movement begins. Namma provides project logistics solutions from initial planning through to the shipment’s arrival at the project site."
+      ],
+      "cta": "Request a Project Logistics Quote",
+      "secondary": "View Our Projects",
+      "journeyEyebrow": "From origin to project site",
+      "journeyTitle": "One movement,\n*five coordinated stages*",
+      "journey": [
+        {
+          "title": "Shipment Collection",
+          "body": "Coordinating the collection of equipment or materials and preparing them for the next stage."
+        },
+        {
+          "title": "Route Survey",
+          "body": "Reviewing cargo dimensions and weight, the proposed route and any challenges that could affect transport."
+        },
+        {
+          "title": "Transport & Handling",
+          "body": "Selecting transport and handling methods suited to the equipment or cargo."
+        },
+        {
+          "title": "Port Operations",
+          "body": "Coordinating loading, unloading and handling operations associated with the shipment’s movement through the port."
+        },
+        {
+          "title": "Site Delivery",
+          "body": "Coordinating the final stage of the journey until the equipment reaches the project site."
+        }
+      ],
+      "heavyEyebrow": "Heavy and oversized cargo",
+      "heavyTitle": "When conventional methods\n*are not enough*",
+      "heavyBody": [
+        "Some equipment and machinery cannot be moved using conventional methods because of their dimensions or weight.",
+        "In these cases, cargo and route requirements are assessed to select suitable transport and handling methods for delivery to the destination."
+      ],
+      "handlingTitle": "Transport & Handling",
+      "handlingBody": [
+        "Some equipment requires specialized transport, lifting and handling methods.",
+        "Requirements are determined by the cargo’s dimensions, weight and characteristics, with loading, transport and unloading coordinated through to the delivery site."
+      ],
+      "routeEyebrow": "Assessing the route before movement",
+      "routeTitle": "The route is\n*part of the plan*",
+      "routeLead": "Before oversized cargo is moved, the route is reviewed to identify factors that may affect the journey, such as:",
+      "routeItems": [
+        "Weights and Dimensions",
+        "Road and Passage Clearances",
+        "Crossing Points",
+        "Site Accessibility",
+        "Loading and Unloading Requirements"
+      ],
+      "routeNote": "This helps establish a clearer plan before execution begins.",
+      "supportTitle": "Services that\n*support your project*",
+      "supportIntro": "Project logistics can be integrated with other Namma services according to each project’s requirements.",
+      "supportExtra": [
+        "Specialized Transport",
+        "Port Handling"
+      ],
+      "startEyebrow": "How do we start your project?",
+      "startTitle": "Four steps\n*before the first move*",
+      "start": [
+        {
+          "title": "Understand the Cargo",
+          "body": "We establish the equipment type, dimensions, weights, origin and destination."
+        },
+        {
+          "title": "Assess the Route",
+          "body": "We review the route, ports, handling requirements and site access."
+        },
+        {
+          "title": "Plan the Movement",
+          "body": "We identify the required services and sequence the stages of execution."
+        },
+        {
+          "title": "Coordinate Execution",
+          "body": "We monitor the movement and coordinate the parties and services involved through to arrival."
+        }
+      ],
+      "closingTitle": "Planning a project movement?",
+      "closingBody": "Share your cargo, route and site details, and our project logistics team will review your requirements.",
+      "metaDescription": "Project logistics in Saudi Arabia for heavy and oversized cargo: route surveys, transport and handling, port operations and delivery to site.",
+      "exploreCta": "Explore Project Logistics"
+    },
+    "freight": {
+      "board": [
+        "Freight options",
+        "for your",
+        "destination and",
+        "requirements"
+      ],
+      "modes": [
+        {
+          "title": "Air freight",
+          "body": "When time matters"
+        },
+        {
+          "title": "Sea freight",
+          "body": "FCL and LCL"
+        },
+        {
+          "title": "Road transport",
+          "body": "Within Saudi Arabia and covered international routes"
+        }
+      ],
+      "body": "Whether your goods move within Saudi Arabia or to and from international markets, Namma’s freight forwarding team helps you select and arrange the right mode of transport for the cargo, destination, volume and timeline.",
+      "cta": "Request a Quote",
+      "waysTitle": "Three ways\nto move *freight*",
+      "ways": [
+        {
+          "word": "Air",
+          "items": [
+            {
+              "title": "Air Freight",
+              "body": "Coordinating collection, booking, handling and documentation through to arrival when time matters."
+            }
+          ]
+        },
+        {
+          "word": "Sea",
+          "items": [
+            {
+              "title": "Sea Freight: FCL",
+              "body": "Full container load for shipments requiring a dedicated container."
+            },
+            {
+              "title": "Sea Freight: LCL",
+              "body": "Less than container load for goods that can travel in a shared container, with consolidation when required."
+            }
+          ]
+        },
+        {
+          "word": "Road",
+          "items": [
+            {
+              "title": "Road Transport",
+              "body": "Moving goods within Saudi Arabia and along covered international routes."
+            }
+          ]
+        }
+      ],
+      "stagesTitle": "From origin to your\ndestination in ~Saudi Arabia~",
+      "stages": [
+        {
+          "title": "Shipping from Origin",
+          "body": "Departure from the country of origin."
+        },
+        {
+          "title": "Arrival",
+          "body": "Arrival at the Saudi port, airport or border crossing, with handover to the next stage."
+        },
+        {
+          "title": "Customs Clearance",
+          "body": "Documents reviewed and clearance coordinated so the goods can be released."
+        },
+        {
+          "title": "Handling & Storage",
+          "body": "Unloading, handling and storage where the journey needs a pause."
+        },
+        {
+          "title": "Final Delivery",
+          "body": "Delivery to the consignee, site or warehouse at the agreed time."
+        }
+      ],
+      "beyondTitle": "Freight beyond\n*a single mode*",
+      "beyond": [
+        {
+          "label": "Saudi Arabia",
+          "parts": [
+            "Import",
+            "Export"
+          ],
+          "title": "Inbound & Outbound",
+          "body": "Coordinating each stage of import and export journeys."
+        },
+        {
+          "label": "Air, sea and road",
+          "parts": [
+            "Air",
+            "Sea",
+            "Road"
+          ],
+          "title": "Multimodal Transport",
+          "body": "Air, sea and road stages coordinated as one journey."
+        }
+      ],
+      "roadEyebrow": "Road transport",
+      "roadTitle": "Moving goods\n*by road*",
+      "roadIntro": "The appropriate road transport option is selected based on the shipment’s profile.",
+      "profileTitle": "Shipment profile",
+      "profileCount": "5 criteria",
+      "profile": [
+        "Cargo type",
+        "Dimensions and weight",
+        "Distance",
+        "Collection point",
+        "Delivery destination"
+      ],
+      "quoteTitle": "Request a\n*freight quote*",
+      "discussTopic": "freight"
+    },
+    "warehousing": {
+      "title": "Your goods’\njourney continues\n*after arrival*",
+      "body": "Once goods arrive, they need to be stored securely, tracked accurately and released on time. Namma provides warehousing, inventory management, order preparation and distribution, planned around your products and delivery points.",
+      "cta": "Request a Warehousing Quote",
+      "insideTitle": "Inside\nthe *warehouse*",
+      "inside": [
+        {
+          "title": "General Storage",
+          "body": "Storage suited to product type, quantities, duration and handling methods."
+        },
+        {
+          "title": "Temperature-Controlled Storage",
+          "body": "Subject to product requirements and facility availability."
+        },
+        {
+          "title": "Inventory Management",
+          "body": "Receipt, storage, recorded movements, preparation and release to the next stage."
+        },
+        {
+          "title": "Order Preparation & Distribution",
+          "body": "Preparing goods for customers, project sites, production sites and branches."
+        },
+        {
+          "title": "Kitting, Labeling & Light Assembly",
+          "body": "Basic preparation before goods move to the next stage."
+        },
+        {
+          "title": "Customs Clearance",
+          "body": "Available as a connected service when goods need clearance before or after storage."
+        }
+      ],
+      "flowTitle": "How do your\n~goods move?~",
+      "flow": [
+        {
+          "title": "Understand your needs",
+          "body": "Product types, quantities and the way goods need to move."
+        },
+        {
+          "title": "Define storage",
+          "body": "Space, storage duration and product handling methods."
+        },
+        {
+          "title": "Manage the flow",
+          "body": "From receipt and storage to preparation and additional services."
+        },
+        {
+          "title": "Prepare for next stage",
+          "body": "For distribution, delivery or completion of customs procedures."
+        }
+      ],
+      "beyondEyebrow": "Beyond storage",
+      "beyondTitle": "More than\n*a place to store*",
+      "beyondIntro": "Goods are received, recorded, prepared and released to the next stage.",
+      "beyond": [
+        {
+          "label": "Inventory management",
+          "title": "From receipt to release",
+          "body": "Movements are recorded through storage and preparation until goods are released to the next stage."
+        },
+        {
+          "label": "Kitting · labeling · light assembly",
+          "title": "Basic preparation before the next move",
+          "body": "Goods can be kitted, labeled or lightly assembled before they move to the next stage."
+        },
+        {
+          "label": "Conditional capability",
+          "title": "Temperature-controlled storage",
+          "body": "Subject to product requirements and facility availability."
+        }
+      ],
+      "distEyebrow": "Distribution",
+      "distTitle": "From the warehouse\nto the next *destination*",
+      "distIntro": "After storage, goods can be prepared for movement according to the requirements of each operation.",
+      "from": "From",
+      "fromPlace": "Warehouse",
+      "to": "To",
+      "destinations": [
+        "Customers",
+        "Project Sites",
+        "Production Sites",
+        "Branches and Operational Locations"
+      ],
+      "quoteTitle": "Request a\n*warehousing quote*",
+      "discussTopic": "warehousing"
+    },
+    "customs": {
+      "title": "Customs procedures\nstart with\n*clear documentation*",
+      "body": "Documentation and customs requirements can affect shipment movement and release times. Namma helps review documents and coordinate clearance for inbound and outbound shipments, connected with the remaining transport stages.",
+      "cta": "Request Customs Clearance",
+      "includesTitle": "What this\nservice *includes*",
+      "phases": [
+        {
+          "title": "Preparation",
+          "items": [
+            {
+              "title": "Document Review",
+              "body": "Reviewing available documents and requirements before procedures begin."
+            },
+            {
+              "title": "Special Requirements",
+              "body": "Individual review where special approvals or arrangements are needed."
+            }
+          ]
+        },
+        {
+          "title": "Procedure Coordination",
+          "items": [
+            {
+              "title": "Inbound Clearance",
+              "body": "Coordinating clearance for shipments entering Saudi Arabia."
+            },
+            {
+              "title": "Outbound Procedures",
+              "body": "Supporting export procedures and documentation before departure."
+            }
+          ]
+        },
+        {
+          "title": "Connected Logistics",
+          "items": [
+            {
+              "title": "Onward Movement",
+              "body": "Linking clearance to warehousing, distribution or site delivery.",
+              "link": "warehousingDistribution"
+            },
+            {
+              "title": "Duty Exemption Support",
+              "body": "Exemptions, temporary imports and specialized permits."
+            }
+          ]
+        }
+      ],
+      "docsEyebrow": "Documentation",
+      "docsTitle": "Documents we\n~typically review~",
+      "docsIntro": "Select a document to bring it forward. Every document and what it covers stays listed, so nothing depends on hover.",
+      "docs": [
+        {
+          "title": "Commercial Invoice",
+          "body": "Value and description of the goods."
+        },
+        {
+          "title": "Packing List",
+          "body": "Contents, quantities, weights and packaging of each package."
+        },
+        {
+          "title": "Shipping Documents",
+          "body": "Bill of lading or air waybill confirming carriage of the goods."
+        },
+        {
+          "title": "Certificates of Origin",
+          "body": "Where the goods were produced, for duties and trade agreements."
+        },
+        {
+          "title": "Permits",
+          "body": "Approvals required for certain goods before they can be released."
+        }
+      ],
+      "docsOf": "{n} of {total}",
+      "docsNoteStrong": "Typically reviewed, not a fixed checklist.",
+      "docsNote": "Which documents apply depends on the shipment; not every shipment needs every document.",
+      "flowEyebrow": "Connected stages",
+      "flowTitle": "From documents\n*to movement*",
+      "flowIntro": "Documentation, coordination and onward movement are connected parts of the same logistics service.",
+      "flow": [
+        {
+          "title": "Documentation",
+          "body": "Understanding and reviewing the available information and requirements."
+        },
+        {
+          "title": "Coordination",
+          "body": "Supporting and coordinating applicable customs procedures."
+        },
+        {
+          "title": "Onward Movement",
+          "body": "Connecting the shipment to warehousing, distribution, or delivery where relevant."
+        }
+      ],
+      "rolesEyebrow": "Roles",
+      "rolesTitle": "Namma’s role and\n~the authorities’ role~",
+      "rolesIntro": "Namma helps prepare and review information and coordinate procedures within the scope of service. Approvals, inspections, duties and release decisions remain subject to the relevant authorities and applicable regulations.",
+      "roles": [
+        {
+          "tab": "Namma’s role",
+          "title": "What Namma\nsupports",
+          "note": "Within the scope of service",
+          "items": [
+            "Information Preparation",
+            "Document Review",
+            "Procedure Coordination",
+            "Link to Onward Transport"
+          ]
+        },
+        {
+          "tab": "The authorities’ role",
+          "title": "What the\nauthorities decide",
+          "note": "Under applicable regulations",
+          "items": [
+            "Approvals",
+            "Inspections",
+            "Duties",
+            "Release Decisions"
+          ]
+        }
+      ],
+      "boundary": "Responsibility boundary",
+      "connectedIntro": "Customs procedures connect with the remaining transport stages.",
+      "discussTopic": "customs",
+      "connectedTitle": "Services we\n*connect with*"
+    },
+    "packing": {
+      "title": "Equipment protection\nstarts *before\ntransport*",
+      "body": "Industrial equipment and machinery require packing suited to their dimensions, weight, characteristics and method of transport. Namma’s packing solutions help protect equipment during handling, transport and storage.",
+      "cta": "Discuss Your Packing Requirements",
+      "steps": [
+        "Understand",
+        "Assess",
+        "Protect",
+        "Prepare",
+        "Connect"
+      ],
+      "startTitle": "We start with\n~the equipment~",
+      "start": [
+        {
+          "title": "Equipment Type",
+          "body": "Understanding what the equipment is and how sensitive it is.",
+          "tag": "Type"
+        },
+        {
+          "title": "Size & Dimensions",
+          "body": "Measuring the equipment to define the crate or skid around it.",
+          "tag": "Size"
+        },
+        {
+          "title": "Weight",
+          "body": "Weight and centre of gravity, which shape the base, lifting points and handling.",
+          "tag": "Weight"
+        },
+        {
+          "title": "Handling Method",
+          "body": "How the equipment will be lifted, moved and secured at each point.",
+          "tag": "Handling"
+        },
+        {
+          "title": "Mode & Route",
+          "body": "The transport mode and the conditions the packing must withstand on the way.",
+          "tag": "Route"
+        }
+      ],
+      "protectTitle": "Protection in\n*every detail*",
+      "protect": [
+        {
+          "title": "Crating",
+          "body": "Equipment prepared in crates suited to the cargo, helping protect it and facilitate handling and transport."
+        },
+        {
+          "title": "Skidding",
+          "body": "Skids that support safe lifting, handling and securing of heavy items."
+        },
+        {
+          "title": "Impact Protection",
+          "body": "Protection layers selected according to the equipment’s characteristics and transport conditions."
+        },
+        {
+          "title": "Securing Equipment",
+          "body": "Securing items within their packaging for the full journey."
+        },
+        {
+          "title": "Moisture & External Conditions",
+          "body": "Protection against moisture and the external conditions expected along the route."
+        },
+        {
+          "title": "Marking & Identification",
+          "body": "Markings and information applied to packaging to facilitate identification and handling."
+        }
+      ],
+      "planEyebrow": "Integration",
+      "planTitle": "Packing as part of\n*the transport plan*",
+      "planIntro": "Packing is considered in the context of the entire journey, so the method suits what the equipment will encounter in subsequent stages.",
+      "startPoint": "Starting point",
+      "stepN": "Step {n}",
+      "plan": [
+        "Industrial Equipment Packing",
+        "Project Logistics",
+        "Specialized Transport",
+        "Handling & Lifting",
+        "Sea or Air Freight",
+        "Warehousing"
+      ],
+      "sequence": "Understand → Assess → Protect → Prepare → Connect",
+      "discussEyebrow": "Next step",
+      "discussTitle": "Discuss your\n~packing~\nrequirements",
+      "quoteCta": "Request a Quote",
+      "existingTitle": "Have an existing shipment?",
+      "discussTopic": "packing",
+      "eyebrow": "Value-added services"
+    },
+    "relocation": {
+      "eyebrow": "Relocation & Exhibition Logistics",
+      "title": "An organized move,\n*from start to\narrival*",
+      "body": [
+        "Whether you are moving to a new home, relocating an office or facility, or preparing materials for an exhibition or event, the process requires clear coordination to protect your belongings and help them arrive at the right place and time.",
+        "Namma provides domestic and international relocation services, with packing, transport, storage and related solutions tailored to each move."
+      ],
+      "cta": "Request a Relocation Quote",
+      "contact": "Contact Us",
+      "homeEyebrow": "Household goods relocation",
+      "homeTitle": "Care for your\nbelongings\n~at every stage~",
+      "homeBody": "A relocation begins by understanding what needs to be moved, then defining the packing, transport, storage and delivery requirements. The service may include:",
+      "home": [
+        "Packing & Packaging",
+        "Domestic and International Transport",
+        "Storage When Required",
+        "Customs Clearance for International Shipments",
+        "Delivery at Destination"
+      ],
+      "officeEyebrow": "Office & facility relocation",
+      "officeTitle": "Business relocation\nwith complexity\n~kept to a minimum~",
+      "officeBody": "We help businesses organize the movement of furniture, equipment and contents between locations, taking the relocation schedule and the nature of the items into account. The process may include:",
+      "office": [
+        "Relocation Planning",
+        "Packing",
+        "Transport",
+        "Temporary Storage",
+        "Delivery to the New Location",
+        "Dismantling and Reassembly of Certain Fixtures Within the Agreed Scope of Work"
+      ],
+      "eventsEyebrow": "Exhibitions & events",
+      "eventsTitle": "When delivery must meet\n*a fixed deadline*",
+      "eventsIntro": "Exhibitions and events require careful coordination of collection, transport and arrival at the venue. Namma supports the movement of:",
+      "events": [
+        "Exhibition Materials and Supplies",
+        "Display Stands",
+        "Equipment",
+        "Promotional Materials",
+        "Event-Related Shipments"
+      ],
+      "eventsNote": "Storage and transport before and after the event can also be coordinated when required.",
+      "siteTitle": "Exhibition Site Handling",
+      "siteBody": "On-site installation and dismantling of exhibits, displays and event materials can be coordinated alongside transport and storage, according to the agreed scope and venue requirements.",
+      "ataLink": "Temporary import for exhibition goods? See ATA Carnet support",
+      "extraTitle": "Additional relocation\nservices",
+      "extraIntro": "Depending on the nature of the move, services may include:",
+      "extra": [
+        {
+          "title": "Vehicle Transport",
+          "body": "Coordinating vehicle movements to the required destination in line with transport requirements."
+        },
+        {
+          "title": "Pet Relocation",
+          "body": "Helping coordinate pet relocation requirements within the services available."
+        },
+        {
+          "title": "Cargo Insurance",
+          "body": "Providing insurance options according to the shipment’s characteristics and the scope of service."
+        },
+        {
+          "title": "Temporary Storage",
+          "body": "Storing belongings when collection and delivery dates do not align."
+        }
+      ],
+      "planTitle": "Plan your move",
+      "planBody": "Tell us your origin, destination and what you need to move, and we will help you identify the right services.",
+      "discussTopic": "relocation"
+    },
+    "threePl": {
+      "eyebrow": "Contract logistics solutions",
+      "title": "One partner.\nConnected logistics\n*operations.*",
+      "body": "Namma Cargo manages and coordinates integrated logistics and supply chain operations for its clients, bringing freight, transportation, warehousing, distribution and customs clearance together under one partner.",
+      "cta": "Discuss Your Project",
+      "secondary": "Explore the Capabilities",
+      "card": {
+        "brand": "Namma Cargo",
+        "rows": [
+          [
+            "Model",
+            "3PL"
+          ],
+          [
+            "Point of contact",
+            "One"
+          ],
+          [
+            "Since",
+            "1983"
+          ],
+          [
+            "Offices",
+            "Al Khobar, Riyadh, Jeddah"
+          ]
+        ]
+      },
+      "meansEyebrow": "What it means for you",
+      "meansTitle": "Your logistics,\nmanaged as *one operation*",
+      "oneWord": "One",
+      "contactTag": "Point of contact",
+      "statement": "Instead of coordinating several providers, you work with one partner that manages the operation end to end: planning each stage, connecting the services involved and keeping you informed throughout.",
+      "scopeLabel": "Agreed scope",
+      "scopeBody": "Scope is agreed with each client, based on the goods, locations and service levels your operation requires.",
+      "profile": "Download Company Profile",
+      "capsEyebrow": "How we manage it",
+      "capsTitle": "Four capabilities,\n~one connected operation~",
+      "capsIntro": "The building blocks of how Namma Cargo runs integrated logistics for its clients.",
+      "caps": [
+        {
+          "title": "Operations Management",
+          "body": "Managing end-to-end logistics operations on your behalf, from inbound freight to final delivery, within one agreed scope of work.",
+          "points": [
+            "Defined scope and service levels",
+            "One accountable operations team",
+            "Freight, storage and delivery under one plan"
+          ]
+        },
+        {
+          "title": "Logistics Coordination",
+          "body": "Aligning carriers, warehouses, customs and sites so each stage hands over cleanly to the next.",
+          "points": [
+            "Planned handovers between stages",
+            "Carriers and providers aligned",
+            "Schedules kept in step"
+          ]
+        },
+        {
+          "title": "Shipment Visibility",
+          "body": "Keeping you informed of where goods are and what happens next, from booking to delivery.",
+          "points": [
+            "Status updates at each stage",
+            "Clear milestones",
+            "Early notice of changes"
+          ]
+        },
+        {
+          "title": "Customer Support",
+          "body": "A team that knows your account and responds to requests and questions throughout the operation.",
+          "points": [
+            "Dedicated point of contact",
+            "Responsive follow-up",
+            "Support from request to completion"
+          ]
+        }
+      ],
+      "servicesEyebrow": "Services we connect",
+      "servicesTitle": "The services behind\n*your operation*",
+      "servicesIntro": "Each 3PL scope draws on Namma’s core service lines.",
+      "coordEyebrow": "Coordination",
+      "coordTitle": "Many moving parts.\nOne point *of contact.*",
+      "coordIntro": "Coordinating the services, teams and processes involved in your supply chain, so each stage hands over cleanly to the next.",
+      "rings": [
+        "Carriers",
+        "Storage",
+        "Sites"
+      ],
+      "center": "Contact",
+      "coord": [
+        {
+          "title": "Carriers",
+          "body": "Carriers, ports and customs aligned"
+        },
+        {
+          "title": "Storage",
+          "body": "Warehousing and distribution scheduled"
+        },
+        {
+          "title": "Sites",
+          "body": "Project sites and branches kept in step"
+        },
+        {
+          "title": "Contact",
+          "body": "A team that knows your account and your cargo"
+        }
+      ],
+      "coordPoints": [
+        "Dedicated point of contact",
+        "Clear communication at every stage",
+        "Support from request to completion"
+      ],
+      "bandOne": "One",
+      "bandPartner": "Partner",
+      "bandTitle": "Connected logistics\n~operations.~",
+      "bandBody": "Freight, transportation, warehousing, distribution and customs clearance, together under one partner",
+      "discussTopic": "3PL"
+    },
+    "serviceDetail": {
+      "includedEyebrow": "What's included",
+      "stepsEyebrow": "How it works",
+      "relatedEyebrow": "Related services",
+      "relatedTitle": "Within the same\n*service group*",
+      "backTo": "All {group}"
+    },
+    "airFreight": {
+      "title": "Air freight for\n*time-critical* cargo",
+      "body": [
+        "When the arrival date leads, air freight moves your cargo on scheduled services or, when capacity or timing demands it, on a dedicated charter.",
+        "Namma arranges the booking, documentation and handling at both ends, and connects the flight with customs clearance and delivery in Saudi Arabia."
+      ],
+      "includedTitle": "Air freight,\n*arranged end to end*",
+      "included": [
+        {
+          "title": "Scheduled air cargo",
+          "body": "Space booked on airline services that match the route and the required arrival date."
+        },
+        {
+          "title": "Air charter",
+          "body": "Dedicated capacity when cargo dimensions, weight or timing do not fit scheduled services."
+        },
+        {
+          "title": "Documentation",
+          "body": "Air waybills and shipping documents prepared and checked before departure."
+        },
+        {
+          "title": "Airport handling",
+          "body": "Collection, acceptance and handling coordinated at the origin and destination airports."
+        }
+      ],
+      "stepsTitle": "From booking\n*to arrival*",
+      "steps": [
+        {
+          "title": "Cargo & timeline",
+          "body": "We review what is moving and when it must arrive."
+        },
+        {
+          "title": "Routing & booking",
+          "body": "The service or charter that fits is booked with the airline."
+        },
+        {
+          "title": "Departure",
+          "body": "Documents, handling and loading are completed at origin."
+        },
+        {
+          "title": "Arrival & delivery",
+          "body": "Clearance and onward delivery are coordinated at destination."
+        }
+      ],
+      "topic": "air freight"
+    },
+    "seaFreight": {
+      "title": "Sea freight for\n*full containers and\nproject cargo*",
+      "body": [
+        "Sea freight carries full containers, breakbulk and project cargo between international ports and Saudi Arabia, port to port or door to door.",
+        "Namma books the carrier, prepares the documents and coordinates the land legs, port handling and customs clearance on both sides."
+      ],
+      "includedTitle": "Sea freight,\n*coordinated port to door*",
+      "included": [
+        {
+          "title": "Full container loads (FCL)",
+          "body": "Containers booked for your cargo alone, sized to the volume that is moving."
+        },
+        {
+          "title": "Breakbulk & project cargo",
+          "body": "Cargo that does not fit a container, planned with ports, carriers and handling providers."
+        },
+        {
+          "title": "Sea charter",
+          "body": "Dedicated vessels for large or specialized shipments when regular services do not fit."
+        },
+        {
+          "title": "Port handling",
+          "body": "Loading, discharge and port formalities coordinated at both ends."
+        }
+      ],
+      "stepsTitle": "From booking\n*to delivery*",
+      "steps": [
+        {
+          "title": "Cargo & route",
+          "body": "We review the cargo, the ports and the required arrival date."
+        },
+        {
+          "title": "Carrier & booking",
+          "body": "Space or a vessel is booked and the documents are prepared."
+        },
+        {
+          "title": "Ocean transit",
+          "body": "The shipment is followed from loading to arrival at the port."
+        },
+        {
+          "title": "Clearance & delivery",
+          "body": "Customs clearance and the land leg to destination are coordinated."
+        }
+      ],
+      "topic": "sea freight"
+    },
+    "lclShipments": {
+      "title": "LCL shipments:\n*share the container*",
+      "body": [
+        "When your cargo does not fill a container, less-than-container-load (LCL) shipping lets it travel in shared space and pay for the volume it uses.",
+        "Namma coordinates consolidation at origin, the sea leg, and deconsolidation, clearance and delivery at destination."
+      ],
+      "includedTitle": "Smaller shipments,\n*handled with care*",
+      "included": [
+        {
+          "title": "Consolidation",
+          "body": "Your cargo is combined with other shipments in a shared container at origin."
+        },
+        {
+          "title": "Volume-based space",
+          "body": "Space is arranged around the volume and weight of the cargo that is moving."
+        },
+        {
+          "title": "Deconsolidation",
+          "body": "Cargo is separated from the shared container after arrival."
+        },
+        {
+          "title": "Onward delivery",
+          "body": "Clearance and delivery to your site or warehouse are coordinated."
+        }
+      ],
+      "stepsTitle": "From pickup\n*to delivery*",
+      "steps": [
+        {
+          "title": "Cargo details",
+          "body": "We confirm volume, weight, packing and the required dates."
+        },
+        {
+          "title": "Consolidation",
+          "body": "The cargo is delivered to the consolidation point and loaded."
+        },
+        {
+          "title": "Sea transit",
+          "body": "The shared container moves to the destination port."
+        },
+        {
+          "title": "Release & delivery",
+          "body": "After deconsolidation and clearance, the cargo is delivered."
+        }
+      ],
+      "topic": "LCL shipment"
+    },
+    "roadFreight": {
+      "title": "Road freight\n*across the Kingdom\nand its borders*",
+      "body": [
+        "Road freight connects ports, factories, warehouses and project sites within Saudi Arabia and across the GCC and neighbouring countries.",
+        "Namma arranges the trucks and trailers for the cargo, plans the route and coordinates border formalities on cross-border journeys."
+      ],
+      "includedTitle": "Road freight,\n*planned around the route*",
+      "included": [
+        {
+          "title": "Domestic road freight",
+          "body": "Full and part loads between cities, ports and sites in Saudi Arabia."
+        },
+        {
+          "title": "Cross-border trucking",
+          "body": "Road journeys to and from the GCC and neighbouring countries."
+        },
+        {
+          "title": "Border formalities",
+          "body": "Documents and customs steps at the border, coordinated in advance."
+        },
+        {
+          "title": "Suited equipment",
+          "body": "Trucks and trailers selected for the cargo, its weight and dimensions."
+        }
+      ],
+      "stepsTitle": "From loading\n*to destination*",
+      "steps": [
+        {
+          "title": "Cargo & route",
+          "body": "We confirm the cargo, origin, destination and dates."
+        },
+        {
+          "title": "Equipment",
+          "body": "The truck and trailer that fit the cargo are arranged."
+        },
+        {
+          "title": "On the road",
+          "body": "The journey is coordinated, including any border crossings."
+        },
+        {
+          "title": "Delivery",
+          "body": "Cargo is delivered and offloaded at destination."
+        }
+      ],
+      "topic": "road freight"
+    },
+    "transportation": {
+      "title": "Transportation\n*built into your\nsupply chain*",
+      "body": [
+        "Within a contract logistics agreement, transportation links your warehouse to your sites, branches and customers on a planned schedule.",
+        "Namma plans the routes and the vehicles around your volumes, and keeps deliveries visible from dispatch to proof of delivery."
+      ],
+      "includedTitle": "Planned movement,\n*every day*",
+      "included": [
+        {
+          "title": "Scheduled distribution",
+          "body": "Regular deliveries to branches, sites and customers on agreed routes."
+        },
+        {
+          "title": "Dedicated transport",
+          "body": "Vehicles assigned to your operation when volumes call for it."
+        },
+        {
+          "title": "Inter-city transport",
+          "body": "Movements between cities and regions within the Kingdom."
+        },
+        {
+          "title": "Delivery visibility",
+          "body": "Dispatch, status and proof of delivery shared as goods move."
+        }
+      ],
+      "stepsTitle": "From warehouse\n*to your customers*",
+      "steps": [
+        {
+          "title": "Requirements",
+          "body": "We map your volumes, destinations and delivery windows."
+        },
+        {
+          "title": "Route plan",
+          "body": "Routes and vehicles are planned around the schedule."
+        },
+        {
+          "title": "Dispatch",
+          "body": "Orders are loaded and dispatched from the warehouse."
+        },
+        {
+          "title": "Delivery & reporting",
+          "body": "Deliveries are confirmed and reported back to you."
+        }
+      ],
+      "topic": "transportation"
+    },
+    "heavyLift": {
+      "title": "Heavy lift\n*cargo solutions*",
+      "body": [
+        "Heavy equipment needs lifting and transport planned around its weight, centre of gravity and the conditions at each point of the journey.",
+        "Namma coordinates cranes, modular trailers and specialized providers, with the lifting and securing plan agreed before movement begins."
+      ],
+      "includedTitle": "Heavy lifts,\n*engineered in advance*",
+      "included": [
+        {
+          "title": "Lift planning",
+          "body": "Lifting methods and equipment selected for the cargo's weight and dimensions."
+        },
+        {
+          "title": "Cranes & modular trailers",
+          "body": "Lifting equipment and multi-axle trailers arranged with specialized providers."
+        },
+        {
+          "title": "Securing & handling",
+          "body": "Lashing and handling planned for each stage of the movement."
+        },
+        {
+          "title": "Site coordination",
+          "body": "Offloading and placement coordinated with the project site."
+        }
+      ],
+      "stepsTitle": "From assessment\n*to placement*",
+      "steps": [
+        {
+          "title": "Cargo assessment",
+          "body": "Weight, dimensions and lifting points are reviewed."
+        },
+        {
+          "title": "Lift & route plan",
+          "body": "Equipment, method and route are agreed before movement."
+        },
+        {
+          "title": "Lift & transport",
+          "body": "The cargo is lifted, secured and moved under supervision."
+        },
+        {
+          "title": "Offload at site",
+          "body": "Placement at site is coordinated with your team."
+        }
+      ],
+      "topic": "heavy lift"
+    },
+    "oversizedCargo": {
+      "title": "Oversized cargo\n*transport*",
+      "body": [
+        "Out-of-gauge cargo is wider, taller or longer than standard transport allows, so every route has to be surveyed and permitted before it moves.",
+        "Namma plans the route, the permits and the escorts, and coordinates the transport with authorities and the receiving site."
+      ],
+      "includedTitle": "Out-of-gauge,\n*on a planned route*",
+      "included": [
+        {
+          "title": "Route surveys",
+          "body": "Bridges, turns, utilities and road conditions checked along the route."
+        },
+        {
+          "title": "Permits",
+          "body": "Movement permits arranged with the relevant authorities."
+        },
+        {
+          "title": "Escorts",
+          "body": "Escort and traffic arrangements for the journey where required."
+        },
+        {
+          "title": "Specialized trailers",
+          "body": "Low-bed, extendable and modular trailers matched to the cargo."
+        }
+      ],
+      "stepsTitle": "From survey\n*to site*",
+      "steps": [
+        {
+          "title": "Dimensions",
+          "body": "We confirm the cargo's size, weight and loading points."
+        },
+        {
+          "title": "Route & permits",
+          "body": "The route is surveyed and the permits arranged."
+        },
+        {
+          "title": "Movement",
+          "body": "The cargo moves with escorts on the approved route."
+        },
+        {
+          "title": "Arrival",
+          "body": "Offloading is coordinated with the receiving site."
+        }
+      ],
+      "topic": "oversized cargo"
+    },
+    "airSea": {
+      "title": "When your cargo\nneeds *dedicated\ntransport*",
+      "body": "Some shipments are not suited to regular freight schedules because of their dimensions, weight, characteristics or required arrival date. Namma helps assess and arrange air or sea charter options with airlines, carriers and specialized providers.",
+      "cta": "Request a Chartering Quote",
+      "air": "Air",
+      "sea": "Sea",
+      "strip": [
+        {
+          "title": "Air charter",
+          "body": "When cargo requires capacity or timing that scheduled services cannot provide."
+        },
+        {
+          "title": "Sea charter",
+          "body": "For large or specialized shipments, assessed by ports, capacity and handling needs."
+        },
+        {
+          "title": "Arranged with",
+          "body": "Airlines, carriers and specialized providers."
+        }
+      ],
+      "modesEyebrow": "Two charter modes",
+      "modesTitle": "Different modes.\nOne decision *process.*",
+      "modesIntro": "Namma helps assess and arrange air or sea charter options with airlines, carriers and specialized providers.",
+      "seaPill": "Considers ports, capacity and handling needs",
+      "airPill": "Considers capacity and timing",
+      "seaTitle": "Sea charter",
+      "seaBody": "Dedicated sea transport for large or specialized shipments, assessed by ports, capacity and handling needs.",
+      "airTitle": "Air charter",
+      "airBody": "Dedicated air freight when cargo requires capacity or timing that scheduled services cannot provide.",
+      "decides": "The cargo *decides*",
+      "criteria": [
+        "Dimensions",
+        "Weight",
+        "Characteristics",
+        "Required arrival date"
+      ],
+      "stagesTitle": "We start\n*with the cargo*",
+      "stages": [
+        {
+          "title": "What needs to move",
+          "body": "The cargo and its characteristics.",
+          "check": "The cargo"
+        },
+        {
+          "title": "Dimensions & weight",
+          "body": "The capacity and loading the movement requires.",
+          "check": "Capacity & loading"
+        },
+        {
+          "title": "Origin & destination",
+          "body": "The ports, airports and routes involved.",
+          "check": "Ports, airports & routes"
+        },
+        {
+          "title": "Required arrival",
+          "body": "The timeline the charter must meet.",
+          "check": "Timeline"
+        }
+      ],
+      "brief": "Charter brief",
+      "briefTitle": "Requirements\ntaking shape",
+      "briefStatus": "Stage {n} of {total} · {title}",
+      "chainTitle": "The charter,\nconnected\n*end to end*",
+      "chainHead": [
+        "Origin",
+        "Stage",
+        "Code"
+      ],
+      "chain": [
+        {
+          "title": "To the port",
+          "code": "S·03",
+          "tag": "Land leg"
+        },
+        {
+          "title": "Handling & packing",
+          "code": "S·05"
+        },
+        {
+          "title": "Customs clearance",
+          "code": "S·04"
+        },
+        {
+          "title": "From the port",
+          "code": "S·03",
+          "tag": "Land leg"
+        },
+        {
+          "title": "Project site",
+          "code": "S·06"
+        }
+      ],
+      "chainAir": "Air charter",
+      "chainSea": "Sea charter",
+      "or": "or",
+      "legendCode": "Service code",
+      "legendLand": "Land leg",
+      "buildScope": "Build your scope",
+      "connectedIntro": "Not sure which service fits? Tell us what you need to move.",
+      "assessEyebrow": "Charter assessment",
+      "assessTitle": "What we assess\n*before chartering*",
+      "assessIntro": "The appropriate option is coordinated with specialized providers once the cargo’s requirements are clear.",
+      "assess": [
+        "Cargo characteristics",
+        "Dimensions and weight",
+        "Origin and destination",
+        "Required timeline",
+        "Loading and unloading requirements"
+      ],
+      "assessCta": "Discuss Your Shipment Requirements",
+      "discussTopic": "charter"
+    },
+    "duty": {
+      "eyebrow": "Duty Exemption & Specialized Customs Support",
+      "title": "Support for\nspecialized\n*customs\nprocedures*",
+      "body": [
+        "Some businesses and shipments require customs procedures beyond standard clearance.",
+        "Namma provides support across a range of specialized procedures, from reviewing documents and requirements to following up on application steps with the relevant authorities."
+      ],
+      "cta": "Discuss Your Customs Requirements",
+      "secondary": "Explore Customs Clearance",
+      "items": [
+        {
+          "title": "Duty Exemption Applications",
+          "body": "Helping customers prepare and review documentation for duty exemption applications according to the business, goods and regulatory requirements involved."
+        },
+        {
+          "title": "Temporary Imports",
+          "body": "Where goods enter Saudi Arabia for a limited period before being re-exported, we can help coordinate the required procedures and documentation according to the circumstances."
+        },
+        {
+          "title": "Duty Refunds",
+          "body": "Helping with the procedures and documentation for duty refund applications where the relevant requirements are met."
+        },
+        {
+          "title": "Chemical Permits",
+          "body": "Supporting customers with procedures for permits covering certain chemicals when these requirements form part of the import process."
+        },
+        {
+          "title": "ATA Carnet Facilitation",
+          "body": "Support with ATA Carnet documentation and temporary movement of eligible exhibition goods or professional equipment, where applicable to the route and purpose."
+        },
+        {
+          "title": "Bonded Transportation",
+          "body": "Coordination of goods movements under customs control, subject to the applicable procedures and agreed transport scope."
+        }
+      ],
+      "caseTitle": "Every case has\n*its own\nrequirements*",
+      "caseLead": "Required procedures and documentation vary according to",
+      "caseMarks": [
+        "the goods,",
+        "the business’s status",
+        "and the purpose of the import or export."
+      ],
+      "caseBody": "The service therefore begins with a review of the case and identification of requirements before procedures continue.",
+      "caseNote": "Approval of exemptions, permits or duty refunds remains the responsibility of the relevant authorities.",
+      "helpTitle": "Need assistance?\nWe’re *here to\nhelp.*",
+      "discussTopic": "customs",
+      "procsEyebrow": "Specialized procedures",
+      "procsTitle": "Six procedures,\n*one point of support*",
+      "procsIntro": "From exemption applications to bonded movements, each procedure has its own documents, steps and authority requirements."
+    }
+  },
+  "crumbs": {
+    "solutions": "Services",
+    "support": "Support & Help",
+    "warehousingDistribution": "Warehousing, Distribution & Customs Services"
+  },
+  "projectsPage": {
+    "eyebrow": "Proof of experience",
+    "discussTopic": "project",
+    "title": "Expertise\ndemonstrated\nthrough *delivered\nprojects*",
+    "body": "The projects Namma has participated in reflect the development of its expertise, from freight services to more complex logistics operations.",
+    "browse": "Browse all projects",
+    "countLabel": "projects listed behind this card",
+    "featuredEyebrow": "Featured projects",
+    "featuredTitle": "Four projects that\nshow the scale",
+    "featuredIntro": "Selected from Namma’s completed projects list.",
+    "ft": "FT",
+    "ftLong": "freight tons, approx.",
+    "site": "Site",
+    "client": "Client",
+    "services": "Services",
+    "viewDetails": "View Project Details",
+    "listEyebrow": "All projects",
+    "listTitle": "The completed\n*projects list*",
+    "listIntro": "Filter by project type. Volumes are freight tons as recorded in Namma’s completed projects list.",
+    "all": "All",
+    "sort": "Sort",
+    "sortVolume": "Largest volume",
+    "sortAz": "A–Z",
+    "colProject": "Project",
+    "colSite": "Site",
+    "colServices": "Services",
+    "colVolume": "Volume",
+    "showing": "Showing {n} of {total} projects",
+    "showMore": "Show {n} more",
+    "noSite": "-",
+    "allPageTitle": "All *projects*",
+    "allPageBody": "Namma’s completed projects list, by project type and recorded freight volume.",
+    "categories": {
+      "petrochemical": "Petrochemical & chemical",
+      "industrialMining": "Industrial & mining",
+      "oilGas": "Oil & gas",
+      "otherCargo": "Other cargo",
+      "powerWater": "Power & water",
+      "infrastructure": "Infrastructure & government"
+    },
+    "serviceLabels": {
+      "clearanceTransport": "Customs clearance & transport",
+      "importClearanceTransport": "Import clearance & transport",
+      "dutyClearanceTransport": "Duty exemption, clearance & transport",
+      "dutyRefund": "Duty exemption & refund",
+      "clearance": "Customs clearance",
+      "doorToDoor": "Door-to-door",
+      "doorToDoorForwarding": "Door-to-door forwarding",
+      "doorToDoorProject": "Door-to-door project logistics",
+      "personalEffects": "Personal effects shipping",
+      "warehousing": "Warehousing & distribution",
+      "logisticsWarehousing": "Logistics management & warehousing"
+    },
+    "serviceLong": {
+      "clearanceTransport": "In-kingdom customs clearance & transportation services",
+      "importClearanceTransport": "Import customs clearance & transportation services",
+      "dutyClearanceTransport": "Duty exemption, in-kingdom customs clearance & transportation services",
+      "dutyRefund": "Duty exemption & duty refund services",
+      "clearance": "In-kingdom customs clearance services",
+      "doorToDoor": "Door-to-door logistics services",
+      "doorToDoorForwarding": "Door-to-door freight forwarding, customs clearance & transportation",
+      "doorToDoorProject": "Door-to-door project logistics services",
+      "personalEffects": "Door-to-door personal effects shipping",
+      "warehousing": "Warehousing & distribution services",
+      "logisticsWarehousing": "Logistics management, warehousing & distribution"
+    },
+    "sites": {
+      "jubail": "Jubail",
+      "jubailKsa": "Jubail, other locations in KSA",
+      "jubailPorts": "Jubail, other ports of entry",
+      "rasAlKhair": "Ras Al-Khair",
+      "rasAlZour": "Ras Al-Zour",
+      "yanbu": "Yanbu",
+      "shaybah": "Shaybah",
+      "hawiyah": "Hawiyah",
+      "dammam": "Dammam",
+      "dhahran": "Dhahran",
+      "riyadh": "Riyadh",
+      "riyadhDhahran": "Riyadh / Dhahran",
+      "qurayyah": "Qurayyah",
+      "juaymah": "Ju’aymah",
+      "rabigh": "Rabigh",
+      "rasTanura": "Ras Tanura",
+      "fadhili": "Fadhili, Al Khobar / Dammam",
+      "jafurah": "Jafurah",
+      "nairiyah": "Al Nairyah",
+      "hummaiya": "Al-Hummaiya",
+      "aramcoSites": "Uthmaniyah, Ras Tanura, Shedgum, Ju’aymah",
+      "uthShedJua": "Uthmaniyah, Shedgum, Ju’aymah",
+      "uthmaniyah": "Uthmaniyah",
+      "najran": "Najran",
+      "khursaniyah": "Khursaniyah",
+      "ksa": "Saudi Arabia",
+      "berri": "Berri",
+      "ainDar": "Ain Dar",
+      "qatif": "Qatif",
+      "haradh": "Haradh",
+      "jeddah": "Jeddah",
+      "khafji": "Khafji",
+      "makkah": "Makkah",
+      "mina": "Mina",
+      "shuaibah": "Shuaibah",
+      "shedgum": "Shedgum",
+      "tanajib": "Tanajib",
+      "udhailiyah": "Udhailiyah",
+      "ghazlan": "Ghazlan"
+    },
+    "clients": {
+      "maaden": "Ma’aden",
+      "aramco": "Saudi Aramco",
+      "sabic": "SABIC"
+    },
+    "detail": {
+      "recorded": "Recorded project · {year}",
+      "milestone": "Project logistics milestone · {year}",
+      "discussSimilar": "Discuss a Similar Project",
+      "viewProjects": "View Projects",
+      "detailsEyebrow": "Project details",
+      "volume": "Volume (F.Tons)",
+      "name": "Name of the project",
+      "site": "Project site",
+      "services": "Nature of services",
+      "type": "Type of project",
+      "requestQuote": "Request a Quote",
+      "moreWith": "More with {client}",
+      "moreProjectsWith": "More projects\nwith {client}",
+      "seeAll": "See all {n}",
+      "seeAllWith": "See all {n} {client} projects",
+      "recordEyebrow": "Project record",
+      "recordTitle": "From the completed\n*projects list*",
+      "contextTitle": "Volume in context",
+      "contextIntro": "Largest recorded volumes in the list, freight tons",
+      "prev": "Previous project",
+      "next": "Next project",
+      "similar": "Have a similar project?",
+      "allProjects": "All projects"
+    },
+    "projects": {
+      "rasAlZour": {
+        "title": "Ras Al Zour Aluminium\nSmelter Project",
+        "short": "Ras Al-Zour\nAluminium\nSmelter",
+        "body": "Namma participated in logistics activities for the Ras Al Zour aluminium smelter project in 2010, involving approximately 800,000 freight tons and illustrating the scale of its industrial project experience.",
+        "clientLine": "Ma’aden / Bechtel"
+      },
+      "qatifGosp": {
+        "title": "Qatif Gas-Oil\nSeparation Project",
+        "short": "Qatif Gas-Oil\nSeparation Project",
+        "body": "Namma supported cargo movements associated with the Qatif Gas-Oil Separation Project in 2002, involving approximately 275,000 freight tons and adding to its experience in oil and gas project logistics.",
+        "clientLine": "Snamprogetti / Saudi Aramco"
+      },
+      "ibnZahr": {
+        "title": "IBN-ZAHR\nPP-II Project",
+        "short": "IBN-ZAHR PP-II\nProject",
+        "body": "An important milestone in the development of Namma’s expertise in integrated project logistics management.",
+        "clientLine": "Parsons International, USA"
+      },
+      "sadafExpansion": {
+        "title": "SADAF Expansion\nProject",
+        "short": "SADAF Expansion\nProject",
+        "body": "Namma supported logistics activities for the SADAF expansion in 1995, involving approximately 200,000 freight tons. The project forms part of the company’s experience in large-volume industrial cargo movements.",
+        "clientLine": "Brown & Root"
+      }
+    },
+    "volumeNotes": {
+      "lineItems": "{n}+ line items",
+      "shipmentsMonthly": "{n} shipments / month",
+      "notRecorded": "Not recorded"
+    }
+  },
+  "forms": {
+    "required": "Required",
+    "requiredMark": "* Required",
+    "errName": "Enter your full name.",
+    "errEmail": "Enter a valid email address.",
+    "errPhone": "Enter a valid phone number.",
+    "errCity": "Enter your city.",
+    "errRequired": "This field is required.",
+    "errSelect": "Select an option.",
+    "errFile": "Attach your CV.",
+    "errFileType": "Use a PDF, DOC or DOCX file.",
+    "errFileSize": "The file must be 5 MB or smaller.",
+    "errConsent": "You need to agree to the Privacy Policy to apply.",
+    "errSummary": "{n} fields need your attention.",
+    "errSummaryOne": "1 field needs your attention.",
+    "phoneHint": "Include your country code, e.g. +966, +971, +20.",
+    "optional": "(optional)",
+    "demoBadge": "Demo confirmation · Prototype",
+    "errConsentRequest": "Please agree to the Privacy Policy so we can respond."
+  },
+  "aboutPage": {
+    "eyebrow": "About Namma Cargo",
+    "title": "Logistics expertise\nevolving *since 1983*",
+    "storyEyebrow": "About us",
+    "since": "Since 1983",
+    "lead": "Namma began its journey in 1983 ~with relocation and personal effects services.~",
+    "expanded": "As customer and market needs evolved, its business expanded to include international freight, customs services, project logistics, warehousing and distribution, ~and specialized logistics solutions.~",
+    "body": "For more than four decades, Namma has supported the movement of cargo and equipment across a diverse range of industries and projects in Saudi Arabia, building the local and international relationships and expertise that support its business today.",
+    "filmLabel": "The Namma story",
+    "filmTitle": "Four decades on the move",
+    "filmCta": "Watch the film",
+    "filmFile": "en",
+    "filmSoon": "The company film will play here.",
+    "filmToday": "Today",
+    "todayEyebrow": "Today",
+    "todayTitle": "Namma *today*",
+    "todayIntro": "Namma offers an integrated range of logistics solutions serving businesses, projects and individuals.",
+    "today": [
+      {
+        "title": "Project Logistics",
+        "body": "Planning and coordinating the movement of equipment and heavy and oversized cargo."
+      },
+      {
+        "title": "Freight & Transport",
+        "body": "Air, sea and road freight solutions within Saudi Arabia and across international markets."
+      },
+      {
+        "title": "Warehousing & Distribution",
+        "body": "Storing goods, managing their movement and preparing them for distribution."
+      },
+      {
+        "title": "Customs Services",
+        "body": "Supporting clearance, exemption procedures and customs services associated with shipment movements."
+      },
+      {
+        "title": "Relocation & Exhibitions",
+        "body": "Solutions for household goods, office and facility relocations, exhibitions and events."
+      }
+    ],
+    "specialTitle": "Specialized solutions",
+    "specialBody": "Industrial equipment packing, air and sea charter arrangements, and project-related transport services.",
+    "journeyEyebrow": "Namma’s journey",
+    "journeyTitle": "More than four decades\n*of growth*",
+    "journeyIntro": "Namma’s expertise was not built in a single phase. It has developed with each new milestone in the business.",
+    "milestoneOf": "Milestone {n} / {total}",
+    "valuesEyebrow": "Vision, mission & values",
+    "visionLabel": "Our vision",
+    "visionTitle": "Your delivery, our priority",
+    "visionBody": "To make our customers’ shipment delivery needs a priority that guides our logistics services, through clarity, responsiveness and a proactive approach to their requirements.",
+    "missionLabel": "Our mission",
+    "missionBody": "Supporting our customers and partners with logistics solutions tailored to their needs, covering the required service stages while taking cost efficiency into account.",
+    "values": [
+      {
+        "title": "Excellence",
+        "body": "We strive to deliver a consistent standard of quality across our services and operations."
+      },
+      {
+        "title": "Innovation",
+        "body": "We continually seek better ways to develop our services and improve the customer experience."
+      },
+      {
+        "title": "Diversity",
+        "body": "We value the diversity of expertise, ideas and needs that shape our workplace and relationships."
+      },
+      {
+        "title": "Respect",
+        "body": "We build our relationships on mutual respect, clarity and responsibility."
+      }
+    ],
+    "numbersEyebrow": "Namma in numbers",
+    "numbersTitle": "Measurable *experience*",
+    "bigUnit": "FRT",
+    "bigLabel": "Freight tons handled over 10 years",
+    "numbers": [
+      {
+        "label": "Complex Projects Handled"
+      },
+      {
+        "label": "Domestic & International Truck Movements"
+      },
+      {
+        "label": "Sea shipments"
+      },
+      {
+        "label": "Air shipments"
+      }
+    ],
+    "strengthsEyebrow": "Strengths",
+    "strengthsTitle": "Our *strengths*",
+    "strengths": [
+      {
+        "title": "Our Team’s Expertise",
+        "body": "A team of logistics specialists combining practical knowledge with the ability to address diverse freight and project requirements."
+      },
+      {
+        "title": "Technology Platforms That Support Operations",
+        "body": "Namma uses technology platforms to help manage and monitor logistics operations, supporting connected solutions from start to finish."
+      },
+      {
+        "title": "Versatile Road Transport Capabilities",
+        "body": "A fleet of trucks and trailers transports various goods, with arrangements tailored to cargo, route, and any required specialist equipment or partner support."
+      },
+      {
+        "title": "Ongoing Customer Communication",
+        "body": "We maintain clear communication with our customers throughout the logistics process, from the initial request to service completion."
+      },
+      {
+        "title": "International Connections",
+        "body": "An overseas agency network complements our Saudi operational presence and helps coordinate international freight movements."
+      }
+    ],
+    "nextEyebrow": "Next move",
+    "nextTitle": "Work with a team that\nhas moved projects\n*since 1983*",
+    "exploreProjects": "Explore Our Projects",
+    "corporateEyebrow": "Corporate background",
+    "corporate": "*Namma* Cargo is part of the ~Nesma~ group of companies."
+  },
+  "networkPage": {
+    "eyebrow": "Our network",
+    "title": "A network closer\nto your *business\nneeds*",
+    "body": "Namma’s offices and locations support customer communication and the coordination of operations and services across different regions of Saudi Arabia.",
+    "mapAlt": "Map of Saudi Arabia showing Namma’s offices in Al Khobar, Riyadh and Jeddah, and project sites at Ras Al Zour and Qatif.",
+    "projectSites": {
+      "rasAlZour": "Ras Al Zour",
+      "qatif": "Qatif GOSP"
+    },
+    "headOffice": "Head office",
+    "office": "Office",
+    "statBig": "Domestic and International Truck Movements",
+    "stats": [
+      {
+        "value": "3",
+        "label": "Offices"
+      },
+      {
+        "value": "1983",
+        "label": "Founded"
+      },
+      {
+        "value": "40+",
+        "label": "Years of logistics experience"
+      }
+    ],
+    "coverageEyebrow": "Coverage",
+    "coverageTitle": "A wider operational\n~network~",
+    "coverageBody": "Alongside our main offices, operational coverage supports cargo movements through industrial centres and border locations across Saudi Arabia. Contact our team to discuss support for your route or site.",
+    "addresses": [
+      {
+        "street": "3859 Tariq Ibn Ziyad Street, Qurtubah District\nAl Khobar 34235, Saudi Arabia",
+        "short": "EAGA3859",
+        "parts": "Building 3859 · Additional no. 7434 · Postal code 34235"
+      },
+      {
+        "street": "7304 Prince Abdulaziz Bin Musaid Bin Jalawi Street, As Sulimaniyah District\nRiyadh 12243, Saudi Arabia",
+        "short": "RHSB7304",
+        "parts": "Building 7304 · Additional no. 5229 · Postal code 12243"
+      },
+      {
+        "street": "7304 Prince Sultan Branch Road, Az Zahra District\nJeddah 23522, Saudi Arabia",
+        "short": "JEZB7304",
+        "parts": "Building 7304 · Additional no. 4522 · Postal code 23522"
+      }
+    ],
+    "nationalAddress": "National address",
+    "directions": "Get directions"
+  },
+  "careersPage": {
+    "eyebrow": "Careers at Namma",
+    "titleTop": "Join the",
+    "titleMid": "Namma",
+    "titleEnd": "team",
+    "body": "Behind every logistics operation is a team responsible for planning, coordination and monitoring. Explore opportunities to develop your expertise and contribute to services supporting customers and projects across industries.",
+    "cta": "View Current Opportunities",
+    "badgeEyebrow": "Careers at Namma",
+    "badgeTitle": "Join the Namma team",
+    "pillars": [
+      "Develop your expertise",
+      "Support customers and projects",
+      "Work across industries"
+    ],
+    "rolesEyebrow": "Current opportunities",
+    "rolesTitle": "Open *roles*",
+    "rolesIntro": "Explore available roles and their requirements. Each role shows its department, city and employment type.",
+    "allDepartments": "All departments",
+    "rolesCount": "{n} roles",
+    "roleCount": "1 role",
+    "viewRole": "View role",
+    "departments": {
+      "operations": "Operations",
+      "warehouse": "Warehouse",
+      "projects": "Projects",
+      "customs": "Customs",
+      "sales": "Sales"
+    },
+    "cities": {
+      "khobar": "Al Khobar",
+      "jeddah": "Jeddah",
+      "riyadh": "Riyadh"
+    },
+    "types": {
+      "fullTime": "Full-time"
+    },
+    "modal": {
+      "opportunity": "Career opportunity",
+      "company": "Namma Cargo",
+      "close": "Close",
+      "about": "About the role",
+      "responsibilities": "Key responsibilities",
+      "qualifications": "Qualifications",
+      "pendingTitle": "Content pending",
+      "pendingBody": "The approved description for this section has not been supplied yet.",
+      "readyTitle": "Ready to join Namma?",
+      "readyBody": "Take the next step in your career with Namma Cargo.",
+      "back": "Back to Open Roles",
+      "apply": "Apply for This Position",
+      "applyTitle": "Apply for this position",
+      "applyIntro": "Complete the form below. Fields marked * are required.",
+      "fullName": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "phonePlaceholder": "+966 5X XXX XXXX",
+      "city": "City",
+      "position": "Position applied for",
+      "cv": "Upload CV",
+      "cvHint": "PDF, DOC or DOCX · up to 5 MB",
+      "cvChoose": "Choose a file",
+      "cvDrop": "or drag it here",
+      "cvReady": "ready",
+      "replace": "Replace",
+      "remove": "Remove",
+      "message": "Brief message",
+      "consentBefore": "I have read and agree to the",
+      "consentLink": "Privacy Policy",
+      "consentAfter": "and consent to Namma Cargo processing my details for this application.",
+      "backToJob": "Back to Job Details",
+      "submit": "Submit Application",
+      "validatedTitle": "Application details validated",
+      "validatedBodyA": "Everything you entered passed validation. This is a front-end prototype, so",
+      "validatedStrong": "no application was sent",
+      "validatedBodyB": "and your CV did not leave this browser.",
+      "name": "Name",
+      "positionShort": "Position",
+      "emailShort": "Email",
+      "cvShort": "CV",
+      "discardTitle": "Discard your application?",
+      "discardBody": "The details you entered for this role will be cleared.",
+      "keepEditing": "Keep editing",
+      "discard": "Discard and close"
+    },
+    "jobs": {
+      "customs-officer": {
+        "title": "Customs Officer",
+        "about": "As Customs Officer in Jeddah, you make sure our customers’ import and export shipments clear smoothly by reviewing documents, preparing declarations and working with Saudi customs and the relevant authorities to release goods without delay.",
+        "responsibilities": [
+          "Review commercial invoices, packing lists, certificates of origin and other shipping documents.",
+          "Prepare and submit customs declarations through the national customs platform.",
+          "Classify goods under the correct HS codes and calculate duties and fees.",
+          "Follow up inspections and releases at Jeddah Islamic Port and King Abdulaziz International Airport.",
+          "Coordinate requirements with relevant authorities such as SFDA and SASO.",
+          "Keep customers and the operations team updated on clearance status."
+        ],
+        "qualifications": [
+          "Diploma or Bachelor’s degree in Business, Logistics or a related field.",
+          "Good knowledge of Saudi customs procedures, tariff classification and documentation.",
+          "Experience with the national customs platform and clearance workflows."
+        ]
+      },
+      "operations-coordinator": {
+        "title": "Operations Coordinator"
+      },
+      "warehouse-supervisor": {
+        "title": "Warehouse Supervisor"
+      },
+      "project-engineer": {
+        "title": "Project Engineer"
+      },
+      "sales-executive": {
+        "title": "Sales Executive"
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "Contact us",
+    "title": "How can we\n*help you?*",
+    "body": "Choose the option that best matches your needs to reach the right place quickly.",
+    "options": [
+      {
+        "title": "I have a new shipment or project",
+        "body": "Share your requirements to receive a quote for the service you need.",
+        "cta": "Request a Quote"
+      },
+      {
+        "title": "I have an existing shipment",
+        "body": "Use your shipment reference number to view the available tracking information.",
+        "cta": "Track Your Shipment"
+      },
+      {
+        "title": "I am looking for a Namma office",
+        "body": "Find office locations and contact details.",
+        "cta": "Our Network"
+      },
+      {
+        "title": "I have a general enquiry",
+        "body": "If your enquiry is not related to a quote or an existing shipment, contact us directly.",
+        "cta": "Contact Form"
+      }
+    ],
+    "formEyebrow": "General enquiry",
+    "formTitle": "Send us a *message*",
+    "formIntro": "Tell us what your enquiry is about and our team will get back to you. For a new shipment, Request a Quote is the faster route.",
+    "topic": "Topic",
+    "topicPlaceholder": "Select a topic",
+    "topics": [
+      "General enquiry",
+      "Existing shipment",
+      "Partnership or agency",
+      "Supplier",
+      "Media",
+      "Other"
+    ],
+    "reference": "Shipment reference",
+    "referenceHint": "If your enquiry concerns an existing shipment.",
+    "message": "Message",
+    "messagePlaceholder": "How can we help?",
+    "send": "Send message",
+    "sentTitle": "Message received",
+    "sentBody": "Thank you. Our team will review your message and get back to you shortly.",
+    "sendAnother": "Send another message",
+    "direct": "Prefer to call? Unified number",
+    "attach": "Attach a file",
+    "attachCta": "Choose a file",
+    "consentA": "I agree to the use of my data to respond to this enquiry in accordance with the",
+    "consentB": "."
+  },
+  "quotePage": {
+    "eyebrow": "Request a quote",
+    "title": "Tell us what\n*you need*",
+    "body": "The more we know about your shipment or project, the sooner we can direct your request to the right team. Start with the information you have.",
+    "steps": [
+      "Service",
+      "Journey",
+      "Shipment",
+      "Contact"
+    ],
+    "stepOf": "Step {n} of {total}",
+    "next": "Next",
+    "back": "Back",
+    "submit": "Send request",
+    "serviceTitle": "Which service do you need?",
+    "serviceIntro": "Select the service that best matches your requirements.",
+    "services": {
+      "projectLogistics": "Heavy, oversized and project cargo",
+      "freightTransport": "Air, sea and road freight",
+      "warehousingDistribution": "Storage, inventory and distribution",
+      "relocationExhibitions": "Household, office, events",
+      "industrialEquipmentPacking": "Crating, skidding, protection",
+      "customsClearance": "Inbound and outbound",
+      "notSure": "We will help you choose",
+      "airFreight": "Scheduled and charter air cargo",
+      "seaFreight": "FCL, breakbulk and project cargo",
+      "lclShipments": "Shared container space",
+      "roadFreight": "Domestic, GCC and cross-border",
+      "threePl": "Contract logistics",
+      "transportation": "Planned distribution",
+      "heavyLift": "Lifting and moving heavy equipment",
+      "oversizedCargo": "Out-of-gauge cargo"
+    },
+    "serviceNames": {
+      "airSeaChartering": "Air or Sea Chartering",
+      "notSure": "Not Sure"
+    },
+    "journeyTitle": "Where is it going?",
+    "journeyIntro": "Origin and destination can be a city, port, country or project site.",
+    "from": "From",
+    "fromPlaceholder": "City, port or country",
+    "to": "To",
+    "toPlaceholder": "City, port or project site",
+    "date": "Expected shipping date",
+    "dateHint": "An approximate date is fine.",
+    "flexible": "My dates are flexible",
+    "shipmentTitle": "What are you shipping?",
+    "shipmentIntro": "Approximate figures are enough at this stage.",
+    "goods": "Goods",
+    "goodsPlaceholder": "e.g. transformer, machinery, household goods",
+    "weight": "Approximate weight",
+    "weightUnit": "kg",
+    "packages": "Number of packages",
+    "notes": "Dimensions or special requirements",
+    "notesPlaceholder": "Oversized, hazardous, temperature-controlled…",
+    "contactTitle": "How can we reach you?",
+    "contactIntro": "We use these details only to respond to your request.",
+    "name": "Full name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "summaryEyebrow": "Your request so far",
+    "summaryTitle": "Summary",
+    "summary": {
+      "service": "Service",
+      "from": "From",
+      "to": "To",
+      "date": "Shipping date",
+      "goods": "Goods",
+      "weight": "Weight",
+      "contact": "Contact"
+    },
+    "flexibleShort": "Flexible",
+    "directedTo": "Will be directed to",
+    "teams": {
+      "projectLogistics": "Project Logistics team",
+      "freightTransport": "Freight & Transport team",
+      "warehousingDistribution": "Warehousing & Distribution team",
+      "relocationExhibitions": "Relocation & Exhibitions team",
+      "industrialEquipmentPacking": "Industrial Packing team",
+      "customsClearance": "Customs team",
+      "notSure": "Customer Service team",
+      "airFreight": "Freight team",
+      "seaFreight": "Freight team",
+      "lclShipments": "Freight team",
+      "roadFreight": "Freight team",
+      "threePl": "Contract Logistics team",
+      "transportation": "Contract Logistics team",
+      "heavyLift": "Project Logistics team",
+      "oversizedCargo": "Project Logistics team"
+    },
+    "helpA": "You can go back to any step without losing what you have entered. Need help? Call",
+    "sentEyebrow": "Request received",
+    "sentTitle": "Thank you, we have your request",
+    "sentBody": "Your request has been directed to the {team}. They will review it and contact you shortly.",
+    "sentRef": "Request reference",
+    "again": "Start a new request",
+    "demoNote": "Preview build: no request was sent.",
+    "dangerous": "Does the shipment contain dangerous goods?",
+    "dangerousHint": "Please share the UN number, classification and safety data sheet (SDS) if available. Add them in the notes or attach them below.",
+    "insured": "Are the goods already insured?",
+    "insurance": "Would you like to discuss cargo insurance?",
+    "yesNo": {
+      "yes": "Yes",
+      "no": "No",
+      "notSure": "Not sure"
+    },
+    "files": "Supporting files",
+    "attach": "Attach files",
+    "filesHint": "Packing list, shipment photos, drawings, specifications or other relevant documents (up to 5 files).",
+    "removeFile": "Remove",
+    "method": "Preferred contact method",
+    "methods": {
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "consentA": "I agree to the use of my data to contact me about this request in accordance with the",
+    "consentB": ".",
+    "serviceNotes": {
+      "warehousingDistribution": "Product type, quantity, storage duration, required temperature range, distribution needs…",
+      "relocationExhibitions": "Property or office type, inventory, access restrictions, preferred move date, or event name, venue and delivery / collection dates…",
+      "customsClearance": "Import or export purpose, goods description, documents available…"
+    }
+  },
+  "trackPage": {
+    "eyebrow": "Shipment tracking",
+    "title": "Track your\n*shipment*",
+    "body": "Use Namma’s shipment tracking service to access the latest available information for your shipment.",
+    "label": "Shipment reference number",
+    "placeholder": "e.g. NMC-0045821",
+    "hint": "Letters, numbers and leading zeros are kept exactly as you type them.",
+    "submit": "Track Now",
+    "searching": "Searching…",
+    "errEmpty": "Enter your shipment reference number.",
+    "awaitingTitle": "Awaiting reference",
+    "awaitingBody": "Enter a shipment reference number above and select Track Now.",
+    "notFoundTitle": "No record found",
+    "notFoundBody": "We could not find tracking information for {ref}. Check the reference and try again, or contact our team.",
+    "resultEyebrow": "Shipment",
+    "status": "Status",
+    "lastUpdate": "Last update",
+    "route": "Route",
+    "mode": "Mode",
+    "demoNote": "Sample data for review. Live tracking will connect to Namma’s tracking service.",
+    "tryDemo": "Try the sample reference",
+    "sample": {
+      "status": "In transit",
+      "updated": "Today, 09:40",
+      "from": "Jebel Ali, UAE",
+      "to": "Al Khobar, KSA",
+      "mode": "Road freight",
+      "events": [
+        {
+          "title": "Booking confirmed",
+          "place": "Al Khobar",
+          "time": "3 days ago"
+        },
+        {
+          "title": "Picked up from shipper",
+          "place": "Jebel Ali",
+          "time": "2 days ago"
+        },
+        {
+          "title": "Cleared at border",
+          "place": "Al Batha",
+          "time": "Yesterday"
+        },
+        {
+          "title": "In transit to destination",
+          "place": "Eastern Province",
+          "time": "Today"
+        },
+        {
+          "title": "Delivered",
+          "place": "Al Khobar",
+          "time": ""
+        }
+      ]
+    },
+    "helpTitle": "Need help with an existing shipment?",
+    "helpBody": "If your enquiry concerns an existing shipment, documents or updates that need clarification, contact our team and provide your shipment reference number.",
+    "helpCta": "Contact Our Team"
+  },
+  "supportPage": {
+    "eyebrow": "Support",
+    "title": "Support &\n*help*",
+    "body": "Find the fastest route to the help you need, whether you are planning a shipment, following an existing one or looking for documents.",
+    "sections": [
+      {
+        "title": "Planning a new shipment or project",
+        "body": "Use Request a Quote to share your cargo, route and timing. Your request is directed to the team responsible for the service you select."
+      },
+      {
+        "title": "Following an existing shipment",
+        "body": "Use Track a Shipment with your shipment reference number. If information is limited, contact our team with the same reference."
+      },
+      {
+        "title": "Documents and customs",
+        "body": "For questions about documentation, clearance or duty exemption procedures, contact our team through the contact form and select “Existing shipment”, with your shipment reference if you have one."
+      },
+      {
+        "title": "Reaching an office",
+        "body": "Call the unified number {phone} for enquiries to any office, or contact Al Khobar, Riyadh or Jeddah directly."
+      }
+    ]
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "onThisPage": "On this page",
+    "privacy": {
+      "title": "Privacy *policy*",
+      "body": "How Namma Cargo handles personal data submitted through this website.",
+      "sections": [
+        {
+          "title": "Information we collect",
+          "body": "Details you submit through our forms, such as your name, company, email, phone number, shipment details and any files you attach."
+        },
+        {
+          "title": "How we use information",
+          "body": "To respond to quote requests and enquiries, provide and coordinate logistics services, process job applications, and meet applicable legal requirements."
+        },
+        {
+          "title": "Sharing",
+          "body": "Information may be shared with parties involved in delivering a requested service, such as carriers, agents and relevant authorities, within the scope of that service."
+        },
+        {
+          "title": "Retention and protection",
+          "body": "Information is kept for as long as needed for the purposes above and protected with appropriate measures."
+        },
+        {
+          "title": "Your choices",
+          "body": "You may contact us to ask about, update or request deletion of your personal data, subject to applicable regulations."
+        },
+        {
+          "title": "Contact",
+          "body": ""
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of *use*",
+      "body": "The terms that apply to your use of the Namma Cargo website.",
+      "sections": [
+        {
+          "title": "Use of the website",
+          "body": "The website provides information about Namma Cargo’s services. Content is provided for general information and may change without notice."
+        },
+        {
+          "title": "Quotes and services",
+          "body": "Submitting a request does not create a service agreement. Services are provided according to an agreed scope of work and the applicable terms of service."
+        },
+        {
+          "title": "Tracking information",
+          "body": "Tracking information depends on records available through the tracking service and may be limited for some shipments."
+        },
+        {
+          "title": "Intellectual property",
+          "body": "Website content, including the Namma name and logo, may not be reproduced without permission."
+        },
+        {
+          "title": "Third-party links",
+          "body": "Links to external websites are provided for convenience; Namma is not responsible for their content."
+        },
+        {
+          "title": "Governing law",
+          "body": "These terms are governed by the laws of the Kingdom of Saudi Arabia."
+        }
+      ]
+    }
+  },
+  "megaMenu": {
+    "projectLogistics": "Heavy equipment, oversized cargo and multi-stage projects.",
+    "freightTransport": "Air, sea, LCL and road freight to and from Saudi Arabia.",
+    "warehousingDistribution": "Secure storage, inventory management & planned distribution to your sites & customers.",
+    "customsClearance": "Customs clearance, duty exemptions and import/export permits, handled end to end.",
+    "relocationExhibitions": "Household, office and facility moves, and exhibition logistics.",
+    "industrialEquipmentPacking": "Packing, crating, labelling and kitting before goods move.",
+    "threePl": "Warehousing, transportation and value-added services under one agreement.",
+    "ctaTitle": "Have a new shipment or project?",
+    "ctaBody": "Share the essential details of your requirements, and we will direct your request to the right team.",
+    "airFreight": "Scheduled and charter air cargo for time-critical shipments.",
+    "seaFreight": "Full-container and project cargo by sea, port to port or door to door.",
+    "lclShipments": "Shared container space for smaller sea shipments.",
+    "roadFreight": "Domestic, GCC and cross-border road freight.",
+    "transportation": "Planned distribution and dedicated transport across the Kingdom.",
+    "heavyLift": "Lifting and moving heavy equipment with engineered planning.",
+    "oversizedCargo": "Out-of-gauge cargo moved with route surveys and permits."
+  }
+}

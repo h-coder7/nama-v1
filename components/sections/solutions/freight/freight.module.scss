@@ -1,0 +1,142 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.mark, .markSm { display: inline-block; background: $c-yellow; mask: url("/assets/namma/brand/logo-mark.png") center / contain no-repeat; }
+.mark { width: 32px; height: 20px; }
+.markSm { width: 22px; height: 13px; }
+
+/* hero */
+.hero { padding: clamp(104px, 9vw, 128px) 0 clamp(56px, 6vw, 72px); background: $c-ink; color: $c-white; }
+.crumbs ol { font-family: $f-display; font-size: 0.8125rem; }
+.heroTop { display: flex; align-items: center; justify-content: space-between; margin-top: 32px; }
+.board {
+  position: relative; margin-top: 18px; isolation: isolate;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 28px;
+  min-height: clamp(360px, 33vw, 420px); padding: clamp(14px, 1.6vw, 20px);
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 24px; overflow: hidden;
+  @include notch(30px);
+}
+.boardImg { object-fit: cover; z-index: -1; }
+.flaps { display: grid; gap: 6px; perspective: 600px; }
+.flapLine { display: flex; flex-wrap: wrap; gap: 4px; }
+.flapWord { display: inline-flex; gap: 4px; }
+.flap {
+  display: inline-grid; place-items: center;
+  width: clamp(18px, 2.95vw, 42px); height: clamp(26px, 3.6vw, 52px);
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(36, 36, 36, 0.92) 0 49%, rgba(28, 28, 28, 0.94) 51% 100%);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  font-family: "Space Grotesk", $f-display; font-weight: 600; font-size: clamp(0.9rem, 1.7vw, 1.75rem); line-height: 1;
+  color: $c-white; text-transform: uppercase; transform-origin: 50% 50%;
+  @include down($bp-md) { width: 16px; height: 24px; border-radius: 3px; font-size: 0.8125rem; }
+}
+@include down($bp-md) { .flapLine, .flapWord { gap: 2px; } .flaps { gap: 3px; } }
+.flapBlank { background: rgba(36, 36, 36, 0.55); }
+.flapWhole { width: auto; padding: 0 clamp(10px, 1.2vw, 16px); font-family: $f-display; font-size: clamp(1rem, 2.2vw, 2.25rem); }
+.flapAccent .flap { color: $c-yellow; }
+.modes {
+  display: grid; gap: 8px;
+  @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  li { display: grid; gap: 4px; padding: 12px 14px; border-radius: 10px; background: rgba(46, 46, 46, 0.82); backdrop-filter: blur(6px); }
+  strong { font-family: $f-display; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; color: $c-yellow; }
+  span { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.85); }
+}
+.heroFoot {
+  display: grid; gap: 24px; margin-top: 28px;
+  @include up($bp-lg) { grid-template-columns: 1fr auto; align-items: center; }
+  p { max-width: 480px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.82); }
+}
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* three ways */
+.ways { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+.wayGrid { display: grid; gap: 16px; margin-top: 40px; @include up($bp-lg) { grid-template-columns: 1fr 2fr 1fr; } }
+.way { display: flex; flex-direction: column; border-radius: 0 0 20px 20px; background: $c-white; overflow: hidden; @include notch(26px); transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; &:hover { translate: 0 -6px; .wayMedia img { scale: 1.06; } } }
+.waySea { background: $c-ink; color: $c-white; .wayWord { color: $c-yellow; } .wayNum { color: $c-yellow; } .wayRule { background: $c-white; } .wayItem p { color: rgba(255, 255, 255, 0.78); } }
+.wayMedia { position: relative; height: clamp(190px, 17vw, 250px); overflow: hidden; img { object-fit: cover; transition: translate 1.2s $ease-out, rotate 1.2s $ease-out, scale 1.2s $ease-out; } }
+.waySea .wayMedia img { object-position: 50% 55%; }
+.wayBody { display: grid; gap: 4px; padding: 20px 20px 34px; }
+.wayWord { overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; @include display(clamp(2.5rem, 1.8rem + 2vw, 3.25rem)); line-height: 1.05; span { display: inline-block; } }
+.wayItems { display: grid; gap: 20px; @include up($bp-md) { grid-auto-flow: column; grid-auto-columns: 1fr; } }
+.wayItem {
+  display: grid; align-content: start; gap: 6px;
+  h3 { font-family: $f-display; font-weight: 700; font-size: 1.0625rem; text-transform: uppercase; }
+  p { font-size: 0.8125rem; line-height: 1.55; color: $c-muted; max-width: 300px; }
+}
+.wayRule { display: block; height: 2px; margin: 8px 0 12px; background: $c-ink; transform-origin: var(--start); }
+.wayNum { font-family: $f-display; font-size: 0.75rem; font-weight: 600; justify-self: start; }
+
+/* stages */
+.stages { padding: $section-y 0; background: $c-yellow; color: $c-ink; }
+.stageGrid { display: grid; gap: 40px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 1fr 1fr; align-items: center; } }
+.stageList { position: relative; display: grid; gap: 4px; }
+.stageRail { position: absolute; inset-inline-start: 9px; top: 12px; bottom: 12px; width: 2px; background: $c-ink; }
+.stageBtn {
+  position: relative; display: flex; align-items: baseline; gap: 12px; width: 100%;
+  padding: 12px 0; padding-inline-start: 34px; border: 0; background: none; text-align: start; color: rgba(46, 46, 46, 0.6);
+  small { font-family: $f-display; font-size: 0.75rem; font-weight: 600; color: rgba(46, 46, 46, 0.75); white-space: nowrap; }
+  > span:last-child { font-family: $f-display; font-weight: 700; font-size: clamp(1rem, 0.85rem + 0.5vw, 1.25rem); text-transform: uppercase; transition: color $dur; }
+  &:hover > span:last-child { color: $c-ink; }
+  @include focus-ring($c-ink);
+}
+.stageDot {
+  position: absolute; inset-inline-start: 0; top: 50%; width: 20px; height: 20px; margin-top: -10px;
+  border: 2.5px solid $c-ink; border-radius: 50%; background: $c-yellow;
+  transition: background $dur, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+}
+.stageDone .stageDot { background: $c-ink; }
+.stageOn { color: $c-ink; .stageDot { background: $c-white; scale: 1.15; } > span:last-child { font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem); } }
+.stageCard {
+  display: grid; gap: 14px; padding: 22px 22px 28px;
+  border-radius: 28px; background: $c-ink; color: $c-white;
+  h3 { margin-top: 8px; @include display(clamp(1.375rem, 1.1rem + 0.8vw, 1.75rem)); }
+  p { font-size: 0.875rem; color: rgba(255, 255, 255, 0.78); min-height: 2.6em; }
+}
+.stageCardTop { display: flex; justify-content: space-between; align-items: center; font-family: $f-display; font-weight: 600; font-size: 0.8125rem; color: $c-yellow; }
+.stageIcon {
+  display: grid; place-items: center; aspect-ratio: 16 / 9; border-radius: 16px; background: #3a3a3a; color: $c-yellow;
+  img { width: clamp(64px, 8vw, 96px); height: auto; }
+  > span { display: grid; place-items: center; }
+}
+.progress { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; span { height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.2); transition: background 0.5s; } .progressOn { background: $c-yellow; } }
+
+/* beyond */
+.beyond { padding: $section-y 0; background: $c-ink; color: $c-white; }
+.beyondGrid { display: grid; gap: 16px; margin-top: 40px; @include up($bp-lg) { grid-template-columns: 1fr 1fr; } }
+.beyondCard { display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; background: $c-white; color: $c-ink; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25); transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; &:hover { translate: 0 -4px; } }
+.beyondHead { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; background: $c-yellow; font-family: $f-display; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; .markSm { background: $c-ink; } }
+.parts { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-bottom: 2px solid $c-ink; }
+.part {
+  display: grid; justify-items: start; gap: 14px; padding: 20px 16px 18px;
+  & + & { border-inline-start: 2px dashed rgba(46, 46, 46, 0.3); }
+  img { width: clamp(64px, 7vw, 92px); height: auto; }
+  strong { font-family: $f-display; font-weight: 700; font-size: 1rem; text-transform: uppercase; }
+}
+:global([dir="rtl"]) .part img { transform: scaleX(-1); }
+.beyondBody { padding: 18px 16px 22px; h3 { @include display(1.25rem); } p { margin-top: 6px; font-size: 0.8125rem; color: $c-muted; } }
+
+/* by road */
+.road { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+.truck { margin-top: 40px; }
+.truckClip { overflow: hidden; }
+.truckImg { position: relative; aspect-ratio: 2400 / 800; }
+.truckImg img { object-fit: cover; }
+// Live overlay on the trailer side (replaces the text baked into the photo, so it can be translated).
+.profile {
+  position: absolute; left: 14.5%; right: 30%; top: 19%; bottom: 37%;
+  display: flex; flex-direction: column; gap: 4%;
+  padding: 1.6% 2.4%;
+  background: linear-gradient(180deg, #f3f3f1, #e9e9e6);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  color: $c-ink; font-family: $f-display;
+  font-size: clamp(0.4rem, 1.05vw, 0.9rem);
+  :global([dir="rtl"]) & { direction: rtl; }
+}
+.profileTitle { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 2%; border-bottom: 2px solid $c-ink; strong { font-size: 1.45em; font-weight: 700; text-transform: uppercase; } span { font-weight: 600; text-transform: uppercase; } }
+.profileRows {
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 6%; row-gap: 3%;
+  li { position: relative; display: flex; gap: 0.8em; align-items: baseline; padding-bottom: 2%; font-size: 1.15em; span { font-weight: 500; } strong { font-weight: 700; text-transform: uppercase; } }
+  i { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: $c-ink; transform-origin: var(--start); }
+}
+.profileMark { position: absolute; inset-inline-end: 3%; bottom: 8%; width: 11%; aspect-ratio: 32 / 20; background: $c-yellow; mask: url("/assets/namma/brand/logo-mark.png") center / contain no-repeat; }

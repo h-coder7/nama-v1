@@ -1,0 +1,110 @@
+// First-visit loading screen (components/layout/Preloader.tsx).
+// Hidden unless the head script set html.nl-on (first visit, motion allowed).
+@use "tokens" as *;
+
+.nl { display: none; }
+
+html.nl-on {
+  overflow: hidden;
+
+  .nl {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    background: $c-ink-deep;
+    color: #fff;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.nl__stage {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  transform: translateY(-4vh);
+}
+
+.nl__art {
+  width: min(64vw, 360px);
+  height: auto;
+  overflow: visible;
+  stroke: $c-yellow;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  [data-d], [data-n-line] {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  [data-g] { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  [data-g="n"] { opacity: 1; }
+  [data-n-line] { stroke-width: 2.6; }
+}
+
+.nl__fill { fill: $c-yellow; stroke: none; opacity: 0; }
+.nl__pen { fill: $c-yellow; stroke: none; opacity: 0; }
+
+.nl__cap {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+
+  [dir="rtl"] & { letter-spacing: 0; font-size: 14px; }
+}
+
+// Bottom left in both languages (as asked), clear of the progress line.
+.nl__count {
+  position: absolute;
+  left: clamp(20px, 4vw, 56px);
+  bottom: clamp(24px, 5vh, 52px);
+  display: grid;
+  gap: 4px;
+  direction: ltr;
+  text-align: left;
+}
+
+.nl__label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+
+  [dir="rtl"] & { letter-spacing: 0; font-size: 14px; direction: rtl; }
+}
+
+.nl__num {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: "Space Grotesk", "Manrope", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(64px, 10vw, 148px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+
+  i {
+    font-style: normal;
+    font-size: 0.32em;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: $c-yellow;
+  }
+}
+
+.nl__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: $c-yellow;
+  transform: scaleX(0);
+  transform-origin: left center;
+}

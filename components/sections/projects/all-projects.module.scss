@@ -1,0 +1,12 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.intro {
+  padding: clamp(118px, 10vw, 140px) 0 clamp(48px, 5vw, 64px);
+  background: $c-ink; color: $c-white;
+  @include stripes;
+  :global(ol) { font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+}
+.title { margin-top: 28px; @include display($fs-hero); font-weight: 600; }
+.accent { color: $c-yellow; }
+.body { margin-top: 18px; max-width: 520px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.82); }

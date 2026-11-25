@@ -1,0 +1,221 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.accent { color: $c-yellow; }
+
+/* ================================================================ hero */
+.hero {
+  position: relative; overflow: hidden;
+  padding: clamp(104px, 9vw, 120px) 0 clamp(64px, 7vw, 96px);
+  background: $c-ink; color: $c-white;
+}
+.heroGrid {
+  display: grid; gap: 40px;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: 0; }
+}
+.heroCopy { display: grid; justify-items: start; position: relative; z-index: 2; }
+.heroEyebrow { margin-top: clamp(48px, 7vw, 96px); }
+.title { margin-top: 26px; @include display(clamp(2.5rem, 1.4rem + 3vw, 3.75rem)); font-weight: 600; line-height: 1.04; }
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.line > span { display: inline-block; }
+.heroBody {
+  margin-top: 30px; max-width: 360px;
+  padding-inline-start: 18px; border-inline-start: 2px solid $c-yellow;
+  font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.86);
+}
+
+.map {
+  position: relative;
+  width: min(100%, 720px);
+  aspect-ratio: 658 / 483;
+  margin-inline: auto;
+  @include up($bp-lg) { width: 116%; margin-inline-start: -6%; margin-top: 16px; }
+  :global([dir="rtl"]) & { @include up($bp-lg) { margin-inline-start: -10%; } }
+}
+/* Same regional artwork as the home "Our network" card, melted into the hero. */
+.shape {
+  position: absolute; inset: 0;
+  -webkit-mask: radial-gradient(closest-side at 50% 50%, #000 72%, transparent 100%);
+  mask: radial-gradient(closest-side at 50% 50%, #000 72%, transparent 100%);
+}
+.mapImg { object-fit: cover; filter: contrast(1.08) brightness(1.06); }
+.glow {
+  position: absolute; left: 72%; top: 34%;
+  width: 56%; aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 197, 74, 0.42), rgba(255, 197, 74, 0.1) 45%, transparent 70%);
+  mix-blend-mode: screen;
+  z-index: 1;
+  pointer-events: none;
+}
+.routes { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+.route { fill: none; stroke: $c-yellow; stroke-width: 0.32; stroke-dasharray: 1 1; stroke-linecap: round; }
+.spark {
+  fill: none; stroke: #fff4d6; stroke-width: 0.6; stroke-linecap: round;
+  stroke-dasharray: 6 94; stroke-dashoffset: 6;
+  opacity: 0;
+  filter: drop-shadow(0 0 1.2px rgba(255, 197, 74, 0.95));
+}
+.leader { fill: none; stroke: rgba(255, 255, 255, 0.7); stroke-width: 0.14; }
+.pin {
+  position: absolute; z-index: 2;
+  i {
+    position: absolute; left: 0; top: 0;
+    width: 20px; height: 20px; translate: -50% -50%; rotate: 45deg;
+    border: 1.5px solid $c-yellow;
+    background: #2b2b2b;
+    box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.8);
+  }
+}
+.ring {
+  position: absolute; left: 0; top: 0;
+  width: 44px; height: 44px; margin: -22px 0 0 -22px;
+  border-radius: 50%;
+  &::before, &::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    border: 1px solid rgba(255, 197, 74, 0.7);
+    animation: netPulse 2.8s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  }
+  &::after { animation-delay: 1.4s; }
+  @media (prefers-reduced-motion: reduce) { &::before, &::after { animation: none; opacity: 0.4; } }
+}
+@keyframes netPulse {
+  from { transform: scale(0.4); opacity: 0.9; }
+  to { transform: scale(1.6); opacity: 0; }
+}
+.pinHead i { width: 24px; height: 24px; background: $c-yellow; box-shadow: 0 0 0 7px rgba(255, 197, 74, 0.18), 0 0 28px rgba(255, 197, 74, 0.6); }
+.pinHead .ring { width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+.pinLabel {
+  position: absolute; left: 18px; top: -8px;
+  display: grid; gap: 2px; white-space: nowrap;
+  strong { font-family: $f-display; font-weight: 600; font-size: 0.9375rem; }
+  small { font-family: $f-display; font-size: 0.6875rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); }
+}
+/* Head office label sits over the Gulf, clear of the route and the project sites. */
+.pinHead .pinLabel { left: 24px; top: 6px; }
+.site {
+  position: absolute; z-index: 2; width: 14px; height: 14px; translate: -50% -50%;
+  border: 1.5px solid $c-yellow; border-radius: 50%;
+  background: #2b2b2b;
+}
+.siteLabel {
+  position: absolute; z-index: 2; translate: 4px -60%;
+  font-family: $f-display; font-size: 0.75rem; white-space: nowrap; color: rgba(255, 255, 255, 0.9);
+}
+@include down($bp-sm) {
+  .pinLabel strong { font-size: 0.75rem; }
+  .siteLabel { font-size: 0.625rem; }
+}
+
+/* ================================================================ offices */
+.offices { padding: clamp(72px, 8vw, 120px) 0 clamp(64px, 7vw, 96px); background: $c-paper; color: $c-ink; }
+.officeGrid {
+  display: grid; gap: 20px;
+  @include up($bp-md) { grid-template-columns: 1fr 1fr; }
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); }
+}
+.office {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: flex-start;
+  min-height: 366px;
+  padding: 26px 26px 28px;
+  border: 1px solid $c-line; border-radius: 20px;
+  background: $c-white;
+  transition: translate $dur $ease-out, box-shadow $dur $ease-out, border-color $dur $ease-out;
+  &:hover { translate: 0 -6px; border-color: rgba(46, 46, 46, 0.28); box-shadow: 0 30px 50px -30px rgba(46, 46, 46, 0.45); }
+  &:hover .directions { background: $c-yellow; color: $c-ink; }
+  &:hover .dirArrow { translate: 2px -2px; }
+  &:hover .code { -webkit-text-stroke-color: rgba(255, 197, 74, 0.9); }
+  h2 { margin-top: 18px; @include display(clamp(1.625rem, 1.3rem + 0.8vw, 2rem)); font-weight: 600; }
+  @include up($bp-md) { &.officeHead { grid-column: 1 / -1; } }
+  @include up($bp-lg) { &.officeHead { grid-column: auto; } }
+}
+.officeTag {
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(46, 46, 46, 0.06);
+  font-family: $f-display; font-weight: 600; font-size: 0.625rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.officeHead .officeTag { background: $c-yellow; color: $c-ink; }
+.code { transition: -webkit-text-stroke-color $dur $ease-out; }
+:global([dir="rtl"]) .officeTag { letter-spacing: 0; }
+.address { margin-top: 14px; font-size: 0.8125rem; line-height: 1.6; color: rgba(46, 46, 46, 0.78); }
+.address { font-style: normal; }
+.street { display: block; }
+.national {
+  display: block; margin-top: 10px;
+  font-size: 0.75rem; color: rgba(46, 46, 46, 0.6);
+  b { font-family: $f-display; font-weight: 600; color: $c-ink; letter-spacing: 0.04em; }
+  small { display: block; margin-top: 2px; font-size: 0.6875rem; }
+}
+.directions {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+  padding: 9px 14px; border-radius: 999px;
+  background: rgba(46, 46, 46, 0.06);
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem;
+  transition: background $dur-fast, color $dur-fast;
+  &:hover { background: $c-yellow; color: $c-ink; }
+  @include focus-ring;
+}
+.dirArrow { display: inline-block; transition: translate $dur-fast $ease-out; }
+.directions:hover .dirArrow { translate: 2px -2px; }
+:global([dir="rtl"]) .dirArrow { scale: -1 1; }
+:global([dir="rtl"]) .directions:hover .dirArrow { translate: -2px -2px; }
+.contacts {
+  position: relative; z-index: 1;
+  display: grid; gap: 12px; margin-top: 18px;
+  li { display: flex; align-items: center; gap: 10px; font-family: $f-display; font-weight: 500; font-size: 0.875rem; }
+  li a { min-width: 0; overflow-wrap: anywhere; }
+  svg { flex: none; color: $c-yellow; }
+  a { @include focus-ring; &:hover { color: $c-yellow; } }
+}
+.office .contacts svg { color: rgba(46, 46, 46, 0.6); }
+.office .contacts a:hover { color: $c-ink; text-decoration: underline; }
+.copy {
+  flex: none;
+  padding: 3px 9px; border: 0; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12); color: inherit;
+  font-family: $f-display; font-size: 0.625rem; font-weight: 600;
+  transition: background $dur-fast, color $dur-fast;
+  &:hover { background: $c-yellow; color: $c-ink; }
+  @include focus-ring;
+}
+.office .copy { background: rgba(46, 46, 46, 0.07); }
+.copied { background: $c-yellow !important; color: $c-ink !important; }
+.code {
+  position: absolute; bottom: -0.16em; inset-inline-end: -0.04em;
+  font-family: $f-display; font-weight: 600; font-size: clamp(5rem, 3.4rem + 4vw, 7.25rem); line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px rgba(46, 46, 46, 0.14);
+  pointer-events: none;
+}
+
+/* ================================================================ stats + coverage */
+.coverage {
+  margin: 0;
+  padding: clamp(64px, 7vw, 96px) 0 clamp(64px, 7vw, 80px);
+  border-radius: 0;
+  background: $c-yellow; color: $c-ink;
+}
+.statTop { display: grid; gap: 28px; @include up($bp-lg) { grid-template-columns: 1fr minmax(0, 360px); align-items: end; } }
+.bigStat {
+  display: grid; gap: 10px;
+  strong { font-family: $f-display; font-weight: 600; font-size: clamp(6rem, 3rem + 9vw, 11rem); line-height: 0.82; letter-spacing: -0.05em; direction: ltr; text-align: match-parent; sup { font-size: 0.55em; vertical-align: 0.5em; margin-inline-start: 0.02em; } }
+  > span { font-family: $f-display; font-weight: 500; font-size: 1rem; }
+}
+.truck {
+  width: 100%; max-width: 360px; justify-self: end; height: auto; overflow: visible;
+  path, circle { fill: none; stroke: $c-ink; stroke-width: 3; stroke-linejoin: round; }
+  .rib { stroke-width: 1.5; }
+  .window { fill: $c-white; }
+  .wheel { fill: $c-yellow; }
+  :global([dir="rtl"]) & { transform: scaleX(-1); }
+}
+.stats {
+  display: grid; gap: 24px; margin-top: 40px;
+  @include up($bp-md) { grid-template-columns: repeat(3, 1fr); }
+  > div { display: flex; flex-direction: column-reverse; gap: 6px; padding-top: 18px; border-top: 3px solid $c-ink; }
+  dd { margin: 0; font-family: $f-display; font-weight: 600; font-size: clamp(2rem, 1.6rem + 1vw, 2.5rem); line-height: 1; }
+  dt { font-size: 0.75rem; font-weight: 600; }
+}
+.coverageHead { margin-top: clamp(56px, 6vw, 72px); }

@@ -1,0 +1,69 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.layout { padding: clamp(64px, 7vw, 92px) 0 $section-y; background: $c-paper; color: $c-ink; }
+.grid { display: grid; gap: 20px; @include up($bp-lg) { grid-template-columns: 320px minmax(0, 1fr); gap: 20px; align-items: start; } }
+
+.index {
+  padding: 26px 18px 30px 18px;
+  border-radius: 20px; background: $c-white;
+  @include notch(36px);
+  @include up($bp-lg) { position: sticky; top: 96px; }
+  > p { padding-inline-start: 0; font-family: $f-display; font-size: 0.6875rem; text-transform: uppercase; color: rgba(46, 46, 46, 0.8); }
+  ol { display: grid; gap: 8px; margin-top: 14px; }
+  a {
+    position: relative;
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 16px; border-radius: 999px;
+    background: rgba(46, 46, 46, 0.06);
+    font-size: 0.8125rem;
+    transition: background $dur, color $dur;
+    span { font-family: $f-display; font-size: 0.75rem; color: rgba(46, 46, 46, 0.5); transition: color $dur; }
+    &:hover { background: rgba(255, 197, 74, 0.22); }
+    @include focus-ring($c-ink);
+  }
+  @include down($bp-lg) { ol { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; scrollbar-width: none; } a { white-space: nowrap; } }
+}
+.indexOn { background: $c-ink !important; color: $c-white; span { color: $c-yellow !important; } }
+
+.cards > ol { display: grid; gap: 12px; }
+.card {
+  display: grid; grid-template-columns: 46px 1fr; gap: 0;
+  padding: 26px clamp(18px, 2vw, 20px) 30px;
+  border: 1px solid rgba(46, 46, 46, 0.16); border-radius: 12px;
+  background: #f3f2f0;
+  @include notch(24px);
+  scroll-margin-top: 110px;
+  outline: none;
+  transition: background $dur, border-color $dur;
+  &:hover { background: $c-white; border-color: rgba(46, 46, 46, 0.24); }
+  h2 { font-family: $f-display; font-weight: 500; font-size: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); }
+}
+.num { font-family: $f-display; font-size: 0.8125rem; color: $c-yellow; padding-top: 4px; }
+.body { margin-top: 10px; max-width: 520px; p { font-size: 0.8125rem; line-height: 1.6; color: rgba(46, 46, 46, 0.82); } }
+.inlineTel { font-weight: 700; color: $c-ink; &:hover { text-decoration: underline; } }
+.contactLine {
+  display: flex; flex-wrap: wrap; gap: 14px 36px;
+  li { display: flex; align-items: center; gap: 10px; font-family: $f-display; font-size: 0.9375rem; }
+  svg { color: $c-yellow; flex: none; }
+  a { @include focus-ring($c-ink); &:hover { text-decoration: underline; } }
+}
+.copy {
+  padding: 3px 9px; border: 1px solid $c-line; border-radius: 999px; background: $c-white;
+  font-family: $f-display; font-size: 0.625rem; font-weight: 600;
+  transition: background $dur-fast;
+  &:hover { background: $c-yellow; border-color: $c-yellow; }
+  @include focus-ring($c-ink);
+}
+.copied { background: $c-yellow !important; border-color: $c-yellow !important; }
+
+.supportCtas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.trackBtn {
+  display: inline-flex; align-items: center; gap: 10px; height: 36px; padding: 0 14px;
+  border-radius: 4px; background: $c-yellow; color: $c-ink;
+  font-family: $f-display; font-weight: 500; font-size: 0.8125rem;
+  transition: background $dur-fast;
+  &:hover { background: $c-yellow-deep; }
+  @include focus-ring($c-ink);
+}
+.ghostDark { color: $c-ink !important; border-color: rgba(46, 46, 46, 0.3) !important; }

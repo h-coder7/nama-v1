@@ -1,0 +1,64 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; }
+.grid { display: grid; margin-top: 56px; @include up($bp-md) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cell { position: relative; overflow: hidden; }
+.tile {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  height: clamp(240px, 22vw, 310px);
+  padding: 30px 40px 0;
+  overflow: hidden;
+  @include focus-ring($c-yellow);
+  @include down($bp-md) { padding: 24px 20px 0; }
+}
+.head { position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.text { display: grid; gap: 10px; }
+.title { font-family: $f-display; font-weight: 500; font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem); }
+.body {
+  max-width: 380px;
+  font-size: 0.875rem; line-height: 1.5;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity $dur $ease-out, transform $dur $ease-out;
+}
+.go {
+  flex: none;
+  display: grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1.5px solid currentColor;
+  transition: background $dur, color $dur, transform $dur $ease-out;
+}
+.word {
+  display: block;
+  margin-bottom: -0.2em;
+  font-family: "Space Grotesk", $f-display; font-weight: 700;
+  font-size: clamp(5.5rem, 3rem + 7vw, 10.5rem); line-height: 0.85; letter-spacing: -0.03em;
+  white-space: nowrap; text-transform: uppercase;
+  transform: translateY(18%);
+  transition: transform 0.6s $ease-out;
+  will-change: transform;
+  span { display: block; }
+}
+:global(html[lang="ar"]) .word { font-family: $f-display; letter-spacing: 0; line-height: 1.1; margin-bottom: -0.35em; }
+.active {
+  .body { opacity: 1; transform: none; }
+  .word { transform: translateY(0); }
+}
+.tile:hover .go { transform: rotate(calc(-45deg * var(--dir))); }
+
+.ink { background: $c-ink; color: $c-white; .word { color: $c-yellow; } .tile:hover .go { background: $c-yellow; color: $c-ink; border-color: $c-yellow; } }
+.stripe {
+  background-color: $c-ink; color: $c-white;
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 0 24px, transparent 24px 48px);
+  .word { color: #ececec; }
+  .tile:hover .go { background: $c-white; color: $c-ink; }
+}
+.yellow { background: $c-yellow; color: $c-ink; .word { color: $c-ink; } .tile:hover .go { background: $c-ink; color: $c-yellow; border-color: $c-ink; } }
+.outline {
+  background: #f2f2f2; color: $c-ink;
+  .word { color: transparent; -webkit-text-stroke: 1.5px $c-ink; }
+  .tile:hover .go { background: $c-ink; color: $c-white; }
+}
+// Outlined Arabic glyphs break up (overlapping contours) — use a soft fill instead.
+:global(html[lang="ar"]) .outline .word { color: #dcdcd8; -webkit-text-stroke: 0; }

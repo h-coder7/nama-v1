@@ -1,0 +1,129 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: $c-paper;
+  padding: clamp(118px, 10vw, 142px) 0 clamp(56px, 6vw, 72px);
+}
+
+/* ---------------------------------------------------------------- name wall */
+.wall {
+  position: absolute; inset: 72px 0 0;
+  z-index: -1;
+  display: grid; align-content: start; gap: 0;
+  padding-top: 8px;
+  mask-image: linear-gradient(180deg, #000 82%, transparent);
+  overflow: hidden;
+  will-change: transform;
+}
+.wallInner { display: grid; align-content: start; }
+
+/* Warm light that follows the pointer (desktop) — sits under the names. */
+.glow {
+  position: absolute; left: 0; top: 0;
+  width: 520px; height: 520px; margin: -260px 0 0 -260px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 197, 74, 0.38), rgba(255, 197, 74, 0.12) 55%, transparent 72%);
+  opacity: 0; visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Scanner line sweeping across the archive. */
+.scan {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: 180px;
+  opacity: 0; visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, rgba(255, 197, 74, 0.10) 70%, rgba(255, 197, 74, 0.28) 96%, transparent 96.5%);
+  &::after {
+    content: ""; position: absolute; top: 0; bottom: 0; right: 3.5%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, $c-yellow 18%, $c-yellow 82%, transparent);
+    box-shadow: 0 0 18px 2px rgba(255, 197, 74, 0.7);
+  }
+}
+.row {
+  position: relative;
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.track { display: inline-flex; width: max-content; will-change: transform; }
+.set {
+  display: inline-flex; gap: 22px; padding-inline-end: 22px;
+  font-family: $f-display; font-weight: 500; font-size: 0.8125rem; line-height: 25px;
+  letter-spacing: 0.02em; text-transform: uppercase;
+  color: rgba(46, 46, 46, 0.26);
+}
+.set > span {
+  position: relative;
+  transition: color 0.6s $ease-out;
+  &::before {
+    content: ""; position: absolute; inset: 3px -6px; z-index: -1;
+    background: $c-ink; border-radius: 2px;
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 0.7s cubic-bezier(0.7, 0, 0.2, 1);
+    :global([dir="rtl"]) & { transform-origin: right center; }
+  }
+}
+.set > .lit {
+  color: $c-yellow;
+  &::before { transform: scaleX(1); }
+}
+.hit {
+  padding: 0 6px;
+  background: $c-yellow; color: $c-ink;
+  border-radius: 2px;
+}
+.bandRow { height: 34px; .set { line-height: 34px; color: $c-ink; font-weight: 600; } .hit { background: transparent; padding: 0; } .lit::before { inset: 5px -6px; } }
+.band {
+  position: absolute; inset: 0 4% 0 0;
+  z-index: -1;
+  background: $c-yellow;
+  transform-origin: left center;
+  :global([dir="rtl"]) & { inset: 0 0 0 4%; transform-origin: right center; }
+}
+
+/* ---------------------------------------------------------------- card */
+.inner { position: relative; }
+.card {
+  --cut: clamp(36px, 4vw, 56px);
+  position: relative;
+  display: grid; justify-items: start;
+  width: min(100%, 535px);
+  margin-inline-start: -10px;
+  padding: clamp(28px, 3.2vw, 42px) clamp(24px, 3.2vw, 40px) clamp(30px, 3.2vw, 38px);
+  border-radius: $radius-lg;
+  background: $c-ink;
+  color: $c-white;
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.45);
+  // Top-end cut corner (Figma)
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+  :global([dir="rtl"]) & { clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut)); }
+  @include down($bp-md) { margin-inline-start: 0; }
+}
+.crumbs ol { font-size: 0.8125rem; }
+.eyebrow { margin-top: 24px; }
+.title {
+  margin-top: 22px;
+  @include display(clamp(2.25rem, 1.4rem + 2.4vw, 2.75rem));
+  font-weight: 600;
+  line-height: 1.04;
+}
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.line > span { display: inline-block; }
+.accent { color: $c-yellow; }
+.body { margin-top: 26px; max-width: 440px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.86); }
+.foot {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 28px;
+  width: 100%; margin-top: 28px;
+}
+.count {
+  display: grid; gap: 4px;
+  strong { font-family: $f-display; font-weight: 500; font-size: clamp(2.5rem, 2rem + 1.4vw, 2.75rem); line-height: 1; color: $c-yellow; }
+  span { font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+}

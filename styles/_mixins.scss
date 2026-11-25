@@ -1,0 +1,43 @@
+@use "tokens" as *;
+
+@mixin up($bp) {
+  @media (min-width: $bp) { @content; }
+}
+@mixin down($bp) {
+  @media (max-width: ($bp - 0.02px)) { @content; }
+}
+
+// Vertical brand stripes (3px lines every 50px) — Figma "overlay"
+@mixin stripes($color: rgba(255, 255, 255, 0.025), $step: 50px) {
+  background-image: repeating-linear-gradient(
+    90deg,
+    $color 0,
+    $color 3px,
+    transparent 3px,
+    transparent $step
+  );
+}
+
+// Cut corner used on cards / panels — bottom-right in LTR, mirrored (bottom-left) in RTL.
+@mixin notch($size: $notch) {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$size}), calc(100% - #{$size}) 100%, 0 100%);
+  :global([dir="rtl"]) & {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, #{$size} 100%, 0 calc(100% - #{$size}));
+  }
+}
+
+@mixin display($size: $fs-h2) {
+  font-family: $f-display;
+  font-weight: 600;
+  font-size: $size;
+  line-height: $lh-display;
+  letter-spacing: var(--ls-display, -0.01em);
+  text-transform: uppercase;
+}
+
+@mixin focus-ring($color: $c-yellow) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 3px;
+  }
+}

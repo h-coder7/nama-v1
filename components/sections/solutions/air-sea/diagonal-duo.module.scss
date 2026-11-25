@@ -1,0 +1,14 @@
+@use "tokens" as *;
+
+.duo { position: absolute; inset: 0; direction: ltr; overflow: hidden; }
+.half { position: absolute; inset: 0; will-change: transform; img { object-fit: cover; } }
+.bars { position: absolute; inset: 0; width: 100%; height: 100%; shape-rendering: geometricPrecision; pointer-events: none; }
+.bar { fill: $c-yellow; }
+.badge {
+  position: absolute; top: 50%; z-index: 1;
+  display: grid; place-items: center;
+  width: clamp(56px, 5.4vw, 76px); aspect-ratio: 1; margin: calc(clamp(56px, 5.4vw, 76px) / -2) 0 0 calc(clamp(56px, 5.4vw, 76px) / -2);
+  border-radius: 50%; background: $c-yellow;
+  box-shadow: 0 0 0 6px rgba(46, 46, 46, 0.35), 0 18px 30px -12px rgba(0, 0, 0, 0.6);
+  svg { width: 54%; height: auto; fill: $c-ink; }
+}

@@ -1,0 +1,72 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0 clamp(56px, 5vw, 80px); background: $c-paper; }
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 20px;
+  margin-top: 48px;
+  @include down($bp-md) { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; }
+}
+.tile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+  min-height: 108px;
+  height: 100%;
+  padding: 16px 18px 18px;
+  background-color: $c-ink;
+  @include stripes(rgba(255, 255, 255, 0.035), 14px);
+  color: $c-white;
+  overflow: hidden;
+  isolation: isolate;
+  transition: background-color $dur $ease-out;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, $c-yellow, #ffd57a);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.45s $ease-out;
+  }
+  &:hover::after { transform: scaleY(1); }
+  &:hover { color: $c-ink; }
+  @include focus-ring;
+  @include down($bp-md) { min-height: 120px; padding: 14px; }
+}
+.code { font-family: "Space Grotesk", sans-serif; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em; }
+.icon { justify-self: end; }
+.name { align-self: end; @include display(clamp(1rem, 0.8rem + 0.6vw, 1.375rem)); font-weight: 500; line-height: 1.1; }
+.arrow, .here, .next { align-self: end; justify-self: end; }
+.here, .next { padding: 4px 9px; border-radius: 999px; font-family: $f-display; font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+.here { background: $c-ink; color: $c-yellow; }
+.next { background: $c-yellow; color: $c-ink; }
+.tile:hover .next { background: $c-ink; color: $c-yellow; }
+.current {
+  color: $c-ink;
+  background-color: $c-yellow;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(46, 46, 46, 0.05) 0 2px, transparent 2px 14px),
+    linear-gradient(90deg, $c-yellow, #ffd57a);
+  box-shadow: inset 0 0 0 3px $c-ink;
+  &::after { display: none; }
+}
+@include down($bp-md) {
+  .tagged .icon { display: none; }
+  .tagged .here, .tagged .next { grid-row: 1; grid-column: 2; align-self: start; }
+  .tagged .name { grid-column: 1 / -1; }
+}
+.rule { display: block; height: 4px; margin-top: 8px; background: $c-ink; transform-origin: var(--start); }
+
+.pager { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 34px; font-size: 0.8125rem; }
+.prev, .nextLink { display: inline-flex; align-items: center; gap: 12px; @include focus-ring; }
+.prevIcon, .nextIcon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 8px; transition: transform $dur $ease-out; }
+.prevIcon { border: 1px solid $c-line; background: $c-white; }
+.nextIcon { background: $c-yellow; }
+.nextLink:hover .nextIcon { transform: translateX(calc(3px * var(--dir))); }
+.prev:hover .prevIcon { transform: translateX(calc(-3px * var(--dir))); }

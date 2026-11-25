@@ -1,0 +1,62 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background-color: $c-ink; @include stripes(rgba(255, 255, 255, 0.02), 50px); color: $c-white; }
+.grid { display: grid; gap: 32px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; } }
+.list { border-top: 1px solid rgba(255, 255, 255, 0.18); }
+.row {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  min-height: 74px;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: none;
+  text-align: start;
+  @include focus-ring;
+}
+.num {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: $f-display; font-size: 0.75rem; font-weight: 600;
+  transition: background $dur, color $dur;
+}
+.title {
+  @include display(clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem));
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 197, 74, 0.8);
+  transition: color 0.45s $ease-out, -webkit-text-stroke-color 0.45s;
+  :global(html[lang="ar"]) & { -webkit-text-stroke: 0; color: rgba(255, 255, 255, 0.32); }
+}
+.arrow { opacity: 0; transform: translateX(calc(-8px * var(--dir))); transition: opacity $dur, transform $dur $ease-out; }
+:global([dir="rtl"]) .arrow { transform: scaleX(-1) translateX(-8px); }
+.active {
+  .num { background: $c-yellow; color: $c-ink; }
+  .title { color: $c-white; -webkit-text-stroke-color: transparent; }
+  .arrow { opacity: 1; transform: none; }
+}
+:global([dir="rtl"]) .active .arrow { transform: scaleX(-1); }
+:global(html[lang="ar"]) .active .title { color: $c-white; }
+.row:hover:not(.active) .title { -webkit-text-stroke-color: $c-yellow; :global(html[lang="ar"]) & { color: rgba(255, 255, 255, 0.6); } }
+
+.card {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+  padding: 14px 14px 32px;
+  border-radius: 18px;
+  background: #262626;
+  @include notch(36px);
+}
+.media { position: relative; width: 100%; aspect-ratio: 380 / 183; border-radius: 12px; overflow: hidden; }
+.image { object-fit: cover; }
+.cardBody { display: grid; gap: 10px; padding: 4px 10px 0; }
+.label { font-family: $f-display; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: $c-yellow; }
+.cardTitle { font-family: $f-display; font-weight: 500; font-size: 1.375rem; }
+.cardText { font-size: 0.8125rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
+.card > :last-child { margin-inline-start: 10px; }

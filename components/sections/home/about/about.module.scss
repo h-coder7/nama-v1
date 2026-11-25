@@ -1,0 +1,191 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; }
+
+.head {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  @include up($bp-lg) { grid-template-columns: 300px 1fr; align-items: start; }
+}
+.title { @include display; color: $c-ink; }
+.accent { color: $c-yellow; }
+
+/* Stage: rolling year + selected milestone */
+.stage {
+  display: grid;
+  gap: 28px;
+  margin-top: clamp(40px, 5vw, 64px);
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 64px; align-items: end; }
+}
+.yearBlock { display: grid; gap: 18px; justify-items: start; }
+.year {
+  display: inline-flex;
+  font-family: $f-display;
+  font-weight: 500;
+  font-size: clamp(5.5rem, 2.6rem + 8.4vw, 10.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: $c-ink;
+  font-variant-numeric: tabular-nums;
+}
+.digit { display: inline-block; height: 1em; overflow: hidden; }
+.roll { display: block; }
+.strip {
+  display: block;
+  transform: translateY(calc(var(--d, 0) * -10%));
+  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+  span { display: block; height: 1em; text-align: center; }
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
+.counter {
+  display: flex; align-items: center; gap: 12px;
+  font-family: $f-display; font-size: 0.75rem; color: $c-muted; letter-spacing: 0.08em;
+  b { color: $c-ink; font-weight: 700; }
+}
+.counterBar {
+  position: relative; width: 120px; height: 2px; border-radius: 2px; background: rgba(46, 46, 46, 0.12); overflow: hidden;
+  span { position: absolute; inset: 0; background: $c-ink; transform-origin: var(--start, left) center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+}
+:global([dir="rtl"]) .counterBar span { transform-origin: right center; }
+.story { display: grid; gap: 16px; align-content: end; max-width: 620px; padding-bottom: 14px; }
+.storyTitle {
+  font-family: $f-display; font-weight: 600;
+  font-size: clamp(1.625rem, 1.2rem + 1.4vw, 2.5rem); line-height: 1.12; letter-spacing: -0.01em;
+  color: $c-ink;
+  text-wrap: balance;
+}
+:global([dir="rtl"]) .storyTitle { letter-spacing: 0; line-height: 1.35; }
+.storyBody { font-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem); line-height: 1.65; color: $c-muted; max-width: 54ch; }
+
+/* Company copy under the rail */
+.copy {
+  display: grid; gap: 24px;
+  margin-top: clamp(48px, 5vw, 72px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid $c-line;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; }
+}
+.copySide { display: grid; gap: 12px; justify-items: start; align-content: start; }
+.lead {
+  font-family: $f-display;
+  font-weight: 500;
+  font-size: $fs-lead;
+  line-height: 1.45;
+  color: $c-ink;
+}
+.body { font-size: 0.875rem; color: $c-muted; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.ghost { color: $c-ink; border-color: rgba(46, 46, 46, 0.3) !important; &:hover { background: rgba(46, 46, 46, 0.05) !important; } }
+
+/* Timeline */
+.timeline { margin-top: clamp(40px, 4.5vw, 64px); }
+.track {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: 0 8px 8px;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 54px;
+    border: 1px solid $c-line;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+  }
+}
+.nav {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 50%;
+  background: $c-ink;
+  color: $c-white;
+  transition: background $dur-fast, transform $dur $ease-out;
+  &:hover { background: #111; transform: scale(1.06); }
+  @include focus-ring;
+}
+.rail {
+  position: relative;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  overflow-x: auto;
+  scrollbar-width: none;
+  // Room for the first year's pill (centred on its tick) so the rail's clip never cuts it.
+  padding-inline-start: 34px;
+  scroll-padding-inline: 34px;
+  @include down($bp-md) { grid-template-columns: repeat(12, 64px); }
+}
+.timeline { position: relative; isolation: isolate; }
+.stop {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: start;
+  @include focus-ring;
+}
+.stopYear {
+  font-family: $f-display;
+  font-size: 0.75rem;
+  color: $c-muted;
+  padding-inline-start: 4px;
+  transition: color $dur-fast, font-weight $dur-fast;
+}
+.stopActive .stopYear { color: $c-ink; font-weight: 700; }
+.stop:hover .stopYear { color: $c-ink; }
+.ticks {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 38px;
+  align-items: center;
+  padding-inline-end: 14%;
+  i {
+    display: block;
+    width: 1px;
+    height: 18px;
+    background: rgba(46, 46, 46, 0.3);
+    &:first-child { height: 24px; background: rgba(46, 46, 46, 0.7); margin-inline-start: 12px; }
+  }
+}
+.pill {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 12px;
+  z-index: 2;
+  translate: -50% -50%;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: $c-yellow;
+  color: $c-ink;
+  font-family: $f-display;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  pointer-events: none;
+  white-space: nowrap;
+  will-change: transform;
+}
+:global([dir="rtl"]) .pill { translate: 50% -50%; }
+
+.rail { cursor: pointer; touch-action: pan-x; }
+.seg {
+  position: absolute; top: 50%; inset-inline-start: 0;
+  width: 0; height: 2px; margin-top: -1px;
+  background: $c-yellow;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.stopPast .seg { width: 100%; }
+.stopActive .seg { width: 12px; }
+.stopPast .ticks i { background: rgba(46, 46, 46, 0.55); &:first-child { background: $c-ink; } }
+.stopPast .stopYear { color: rgba(46, 46, 46, 0.75); }

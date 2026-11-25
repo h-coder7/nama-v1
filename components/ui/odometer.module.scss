@@ -1,0 +1,6 @@
+.odo { display: inline-flex; direction: ltr; unicode-bidi: isolate; }
+.digit {
+  position: relative; display: inline-block; overflow: hidden;
+  height: 1em; line-height: 1;
+}
+.strip { display: flex; flex-direction: column; will-change: transform; span { display: block; height: 1em; line-height: 1; text-align: center; } }

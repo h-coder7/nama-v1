@@ -1,0 +1,128 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  padding: $section-y 0;
+  background: $c-ink;
+  color: $c-white;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 56px;
+  @include up($bp-lg) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+}
+
+.list {
+  border-top: 1px solid $c-line-on-dark; align-self: start;
+  // Desktop: the rows share the photo card's full height, so list and card line up.
+  @include up($bp-lg) {
+    align-self: stretch; display: flex; flex-direction: column;
+    > li { flex: 1 1 0; display: flex; }
+    .row { min-height: 0; }
+  }
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  width: 100%;
+  min-height: 112px;
+  padding-block: 20px; padding-inline: 20px 0;
+  border: 0;
+  border-bottom: 1px solid $c-line-on-dark;
+  background: transparent;
+  text-align: start;
+  isolation: isolate;
+  transition: background $dur $ease-out;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(255, 197, 74, 0.14), rgba(255, 197, 74, 0) 75%);
+    border-inline-start: 2px solid $c-yellow;
+    opacity: 0;
+    transform: scaleX(0.6);
+    transform-origin: var(--start);
+    transition: opacity $dur $ease-out, transform $dur-slow $ease-out;
+  }
+  &:hover::before { opacity: 0.5; transform: none; }
+  @include focus-ring;
+  @include down($bp-md) { min-height: 92px; grid-template-columns: 44px 1fr auto; padding-inline-start: 12px; }
+}
+.active::before { opacity: 1; transform: none; }
+.num { font-family: $f-display; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.7); }
+.rowText { display: grid; gap: 6px; }
+.tag {
+  font-family: $f-display;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $c-yellow;
+}
+.rowTitle { font-family: $f-display; font-weight: 600; font-size: 1.25rem; line-height: 1.2; }
+.rowArrow {
+  display: grid;
+  place-items: center;
+  width: 30px; height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 4px;
+  transition: background $dur, color $dur, border-color $dur, transform $dur $ease-out;
+}
+.active .rowArrow { background: $c-yellow; border-color: $c-yellow; color: $c-ink; }
+.row:hover .rowArrow { transform: translateX(calc(3px * var(--dir))); }
+
+.card {
+  position: relative;
+  min-height: 560px;
+  border-radius: 18px;
+  overflow: hidden;
+  @include notch(48px);
+  border-bottom-right-radius: 0;
+  background: $c-ink-deep;
+  @include down($bp-lg) { min-height: 480px; }
+}
+.cardImage {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s $ease-out;
+}
+.cardImageActive { opacity: 1; }
+.cardShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0) 25%, rgba(30, 30, 30, 0.55) 55%, rgba(30, 30, 30, 0.92) 100%);
+}
+.cardBody {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  padding: 28px 28px 34px;
+}
+.cardTitle { font-family: $f-display; font-weight: 600; font-size: $fs-h3; line-height: 1.2; }
+.cardText { max-width: 440px; font-size: 0.875rem; color: rgba(255, 255, 255, 0.84); }
+.chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px;
+  li > * {
+    display: block;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    background: rgba(30, 30, 30, 0.3);
+    backdrop-filter: blur(6px);
+    transition: background $dur-fast, border-color $dur-fast, color $dur-fast;
+  }
+  a:hover { background: $c-yellow; border-color: $c-yellow; color: $c-ink; }
+  a { @include focus-ring; }
+}

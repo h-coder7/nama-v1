@@ -1,0 +1,157 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-ink-deep; color: $c-white; }
+
+// Photo, copy and route share one grid cell on desktop (layered); on smaller
+// screens the route drops below the photo as a scrolling thumbnail strip.
+.stage {
+  display: grid;
+  grid-template-areas: "photo" "route";
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 48px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #1a1a1a;
+  @include up($bp-lg) {
+    grid-template-areas: "photo";
+    min-height: clamp(560px, 46vw, 660px);
+  }
+}
+
+.photos {
+  grid-area: photo;
+  position: relative;
+  min-height: 460px;
+  @include up($bp-md) { min-height: 520px; }
+}
+.photo {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.9s ease, transform 2.4s $ease-out;
+}
+.photoActive { opacity: 1; transform: scale(1); }
+.image { object-fit: cover; }
+.shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0) 55%),
+    linear-gradient(to right, rgba(20, 20, 20, 0.6) 0%, rgba(20, 20, 20, 0) 60%);
+  @include up($bp-lg) {
+    background:
+      linear-gradient(to right, rgba(20, 20, 20, 0.92) 0%, rgba(20, 20, 20, 0.6) 38%, rgba(20, 20, 20, 0) 70%),
+      linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0) 38%);
+  }
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0) 55%),
+      linear-gradient(to left, rgba(20, 20, 20, 0.6) 0%, rgba(20, 20, 20, 0) 60%);
+    @include up($bp-lg) {
+      background:
+        linear-gradient(to left, rgba(20, 20, 20, 0.92) 0%, rgba(20, 20, 20, 0.6) 38%, rgba(20, 20, 20, 0) 70%),
+        linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0) 38%);
+    }
+  }
+}
+
+.copy {
+  grid-area: photo;
+  position: relative; z-index: 1;
+  align-self: end;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  max-width: 480px;
+  padding: 28px 24px;
+  @include up($bp-lg) { align-self: start; padding: 48px; }
+}
+.count {
+  margin: 0;
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: $f-display;
+  font-size: $fs-label; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  b { font-size: clamp(2rem, 1.4rem + 1.4vw, 2.5rem); letter-spacing: -0.02em; color: $c-yellow; direction: ltr; unicode-bidi: isolate; }
+  :global([dir="rtl"]) & { letter-spacing: 0; }
+}
+.title {
+  margin: 0;
+  font-family: $f-display; font-weight: 700;
+  font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem); line-height: 1.05;
+  text-transform: uppercase;
+}
+.body { margin: 0; font-size: $fs-body; line-height: 1.6; color: rgba(255, 255, 255, 0.82); @include up($bp-lg) { font-size: 1.0625rem; } }
+.status {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: $c-yellow; color: $c-ink;
+  font-size: 0.8125rem; font-weight: 600;
+  &::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: $c-ink; }
+}
+
+.route {
+  grid-area: route;
+  position: relative; z-index: 1;
+  padding: 0 16px 20px;
+  @include up($bp-lg) { grid-area: photo; align-self: end; padding: 0 32px 28px; }
+}
+.line {
+  display: none;
+  position: relative;
+  height: 2px;
+  margin: 0 60px 14px;
+  background: rgba(255, 255, 255, 0.22);
+  span {
+    position: absolute; inset: 0;
+    background: $c-yellow;
+    transform-origin: var(--start);
+    transition: transform 0.7s $ease-out;
+  }
+  @include up($bp-lg) { display: block; }
+}
+.thumbs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+  > li { scroll-snap-align: start; display: flex; }
+  @include up($bp-lg) { grid-auto-columns: minmax(0, 1fr); gap: 14px; overflow: visible; }
+}
+.thumb {
+  position: relative;
+  display: flex; align-items: center; gap: 12px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(6px);
+  color: $c-white;
+  text-align: start;
+  overflow: hidden;
+  transition: background $dur $ease-out, border-color $dur;
+  &:hover { border-color: rgba(255, 255, 255, 0.36); }
+  @include focus-ring;
+}
+.thumbActive { border-color: $c-yellow; background: rgba(255, 197, 74, 0.14); &:hover { border-color: $c-yellow; } }
+.thumbImg {
+  position: relative; flex: none;
+  width: 64px; height: 48px;
+  border-radius: 8px; overflow: hidden;
+  filter: grayscale(1) brightness(0.7);
+  transition: filter $dur;
+}
+.thumbActive .thumbImg, .thumb:hover .thumbImg { filter: none; }
+.thumbText { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.thumbNum { font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; color: $c-yellow; }
+.thumbTitle { font-family: $f-display; font-size: $fs-small; font-weight: 600; line-height: 1.2; }
+.progress {
+  position: absolute;
+  inset-inline: 0; bottom: 0;
+  height: 2px;
+  span { display: block; height: 100%; background: $c-yellow; transform: scaleX(0); transform-origin: var(--start); }
+}

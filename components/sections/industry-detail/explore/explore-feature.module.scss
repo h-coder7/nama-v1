@@ -1,0 +1,68 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; }
+.grid { display: grid; gap: 28px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 690fr 486fr; gap: clamp(24px, 3vw, 48px); align-items: stretch; } }
+.card {
+  display: grid;
+  min-height: 400px;
+  // Fixed height on desktop: previewing a sector with a long name never resizes the section.
+  @include up($bp-lg) { height: 430px; min-height: 0; }
+  border-radius: 24px;
+  overflow: hidden;
+  background: $c-ink;
+  color: $c-white;
+  @include up($bp-md) { grid-template-columns: 300fr 390fr; }
+}
+.cardCopy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 36px 32px 32px; }
+.cardLabel { font-family: $f-display; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: $c-yellow; }
+.cardIcon { margin-top: 40px; color: $c-yellow; }
+// Room for three lines is always reserved, and words wrap whole (never "HEALTHCA / RE").
+.cardName {
+  position: relative; z-index: 1; margin: 32px 0 28px;
+  min-height: 3em; display: flex; align-items: flex-start;
+  @include display(clamp(1.5rem, 1.1rem + 1vw, 2.125rem)); font-weight: 600; line-height: 1; text-transform: uppercase;
+  overflow-wrap: normal; word-break: normal; hyphens: none;
+}
+.open {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: auto;
+  font-family: $f-display; font-size: 0.9375rem; font-weight: 500;
+  @include focus-ring;
+}
+.openIcon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; background: $c-yellow; color: $c-ink; transition: transform $dur $ease-out; }
+.open:hover .openIcon { transform: translateX(calc(4px * var(--dir))); }
+// The photo is cut on the brand diagonal (the slant of the Namma "N") and runs
+// into the copy column, so the card reads as one piece rather than a framed thumbnail.
+.media {
+  position: relative; min-height: 260px;
+  clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%);
+  @include up($bp-md) { margin-inline-start: -64px; }
+  :global([dir="rtl"]) & { clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%); }
+  @include down($bp-md) { clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%); :global([dir="rtl"]) & { clip-path: polygon(0 0, 100% 14%, 100% 100%, 0 100%); } }
+}
+.image { object-fit: cover; }
+
+.index {
+  border-top: 1px solid $c-line;
+  @include up($bp-lg) { display: flex; flex-direction: column; li { flex: 1; display: flex; } }
+}
+.row {
+  display: grid;
+  grid-template-columns: 40px 40px 1fr auto;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  padding: 14px 0;
+  border-bottom: 1px solid $c-line;
+  font-family: $f-display;
+  transition: background $dur, padding $dur $ease-out;
+  @include focus-ring;
+}
+.num { font-size: 0.75rem; color: $c-muted; }
+.rowIcon { color: $c-ink; }
+.rowName { font-weight: 600; font-size: 1rem; text-transform: uppercase; }
+.rowActive:not(.current) { padding-inline-start: 10px; .rowIcon { color: $c-yellow-deep; } }
+.current { cursor: default; }
+.here, .next { padding: 4px 8px; border-radius: 999px; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+.here { background: $c-yellow; }
+.next { border: 1px solid $c-ink; }

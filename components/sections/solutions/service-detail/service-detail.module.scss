@@ -1,0 +1,51 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// Hero: photo fills the band, copy on a directional shade (same treatment as Packing).
+.hero { min-height: clamp(540px, 46vw, 660px); display: flex; align-items: flex-end; padding-bottom: clamp(64px, 7vw, 96px) !important; }
+.heroMedia { position: absolute; inset: 0; img { object-fit: cover; } }
+.heroShade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 42%, rgba(46, 46, 46, 0.2) 80%), linear-gradient(180deg, rgba(46, 46, 46, 0.55), transparent 32%);
+  :global([dir="rtl"]) & { background: linear-gradient(270deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 42%, rgba(46, 46, 46, 0.2) 80%), linear-gradient(180deg, rgba(46, 46, 46, 0.55), transparent 32%); }
+}
+
+// What's included — four numbered cards, the first one yellow.
+.included { padding: $section-y 0; background: $c-paper; }
+.cards {
+  display: grid; gap: 16px; margin-top: clamp(40px, 4vw, 56px);
+  @include up($bp-sm) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @include up($bp-lg) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.card {
+  display: grid; align-content: start; gap: 12px; min-height: 240px;
+  padding: 28px 24px 32px; background: $c-white; border: 1px solid $c-line;
+  @include notch(28px);
+  transition: background $dur $ease-out, translate $dur $ease-out;
+  h3 { margin-top: auto; padding-top: 40px; font-family: $f-display; font-size: $fs-h3; font-weight: 600; line-height: 1.15; }
+  p { font-size: $fs-small; line-height: 1.6; color: $c-muted; }
+  &:first-child { background: $c-yellow; border-color: $c-yellow; p { color: rgba(46, 46, 46, 0.78); } }
+  @media (hover: hover) { &:hover { translate: 0 -4px; } }
+}
+.num { font-family: $f-display; font-size: $fs-label; letter-spacing: 0.08em; color: $c-muted; .card:first-child & { color: $c-ink; } }
+
+// How it works — four steps on a rule.
+.steps { padding: $section-y 0; background: $c-ink; color: $c-white; }
+.track {
+  display: grid; gap: 32px; margin-top: clamp(40px, 4vw, 64px); list-style: none; padding: 0;
+  @include up($bp-md) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @include up($bp-lg) { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+}
+.step {
+  display: grid; align-content: start; gap: 10px; padding-top: 22px; border-top: 1px solid $c-line-on-dark;
+  h3 { margin-top: 18px; font-family: $f-display; font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+  p { font-size: $fs-small; line-height: 1.6; color: $c-muted-on-dark; max-width: 260px; }
+  &:first-child { border-top-color: $c-yellow; }
+}
+.stepHead { display: flex; align-items: center; justify-content: space-between; }
+.stepNum {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  font-family: $f-display; font-size: $fs-small; background: $c-ink-raise; color: $c-yellow;
+  .step:first-child & { background: $c-yellow; color: $c-ink; }
+}
+.stepGo { color: $c-muted-on-dark; :global([dir="rtl"]) & { scale: -1 1; } @include down($bp-lg) { display: none; } }

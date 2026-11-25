@@ -1,0 +1,11 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// Figma: "Home / Industries" — slash separators, current page in semibold.
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 0.8125rem; }
+.crumbs li { display: inline-flex; align-items: center; gap: 6px; }
+.crumbs li + li::before { content: "/"; opacity: 0.6; }
+.crumbs a { opacity: 0.8; transition: opacity $dur-fast, color $dur-fast; &:hover { opacity: 1; color: $c-yellow; } @include focus-ring; }
+.crumbs [aria-current] { font-weight: 600; }
+.dark { color: $c-white; }
+.light { color: $c-ink; a:hover { color: $c-ink; text-decoration: underline; text-underline-offset: 3px; } }

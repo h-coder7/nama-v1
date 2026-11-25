@@ -1,0 +1,73 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.banner {
+  position: relative;
+  display: grid;
+  border-radius: 18px;
+  background: $c-ink;
+  color: $c-white;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
+  @include notch(56px);
+  @include up($bp-lg) { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); min-height: 440px; }
+}
+
+.copy {
+  position: relative; z-index: 2;
+  display: grid; align-content: center; justify-items: start; gap: 18px;
+  padding: clamp(32px, 4vw, 56px);
+  @include up($bp-lg) { padding-inline-end: 0; }
+}
+.kicker {
+  display: flex; align-items: center; gap: 10px;
+  font-family: $f-display; font-size: 0.6875rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  &::before { content: ""; width: 18px; height: 2px; background: $c-yellow; }
+}
+.title {
+  font-family: $f-display; font-weight: 600; text-transform: uppercase;
+  font-size: clamp(1.875rem, 1.3rem + 1.8vw, 3rem); line-height: 1.02; letter-spacing: -0.02em;
+}
+.accent { color: $c-yellow; }
+.body { max-width: 340px; font-size: 0.9375rem; line-height: 1.55; color: rgba(255, 255, 255, 0.68); }
+
+// 1983 ——— 2026
+.rule {
+  display: flex; align-items: center; gap: 14px; width: min(100%, 360px); margin-top: 10px;
+  font-family: $f-display; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em;
+  span:first-child { color: $c-yellow; }
+}
+.ruleLine {
+  position: relative; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.22);
+  &::before, &::after { content: ""; position: absolute; top: -4px; width: 1px; height: 9px; background: rgba(255, 255, 255, 0.4); }
+  &::before { left: 0; } &::after { right: 0; }
+}
+
+// The window: photos under a multiply knock-out — white numerals reveal them.
+.window {
+  position: relative;
+  min-height: 280px;
+  isolation: isolate;
+  overflow: hidden;
+  direction: ltr;
+  @include up($bp-lg) { min-height: 100%; }
+}
+.svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.numerals {
+  fill: #fff;
+  font-family: $f-display; font-weight: 700;
+  font-size: 420px; letter-spacing: -0.03em;
+}
+.years {
+  position: absolute; z-index: 2;
+  right: clamp(20px, 4vw, 56px); bottom: clamp(24px, 3vw, 44px);
+  display: flex; align-items: center; gap: 12px;
+  font-family: $f-display; font-weight: 600; font-size: clamp(1rem, 0.8rem + 0.6vw, 1.5rem);
+  letter-spacing: 0.24em; text-transform: uppercase;
+}
+.slash { width: 8px; height: 1.6em; background: $c-yellow; transform: skewX(-22deg); }
+
+@include down($bp-lg) {
+  .window { order: -1; }
+}

@@ -1,0 +1,30 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; border-bottom: 1px solid $c-line; }
+.heading {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+  margin-top: 24px;
+  @include display(clamp(1.375rem, 1rem + 1vw, 2rem)); font-weight: 500;
+}
+.year { padding: 4px 12px; border-radius: 6px; background: $c-yellow; font-family: "Space Grotesk", sans-serif; font-size: 0.6em; font-weight: 600; }
+// Stacked on phones so the count-up never re-wraps the unit line (layout shift).
+.statRow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 28px; margin-top: 10px; @include down($bp-md) { flex-direction: column; align-items: flex-start; } }
+.stat {
+  font-family: "Space Grotesk", sans-serif; font-weight: 600;
+  font-size: clamp(5rem, 2.5rem + 9vw, 12rem); line-height: 0.95; letter-spacing: -0.05em;
+  color: $c-ink; font-variant-numeric: tabular-nums;
+}
+.unit {
+  display: grid; padding-bottom: clamp(10px, 1.6vw, 24px);
+  strong { font-family: $f-display; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  span { font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: $c-muted; }
+}
+.rule { display: block; height: 1px; margin-top: 24px; background: $c-ink; transform-origin: var(--start); }
+.bottom { display: grid; gap: 24px; margin-top: 28px; @include up($bp-lg) { grid-template-columns: 1fr 0.72fr; gap: 20px; } }
+.media { position: relative; aspect-ratio: 575 / 300; border-radius: 18px; overflow: hidden; }
+.image { object-fit: cover; will-change: transform; }
+.copy { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+.body { font-size: 0.875rem; line-height: 1.6; color: $c-muted; max-width: 400px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.ghost { color: $c-ink; border-color: $c-line !important; background: $c-white; &:hover { border-color: $c-ink !important; background: $c-white !important; } }

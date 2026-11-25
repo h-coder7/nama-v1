@@ -1,0 +1,77 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; color: $c-ink; }
+.yellow { background: $c-yellow; }
+.paper { background: $c-paper; }
+.header { display: grid; gap: 20px; align-items: end; @include up($bp-lg) { grid-template-columns: 1fr 1fr; } }
+.title { @include display; }
+.accent { color: $c-yellow; }
+.muted { color: rgba(46, 46, 46, 0.55); }
+.paper .muted { color: $c-yellow; }
+.intro { max-width: 380px; font-size: $fs-body; line-height: 1.55; color: rgba(46, 46, 46, 0.78); @include up($bp-lg) { justify-self: end; } }
+
+.code { font-family: "Space Grotesk", $f-display; font-weight: 600; font-size: clamp(2.5rem, 1.8rem + 2vw, 3.5rem); line-height: 1; letter-spacing: -0.02em; }
+.phone {
+  display: inline-flex; padding: 8px 12px; border-radius: 8px;
+  background: $c-ink; color: $c-white;
+  font-family: $f-display; font-size: 0.8125rem; font-weight: 600; white-space: nowrap;
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out, background $dur;
+  &:hover { translate: 0 -2px; background: #000; }
+  @include focus-ring($c-ink);
+}
+
+// route
+.routeGrid { display: grid; gap: 40px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 1fr 240px; align-items: start; } }
+.route { position: relative; }
+.routeLine {
+  position: absolute; top: 9px; inset-inline: 9px 0;
+  border-top: 2px dashed $c-ink;
+  transform-origin: var(--start);
+  @include down($bp-md) { display: none; }
+}
+.stops { display: grid; gap: 32px; @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } li { display: grid; justify-items: start; gap: 6px; } }
+.stop { position: relative; width: 18px; height: 18px; margin-bottom: 18px; border-radius: 50%; border: 2px solid $c-ink; background: $c-yellow; }
+.stopHead { background: $c-ink; }
+.city { font-family: $f-display; font-weight: 700; font-size: 1rem; text-transform: uppercase; }
+.role { margin-bottom: 14px; font-size: 0.75rem; color: rgba(46, 46, 46, 0.75); }
+
+.yard {
+  display: grid; gap: 4px;
+  padding: 18px 16px 16px;
+  border-radius: 18px;
+  background: $c-ink; color: $c-white;
+  @include notch(28px);
+}
+.yardLabel { font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.8); }
+.yardArea { font-family: "Space Grotesk", $f-display; font-weight: 600; font-size: 2rem; line-height: 1.1; }
+.yardNote { font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+.yardImage { position: relative; margin-top: 12px; aspect-ratio: 476 / 300; border-radius: 12px; overflow: hidden; img { object-fit: cover; } }
+
+// list
+.listGrid { display: grid; gap: 40px; margin-top: 48px; @include up($bp-lg) { grid-template-columns: 300px 1fr; gap: 80px; align-items: start; } .yard { max-width: 340px; } }
+.list { border-block: 2px solid $c-ink; }
+.listRow {
+  display: grid; grid-template-columns: 110px 1fr auto; align-items: center; gap: 16px;
+  padding: 18px 0;
+  & + & { border-top: 1px solid rgba(46, 46, 46, 0.4); }
+  @include down($bp-sm) { grid-template-columns: 1fr auto; .code { grid-column: 1 / -1; } }
+}
+.listCity { display: grid; gap: 2px; strong { font-family: $f-display; font-weight: 700; text-transform: uppercase; } small { font-size: 0.75rem; color: rgba(46, 46, 46, 0.75); } }
+
+// cards
+.cards { display: grid; gap: 16px; margin-top: 48px; @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card {
+  display: grid; gap: 12px;
+  min-height: 210px; padding: 22px 22px 24px;
+  border-radius: 20px;
+  background: $c-ink; color: $c-white;
+  @include notch(30px);
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &:hover { translate: 0 -4px; }
+}
+.cardHead { background: $c-yellow; color: $c-ink; .badge { background: $c-ink; color: $c-white; } .cardPhone { color: $c-ink; } }
+.cardTop { display: flex; align-items: center; justify-content: space-between; gap: 12px; strong { font-family: $f-display; font-weight: 700; text-transform: uppercase; } }
+.badge { padding: 4px 10px; border-radius: 999px; background: $c-yellow; color: $c-ink; font-family: $f-display; font-size: 0.6875rem; font-weight: 600; }
+.cardCode { margin-top: auto; font-family: "Space Grotesk", $f-display; font-weight: 700; font-size: clamp(3.5rem, 2.5rem + 3vw, 5rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cardPhone { font-family: $f-display; font-weight: 600; font-size: 0.9375rem; color: $c-white; justify-self: start; @include focus-ring; }

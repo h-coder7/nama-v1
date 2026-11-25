@@ -1,0 +1,21 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.page {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  background-color: $c-ink;
+  @include stripes(rgba(255, 255, 255, 0.025), 50px);
+  color: $c-white;
+}
+.inner { padding-top: 140px; padding-bottom: 100px; display: grid; justify-items: start; }
+.code {
+  display: flex; align-items: flex-end;
+  font-family: $f-display; font-weight: 600;
+  font-size: clamp(6rem, 4rem + 8vw, 12rem); line-height: 0.85; letter-spacing: -0.05em;
+}
+.slash { width: 0.09em; height: 0.7em; margin: 0 0.12em 0.04em; background: $c-yellow; transform: skewX(-18deg); }
+.title { margin-top: 28px; @include display($fs-h2); }
+.body { margin-top: 12px; max-width: 460px; color: $c-muted-on-dark; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }

@@ -1,0 +1,64 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: 72px 0 64px; }
+.grid { display: grid; gap: 40px; @include up($bp-lg) { grid-template-columns: 0.72fr 1fr; gap: 28px; align-items: start; } }
+.left { display: grid; justify-items: start; }
+.title { margin-top: 20px; @include display(clamp(1.625rem, 1.2rem + 1vw, 2rem)); }
+.accent { color: $c-yellow; }
+.options { width: 100%; margin-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
+.option {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid $c-line-on-dark;
+  strong { display: block; font-family: $f-display; font-weight: 500; font-size: 1rem; text-transform: uppercase; }
+  small { display: block; margin-top: 4px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+  &:hover .optArrow { background: $c-yellow; border-color: $c-yellow; color: $c-ink; transform: translateX(calc(3px * var(--dir))); }
+  @include focus-ring;
+}
+.optArrow {
+  flex: none; display: grid; place-items: center;
+  width: 24px; height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 4px;
+  transition: background $dur, border-color $dur, color $dur, transform $dur $ease-out;
+}
+.optArrowActive { background: $c-yellow; border-color: $c-yellow; color: $c-ink; }
+
+.card {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+  padding: 56px 34px 64px;
+  border: 1px solid $c-line-on-dark;
+  border-radius: 18px;
+  background: #262626;
+  @include notch(56px);
+  @include down($bp-md) { padding: 32px 22px 48px; }
+}
+.cardTitle { @include display(1.25rem); font-weight: 500; }
+.cardBody { max-width: 380px; margin-top: -10px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.75); }
+.fields { width: 100%; display: grid; gap: 14px; margin-top: 10px; @include up($bp-sm) { grid-template-columns: 1fr 1fr; } }
+.field {
+  display: grid; gap: 10px;
+  > span:first-child { font-family: $f-display; font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; }
+  select {
+    width: 100%; min-height: 44px; padding: 0 40px 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05); color: $c-white;
+    font: 500 0.8125rem/1.4 $f-body;
+    appearance: none; cursor: pointer;
+    :global([dir="rtl"]) & { padding: 0 18px 0 40px; }
+    option { color: $c-ink; }
+    &:focus { outline: none; border-color: $c-yellow; box-shadow: 0 0 0 3px rgba(255, 197, 74, 0.18); }
+  }
+}
+.selectWrap {
+  position: relative;
+  &::after {
+    content: ""; position: absolute; inset-inline-end: 18px; top: 50%;
+    width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: translateY(-70%) rotate(45deg); pointer-events: none;
+  }
+}
+.note { font-size: 0.75rem; color: rgba(255, 255, 255, 0.7); }

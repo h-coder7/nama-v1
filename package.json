@@ -1,0 +1,35 @@
+{
+  "name": "namma-cargo-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "export:preview": "PREVIEW_EXPORT=1 NEXT_PUBLIC_PREVIEW_MPA=1 next build"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/readex-pro": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
+    "next": "^16.4.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.6",
+    "sass": "^1.108.2",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  }
+}

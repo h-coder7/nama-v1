@@ -1,0 +1,99 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background-color: $c-ink; @include stripes(rgba(255, 255, 255, 0.02), 50px); color: $c-white; }
+
+.banner {
+  position: relative;
+  height: clamp(110px, 10.5vw, 150px);
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.bannerImage { object-fit: cover; object-position: 50% 55%; will-change: transform, object-position; }
+// A slow band of light glides across the photo now and then, like sun catching the steel.
+.bannerShine {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden; border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), inset 0 -40px 60px -30px rgba(0, 0, 0, 0.45);
+  &::before {
+    content: ""; position: absolute; top: -50%; bottom: -50%; left: 0; width: 28%;
+    background: linear-gradient(100deg, rgba(255, 220, 150, 0) 0%, rgba(255, 220, 150, 0.22) 50%, rgba(255, 220, 150, 0) 100%);
+    mix-blend-mode: screen;
+    translate: -140% 0; rotate: 8deg;
+    animation: bannerShine 9s cubic-bezier(0.45, 0, 0.25, 1) 1.6s infinite;
+  }
+  :global([dir="rtl"]) &::before { animation-direction: reverse; }
+}
+@keyframes bannerShine { 0% { translate: -140% 0; } 45%, 100% { translate: 480% 0; } }
+@media (prefers-reduced-motion: reduce) { .bannerShine::before { display: none; } }
+
+.list {
+  display: grid;
+  gap: 40px 20px;
+  margin-top: 32px;
+  @include up($bp-md) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+// Many requirements: one row that slides sideways, three in view on desktop.
+.slider {
+  @include up($bp-md) { grid-template-columns: none; }
+  grid-auto-flow: column;
+  grid-auto-columns: 82%;
+  @include up($bp-md) { grid-auto-columns: calc((100% - 2 * 20px) / 3); }
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+  > li { scroll-snap-align: start; min-width: 0; }
+}
+.nav { display: flex; align-items: center; gap: 10px; }
+.navBtn {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; background: transparent; color: $c-white;
+  transition: background $dur, color $dur, border-color $dur, opacity $dur;
+  &:hover:not(:disabled) { background: $c-yellow; border-color: $c-yellow; color: $c-ink; }
+  &:disabled { opacity: 0.35; cursor: default; }
+  @include focus-ring;
+}
+.nav .count { margin-inline-end: 8px; font-family: $f-display; font-variant-numeric: tabular-nums; }
+
+.item {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding-top: 20px;
+  position: relative;
+  outline: none;
+  cursor: default;
+  &:focus-visible .title { text-decoration: underline; text-underline-offset: 4px; }
+}
+.bar {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.14);
+  span {
+    display: block;
+    height: 100%;
+    background: $c-yellow;
+    transform: scaleX(0);
+    transform-origin: var(--start);
+    transition: transform 0.7s $ease-out;
+  }
+}
+.active .bar span { transform: scaleX(1); }
+.num {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(3.5rem, 2.6rem + 2.4vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 197, 74, 0.75);
+  transition: color 0.5s $ease-out, -webkit-text-stroke-color 0.5s;
+}
+.active .num { color: $c-yellow; -webkit-text-stroke-color: $c-yellow; }
+.label { margin-top: 8px; font-family: $f-display; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: $c-yellow; }
+.title { @include display(clamp(1.25rem, 1rem + 0.6vw, 1.5rem)); font-weight: 500; }
+.body { max-width: 300px; font-size: 0.8125rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
+
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 40px; }
+.count { font-size: 0.75rem; color: rgba(255, 255, 255, 0.75); }

@@ -1,0 +1,39 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  min-height: clamp(560px, 46vw, 700px);
+  display: flex;
+  background: $c-ink;
+  color: $c-white;
+  overflow: hidden;
+  isolation: isolate;
+}
+.media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.image { object-fit: cover; object-position: 65% 50%; will-change: transform; }
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(46, 46, 46, 0.92) 0%, rgba(46, 46, 46, 0.7) 32%, rgba(46, 46, 46, 0.05) 70%),
+    linear-gradient(180deg, rgba(46, 46, 46, 0.35) 0%, rgba(46, 46, 46, 0) 30%, rgba(46, 46, 46, 0) 70%, rgba(46, 46, 46, 0.85) 100%);
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(270deg, rgba(46, 46, 46, 0.92) 0%, rgba(46, 46, 46, 0.7) 32%, rgba(46, 46, 46, 0.05) 70%),
+      linear-gradient(180deg, rgba(46, 46, 46, 0.35) 0%, rgba(46, 46, 46, 0) 30%, rgba(46, 46, 46, 0) 70%, rgba(46, 46, 46, 0.85) 100%);
+  }
+  @include down($bp-md) {
+    background: linear-gradient(180deg, rgba(46, 46, 46, 0.55), rgba(46, 46, 46, 0.9) 75%) !important;
+  }
+}
+.content { display: flex; flex-direction: column; padding-top: 128px; padding-bottom: 96px; @include down($bp-md) { padding-top: 104px; padding-bottom: 64px; } }
+.crumbs {
+  ol { font-family: $f-display; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+}
+.copy { display: grid; justify-items: start; margin-top: auto; padding-top: 72px; max-width: 520px; }
+.title { margin-top: 26px; @include display(clamp(2.5rem, 1.6rem + 2.6vw, 3.5rem)); font-weight: 500; }
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.line > span { display: inline-block; }
+.body { margin-top: 18px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.9); }
+.ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }

@@ -1,0 +1,73 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; background: $c-paper; }
+.grid { display: grid; gap: 40px; @include up($bp-lg) { grid-template-columns: 1fr 1.4fr; gap: 110px; } }
+.lead { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+.header { grid-template-columns: 1fr !important; align-items: start !important; }
+.selected {
+  display: grid; justify-items: start; gap: 12px;
+  p { font-size: 0.875rem; color: $c-muted; strong { color: $c-ink; display: inline-block; } }
+}
+.open {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-radius: 8px;
+  background: $c-ink; color: $c-white;
+  font-family: $f-display; font-size: 0.9375rem; font-weight: 500;
+  svg { color: $c-yellow; transition: transform $dur $ease-out; }
+  &:hover svg { transform: translateX(calc(4px * var(--dir))); }
+  @include focus-ring($c-ink);
+}
+
+$step: clamp(64px, 6vw, 92px);
+.drum {
+  --step: #{$step};
+  position: relative;
+  height: clamp(400px, 36vw, 520px);
+  border: 1px solid $c-line;
+  border-radius: 24px;
+  background: #f2f2f0;
+  overflow: hidden;
+  perspective: 900px;
+  cursor: ns-resize;
+  @include focus-ring;
+  @include down($bp-md) { height: 380px; }
+}
+.band { position: absolute; inset-inline: 0; top: 50%; height: clamp(56px, 5vw, 70px); transform: translateY(-50%); background: $c-yellow; }
+.items { position: absolute; inset: 0; transform-style: preserve-3d; }
+.item {
+  position: absolute; left: 0; right: 0; top: 50%;
+  text-align: center;
+  font-family: $f-display; font-weight: 500;
+  font-size: clamp(1.375rem, 1rem + 1.2vw, 2.25rem); line-height: 1;
+  overflow: hidden; text-overflow: ellipsis;
+  padding-inline: 84px;
+  color: rgba(46, 46, 46, calc(0.55 - var(--ad) * 0.12));
+  white-space: nowrap;
+  transform: translateY(calc(-50% + var(--d) * var(--step) * (1.15 - var(--ad) * 0.12))) rotateX(calc(var(--d) * -24deg)) scale(calc(1 - var(--ad) * 0.14));
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s;
+  cursor: pointer;
+  a { color: inherit; }
+  @include down($bp-md) { padding-inline: 16px 72px; }
+}
+.itemActive { color: $c-ink; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 3rem); font-weight: 600; cursor: default; @include down($bp-md) { font-size: 1.375rem; } }
+.noAnim { transition: none; }
+.controls {
+  position: absolute; inset-inline-end: 20px; top: 50%; transform: translateY(-50%);
+  display: grid; gap: 10px;
+  button {
+    display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid $c-line; background: $c-white; color: $c-ink;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform $dur $ease-out;
+    &:hover { transform: scale(1.07); }
+    @include focus-ring;
+  }
+  .down { background: $c-ink; color: $c-yellow; border-color: $c-ink; }
+}
+// The arrow icon mirrors itself in RTL, so the rotation is mirrored too.
+.up, .downIcon { display: grid; }
+.up { transform: rotate(-90deg); }
+.downIcon { transform: rotate(90deg); }
+:global([dir="rtl"]) .up { transform: rotate(90deg); }
+:global([dir="rtl"]) .downIcon { transform: rotate(-90deg); }

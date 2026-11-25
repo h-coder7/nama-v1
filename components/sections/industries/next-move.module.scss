@@ -1,0 +1,82 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  padding: $section-y 0 clamp(80px, 8vw, 128px);
+  background: $c-paper;
+  overflow: hidden;
+}
+.head { display: grid; justify-items: center; text-align: center; gap: 22px; }
+.title { @include display($fs-h2); }
+.accent { color: $c-yellow; }
+.body { max-width: 440px; font-size: 0.9375rem; color: $c-muted; }
+
+.ribbons {
+  position: relative;
+  height: clamp(170px, 20vw, 280px);
+  margin-top: clamp(40px, 5vw, 72px);
+}
+.ribbon {
+  direction: ltr; // decorative loop: same mechanics in both languages
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  overflow: hidden;
+  display: block;
+}
+.dark {
+  top: 18%;
+  padding: 18px 0;
+  background: $c-ink;
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+.yellow {
+  top: 50%;
+  padding: 18px 0;
+  background: $c-yellow;
+  color: $c-ink;
+  transform: rotate(3deg);
+  z-index: 2;
+  @include focus-ring($c-ink);
+}
+.rail { display: flex; width: max-content; will-change: transform; }
+.set > * { :global(html[lang="ar"]) & { direction: rtl; } }
+.set { display: flex; align-items: center; gap: 36px; padding-inline-end: 36px; flex: none; }
+.outline {
+  font-family: $f-display;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1rem + 1.4vw, 2.25rem);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.92);
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; background: $c-yellow; flex: none; }
+.yours {
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: $c-yellow;
+  color: $c-ink;
+  font-family: $f-display;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.9rem + 1vw, 1.75rem);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  font-family: $f-display;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 0.9rem + 1.1vw, 1.875rem);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+:global(html[lang="ar"]) .outline {
+  // Outlined Arabic glyphs overlap at the joins — use a soft fill instead.
+  -webkit-text-stroke: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 600;
+}

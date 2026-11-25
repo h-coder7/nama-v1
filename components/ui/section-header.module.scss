@@ -1,0 +1,26 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.header {
+  display: grid;
+  gap: 24px;
+  align-items: end;
+  @include up($bp-lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+.lead { display: grid; justify-items: start; gap: 20px; }
+.title { @include display; text-wrap: balance; }
+.accent { color: $c-yellow; }
+.muted { color: rgba(46, 46, 46, 0.5); }
+.intro {
+  max-width: 400px;
+  font-size: $fs-body;
+  line-height: 1.55;
+  @include up($bp-lg) { justify-self: start; padding-bottom: 6px; }
+}
+
+.light { .title { color: $c-ink; } .intro { color: $c-muted; } }
+.dark { .muted { color: rgba(255, 255, 255, 0.5); } .title { color: $c-white; } .intro { color: $c-muted-on-dark; } }
+.yellow { .muted { color: rgba(46, 46, 46, 0.55); } .title { color: $c-ink; } .intro { color: rgba(46, 46, 46, 0.75); } .accent { color: $c-white; } }

@@ -1,0 +1,117 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+/* ================================================================ options */
+.options { padding: clamp(64px, 7vw, 80px) 0 clamp(40px, 4vw, 56px); background: $c-paper; color: $c-ink; }
+.optionGrid {
+  display: grid; gap: 20px;
+  @include up($bp-sm) { grid-template-columns: 1fr 1fr; }
+  @include up($bp-lg) { grid-template-columns: repeat(4, 1fr); }
+  li { display: flex; }
+}
+.option {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-rows: auto auto 1fr auto; gap: 14px;
+  width: 100%; min-height: 244px;
+  padding: 26px 18px 18px;
+  border: 0; border-radius: 22px;
+  background: $c-white; color: $c-ink;
+  text-align: start;
+  transition: color $dur $ease-out;
+  &::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: $c-ink;
+    clip-path: circle(0% at 90% 90%);
+    transition: clip-path 0.6s $ease-out;
+    :global([dir="rtl"]) & { clip-path: circle(0% at 10% 90%); }
+  }
+  strong { font-family: $f-display; font-weight: 500; font-size: 1.1875rem; line-height: 1.3; }
+  @include focus-ring($c-ink);
+}
+.optionOn { color: $c-white; &::before { clip-path: circle(150% at 90% 90%) !important; } }
+.optNum { font-family: $f-display; font-size: 0.8125rem; color: rgba(46, 46, 46, 0.7); transition: color $dur; }
+.optionOn .optNum { color: $c-yellow; }
+.optBody { font-size: 0.8125rem; line-height: 1.5; color: rgba(46, 46, 46, 0.78); transition: color $dur; }
+.optionOn .optBody { color: rgba(255, 255, 255, 0.84); }
+.optFoot {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem;
+  i {
+    display: grid; place-items: center; width: 32px; height: 36px;
+    border-radius: 4px; background: rgba(46, 46, 46, 0.07);
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+    transition: background $dur, color $dur, translate $dur $ease-out;
+  }
+}
+.optionOn .optFoot i { background: $c-yellow; color: $c-ink; }
+.option:hover .optFoot i { translate: calc(3px * var(--dir)) 0; }
+
+/* ================================================================ enquiry form */
+.enquiry { padding: clamp(40px, 4vw, 56px) 0 $section-y; background: $c-paper; color: $c-ink; scroll-margin-top: 80px; }
+.enquiryGrid { display: grid; gap: 32px; @include up($bp-lg) { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 48px; align-items: start; } }
+.enquiryIntro { margin-top: 18px; max-width: 380px; font-size: 0.875rem; line-height: 1.6; color: rgba(46, 46, 46, 0.8); }
+.direct {
+  display: inline-grid; gap: 4px; margin-top: 28px;
+  padding: 14px 18px; border-radius: 12px; background: $c-yellow;
+  span { font-size: 0.75rem; }
+  strong { font-family: $f-display; font-weight: 600; font-size: 1.5rem; }
+  transition: translate $dur $ease-out;
+  &:hover { translate: 0 -3px; }
+  @include focus-ring($c-ink);
+}
+.card {
+  padding: clamp(24px, 3vw, 32px);
+  border: 1px solid $c-line; border-radius: 20px; background: $c-white;
+  @include notch(40px);
+}
+.form { display: grid; gap: 16px 12px; @include up($bp-sm) { grid-template-columns: 1fr 1fr; } }
+.full { grid-column: 1 / -1; }
+.field {
+  display: grid; align-content: start; gap: 8px;
+  > span:first-child { font-family: $f-display; font-weight: 500; font-size: 0.6875rem; text-transform: uppercase; em { font-style: normal; text-transform: none; color: $c-muted; font-weight: 400; } }
+  input, select, textarea {
+    width: 100%; min-height: 44px; padding: 10px 14px;
+    border: 1px solid rgba(46, 46, 46, 0.14); border-radius: 6px; background: $c-paper;
+    font: inherit; font-size: 0.9375rem; color: $c-ink;
+    transition: border-color $dur-fast, box-shadow $dur-fast, background $dur-fast;
+    &::placeholder { color: rgba(46, 46, 46, 0.42); }
+    &:focus { outline: none; background: $c-white; border-color: $c-yellow; box-shadow: 0 0 0 3px rgba(255, 197, 74, 0.28); }
+    &[aria-invalid="true"] { border-color: #d9867d; }
+  }
+  textarea { resize: vertical; min-height: 110px; }
+  small { font-size: 0.6875rem; color: $c-muted; }
+}
+.select {
+  position: relative;
+  select { appearance: none; padding-inline-end: 40px; }
+  &::after { content: ""; position: absolute; top: 50%; inset-inline-end: 16px; width: 8px; height: 8px; margin-top: -6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; rotate: 45deg; pointer-events: none; }
+}
+.error { font-size: 0.75rem; color: #b3261e; }
+.submit { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 6px; small { font-size: 0.6875rem; color: $c-muted; } }
+.sent {
+  display: grid; justify-items: start; gap: 14px; padding: 18px 0;
+  h3 { @include display(1.5rem); font-weight: 600; }
+  p { max-width: 400px; font-size: 0.875rem; color: rgba(46, 46, 46, 0.8); }
+}
+.tick { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: $c-yellow; animation: pop 0.5s $ease-out; }
+@keyframes pop { from { transform: scale(0.4); opacity: 0; } }
+
+/* ---------------------------------------------------------------- attachment + consent */
+.srOnly { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.attach {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 8px; justify-self: start; max-width: 100%;
+  height: 42px; padding: 0 16px;
+  border: 1px dashed rgba(46, 46, 46, 0.32); border-radius: 8px; background: $c-white;
+  font-family: $f-display; font-weight: 500; font-size: 0.8125rem; cursor: pointer;
+  transition: border-color $dur-fast;
+  &:hover { border-color: $c-ink; }
+  &:focus-within { outline: 2px solid $c-ink; outline-offset: 2px; }
+  svg { flex: none; }
+}
+.fileName { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.consent {
+  label { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8125rem; line-height: 1.5; cursor: pointer; }
+  input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: $c-ink; }
+  a { text-decoration: underline; text-underline-offset: 2px; }
+}

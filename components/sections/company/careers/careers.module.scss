@@ -1,0 +1,143 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+/* ================================================================ hero */
+.hero {
+  position: relative; overflow: hidden;
+  padding: clamp(104px, 9vw, 120px) 0 0;
+  background: $c-ink; color: $c-white;
+}
+.heroGrid {
+  display: grid; gap: 32px;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: start; }
+}
+.heroCopy { display: grid; justify-items: start; padding-bottom: clamp(96px, 10vw, 150px); }
+.heroEyebrow { margin-top: 26px; }
+.heroTitle {
+  display: grid; margin-top: 4px;
+  font-family: $f-display; font-weight: 700;
+  font-size: clamp(4rem, 1.6rem + 7.4vw, 8.25rem); line-height: 0.92; letter-spacing: -0.045em;
+  text-transform: uppercase;
+  :global([dir="rtl"]) & { letter-spacing: 0; line-height: 1.15; font-size: clamp(3.25rem, 1.6rem + 5.4vw, 6.5rem); }
+}
+.word { display: block; overflow: hidden; padding-block: 0.1em 0.22em; margin-block: -0.1em -0.22em; }
+.word > span { display: inline-block; }
+.wordOutline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px $c-white;
+}
+.wordSoft { color: rgba(255, 255, 255, 0.3); }
+.wordYellow { color: $c-yellow; }
+.heroBody { margin-top: clamp(40px, 6vw, 84px); max-width: 470px; font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.84); }
+.heroCopy > div:last-child { margin-top: 26px; }
+
+/* badge on a lanyard */
+.badgeWrap {
+  position: relative; display: flex; justify-content: center;
+  margin-top: calc(-1 * clamp(104px, 9vw, 120px));
+  @include down($bp-lg) { display: none; }
+}
+.badge { position: relative; display: grid; justify-items: center; transform-origin: 50% 0; rotate: -4deg; }
+.strap {
+  display: block; width: 24px; height: 180px;
+  background: repeating-linear-gradient(180deg, #4a4a4a 0 5px, #3d3d3d 5px 10px);
+  border-inline: 1px solid rgba(0, 0, 0, 0.3);
+}
+.clip { display: block; width: 58px; height: 18px; margin-top: -2px; border-radius: 4px 4px 2px 2px; background: #5a5a5a; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25); }
+.card {
+  width: 266px; margin-top: 4px;
+  border-radius: 6px 6px 16px 16px;
+  background: $c-white; color: $c-ink;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 8px 0 0 $c-yellow;
+  overflow: hidden;
+  rotate: -3deg;
+}
+.cardTop {
+  position: relative; display: flex; align-items: center; gap: 8px;
+  height: 56px; padding: 0 18px;
+  background: #262626; color: $c-white;
+  font-family: $f-display; font-weight: 700; font-size: 0.8125rem;
+  i { position: absolute; inset-inline-end: 18px; top: 22px; width: 36px; height: 7px; border-radius: 4px; background: #555; }
+}
+.cardMark { color: $c-yellow; letter-spacing: -0.1em; }
+.cardBody {
+  padding: 22px 22px 26px;
+  ul { margin-top: 18px; border-top: 1px solid $c-line; }
+  li { display: flex; gap: 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid $c-line; font-family: $f-display; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+  li span { color: $c-yellow; font-weight: 700; letter-spacing: -0.1em; }
+}
+.cardPhoto { position: relative; aspect-ratio: 563 / 437; img { object-fit: contain; } }
+.cardEyebrow { display: block; margin-top: 16px; font-family: $f-display; font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: $c-muted; }
+:global([dir="rtl"]) .cardEyebrow { letter-spacing: 0; }
+.cardTitle { display: block; margin-top: 6px; @include display(1.375rem); font-weight: 700; line-height: 1.05; }
+
+/* tilted ribbon */
+.ribbon {
+  position: relative; z-index: 2;
+  margin: -40px -2% 0; padding: 14px 0;
+  background: $c-yellow; color: $c-ink;
+  rotate: -2.2deg;
+  overflow: hidden;
+  box-shadow: 0 -16px 40px -20px rgba(0, 0, 0, 0.5);
+  :global([dir="rtl"]) & { rotate: 2.2deg; }
+}
+.ribbonTrack { display: flex; width: max-content; will-change: transform; }
+.ribbonSet {
+  display: flex; flex: none;
+  span { display: inline-flex; align-items: center; gap: 28px; padding-inline-end: 28px; font-family: $f-display; font-weight: 700; font-size: clamp(1.25rem, 0.9rem + 1.2vw, 2.25rem); text-transform: uppercase; white-space: nowrap; }
+  b { letter-spacing: -0.12em; }
+}
+.hero + * { position: relative; }
+
+/* ================================================================ roles */
+.roles { padding: $section-y 0; background: $c-paper; color: $c-ink; scroll-margin-top: 72px; }
+.filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 28px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 9px 13px; border: 1px solid $c-line; border-radius: 999px;
+  background: $c-white;
+  font-size: 0.8125rem; font-weight: 500;
+  transition: background $dur-fast, color $dur-fast, border-color $dur-fast;
+  span { color: rgba(46, 46, 46, 0.5); }
+  &:hover { border-color: rgba(46, 46, 46, 0.4); }
+  @include focus-ring($c-ink);
+}
+.chipOn { background: $c-ink; border-color: $c-ink; color: $c-white; span { color: rgba(255, 255, 255, 0.6); } }
+.count { font-size: 0.8125rem; color: $c-muted; }
+.roleList { display: grid; gap: 10px; margin-top: 18px; }
+.role {
+  position: relative; overflow: hidden;
+  display: grid; align-items: center; gap: 16px 24px;
+  grid-template-columns: 1fr auto;
+  padding-block: 22px; padding-inline: 24px 22px;
+  border: 1px solid $c-line; border-radius: 16px;
+  background: $c-white;
+  transition: border-color $dur, box-shadow $dur $ease-out, translate $dur $ease-out;
+  @include up($bp-md) { grid-template-columns: 1fr auto auto; }
+  &::before {
+    content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px;
+    background: $c-yellow; scale: 1 0; transition: scale $dur $ease-out;
+  }
+  &:hover { border-color: rgba(46, 46, 46, 0.24); box-shadow: 0 20px 36px -26px rgba(46, 46, 46, 0.5); translate: 0 -2px; &::before { scale: 1 1; } }
+  @include focus-ring($c-ink);
+}
+.roleMain { display: grid; gap: 12px; strong { @include display(clamp(1.375rem, 1.1rem + 0.7vw, 1.625rem)); font-weight: 600; } }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; span { padding: 5px 11px; border: 1px solid $c-line; border-radius: 999px; background: $c-paper; font-size: 0.75rem; font-weight: 500; } }
+.roleCode {
+  font-family: $f-display; font-weight: 700; font-size: 2rem; letter-spacing: -0.02em;
+  color: rgba(46, 46, 46, 0.12);
+  transition: color $dur;
+  @include down($bp-md) { display: none; }
+}
+.role:hover .roleCode { color: rgba(255, 197, 74, 0.7); }
+.roleCta {
+  display: inline-flex; align-items: stretch; height: 40px;
+  font-family: $f-display; font-weight: 500; font-size: 0.8125rem;
+  > span { display: grid; place-items: center; padding: 0 22px 0 16px; background: $c-ink; color: $c-white; clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%); border-radius: 4px 0 0 4px; }
+  > i { display: grid; place-items: center; width: 44px; margin-inline-start: -6px; background: $c-yellow; color: $c-ink; clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%); border-radius: 0 4px 4px 0; transition: width $dur $ease-out; }
+  :global([dir="rtl"]) & {
+    > span { clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%); border-radius: 0 4px 4px 0; padding: 0 16px 0 22px; }
+    > i { clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%); border-radius: 4px 0 0 4px; }
+  }
+}
+.role:hover .roleCta > i { width: 52px; }

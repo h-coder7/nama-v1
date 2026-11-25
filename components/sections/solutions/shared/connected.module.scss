@@ -1,0 +1,129 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section { padding: $section-y 0; }
+.paper { background: $c-paper; color: $c-ink; }
+.dark { background: $c-ink; color: $c-white; }
+.yellow { background: $c-yellow; color: $c-ink; }
+.header { display: grid; gap: 24px; align-items: end; @include up($bp-lg) { grid-template-columns: 1fr auto; } }
+.lead { display: grid; justify-items: start; gap: 20px; }
+.title { @include display; }
+.accent { color: $c-yellow; }
+.yellow .accent, .yellow .muted { color: rgba(46, 46, 46, 0.55); }
+.muted { color: rgba(46, 46, 46, 0.5); }
+.dark .muted { color: rgba(255, 255, 255, 0.5); }
+.introWrap { display: grid; justify-items: start; gap: 18px; }
+.intro { max-width: 380px; font-size: $fs-body; line-height: 1.55; opacity: 0.8; }
+
+// rows
+.rows { margin-top: 40px; border-bottom: 2px solid $c-ink; }
+.row {
+  display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 24px;
+  padding: 22px 0; border-top: 2px solid $c-ink;
+  @include focus-ring;
+  @include down($bp-md) { grid-template-columns: 1fr auto; .rowDesc { grid-column: 1 / -1; grid-row: 2; } }
+}
+.rowTitle { @include display(clamp(1.25rem, 1rem + 0.8vw, 1.625rem)); transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+.rowDesc { max-width: 300px; font-size: 0.875rem; line-height: 1.5; color: $c-muted; }
+.rowBtn { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 10px; background: $c-ink; color: $c-yellow; transition: background $dur, color $dur, translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+.row:hover { .rowTitle { translate: calc(10px * var(--dir)) 0; } .rowBtn { background: $c-yellow; color: $c-ink; rotate: calc(-45deg * var(--dir)); } }
+
+// photos — 2 + 2 mosaic (wide / narrow, then narrow / wide)
+.photos {
+  display: grid; gap: 16px; margin-top: 40px;
+  @include up($bp-md) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    li:nth-child(1) { grid-column: span 6; } li:nth-child(2) { grid-column: span 4; }
+    li:nth-child(3) { grid-column: span 4; } li:nth-child(4) { grid-column: span 6; }
+  }
+}
+.photo {
+  position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+  height: clamp(220px, 18vw, 260px); padding: 22px;
+  color: $c-white; overflow: hidden;
+  @include notch(30px);
+  @include focus-ring;
+}
+.photoImg { object-fit: cover; z-index: -2; transition: translate 1.2s $ease-out, rotate 1.2s $ease-out, scale 1.2s $ease-out; }
+.photoShade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(46, 46, 46, 0) 20%, rgba(46, 46, 46, 0.88) 100%); }
+.photoBody { display: grid; gap: 8px; max-width: 420px; }
+.photoTitle { @include display(clamp(1.25rem, 1rem + 0.8vw, 1.625rem)); }
+.photoDesc { font-size: 0.8125rem; line-height: 1.5; color: rgba(255, 255, 255, 0.85); }
+.photoGo {
+  display: inline-flex; align-items: center; gap: 10px; flex: none;
+  font-family: $f-display; font-weight: 600; font-size: 0.875rem;
+  > span { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 8px; background: $c-yellow; color: $c-ink; transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+}
+.photo:hover { .photoImg { scale: 1.06; } .photoGo > span { translate: calc(4px * var(--dir)) 0; } }
+
+// tiles
+.tiles { display: grid; gap: 16px; margin-top: 40px; @include up($bp-md) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile {
+  position: relative; display: grid; align-content: end; gap: 8px;
+  min-height: 170px; height: 100%; padding: 24px 22px 26px; padding-inline-end: 96px;
+  border-radius: 20px; background: $c-white; color: $c-ink;
+  @include notch(26px);
+  transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out;
+  &:hover { translate: 0 -4px; .tileGo { rotate: calc(-45deg * var(--dir)); } }
+  @include focus-ring($c-ink);
+}
+.tileDark { background: $c-ink; color: $c-white; .tileNum { color: $c-yellow; } .tileDesc { color: rgba(255, 255, 255, 0.8); } }
+.tileNum { font-family: $f-display; font-size: 0.75rem; font-weight: 600; }
+.tileTitle { @include display(clamp(1.375rem, 1rem + 1vw, 1.875rem)); }
+.tileDesc { max-width: 340px; font-size: 0.8125rem; line-height: 1.5; color: $c-muted; }
+.tileGo { position: absolute; inset-inline-end: 22px; bottom: 22px; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 10px; background: $c-yellow; color: $c-ink; transition: translate $dur $ease-out, rotate $dur $ease-out, scale $dur $ease-out; }
+
+// cards
+.cards { display: grid; gap: 16px; margin-top: 40px; grid-template-columns: repeat(2, minmax(0, 1fr)); @include up($bp-lg) { grid-template-columns: repeat(4, minmax(0, 1fr)); } @include down($bp-sm) { grid-template-columns: 1fr; } }
+.card {
+  display: flex; flex-direction: column; height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px; overflow: hidden;
+  background: #353535; color: $c-white;
+  transition: background $dur $ease-out, color $dur, border-color $dur, translate $dur $ease-out;
+  @include focus-ring;
+}
+.cardOn { translate: 0 -6px; }
+.cardMedia { position: relative; aspect-ratio: 560 / 400; overflow: hidden; border-radius: 17px 17px 0 0; background: $c-ink; }
+.cardImg { object-fit: cover; transition: translate 1s $ease-out, rotate 1s $ease-out, scale 1s $ease-out; }
+.cardIcon {
+  position: absolute; inset-inline-end: 12px; bottom: 12px; z-index: 1;
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 12px; background: $c-yellow;
+  transition: background $dur;
+  img { width: 36px; height: auto; }
+}
+.cardBody { display: grid; align-content: start; gap: 4px; padding: 22px 16px 22px; min-height: 180px; }
+.cardNum { font-family: $f-display; font-size: 0.75rem; opacity: 0.8; }
+.cardLabel { margin-top: 6px; font-size: 0.75rem; opacity: 0.8; }
+.cardTitle { @include display(clamp(1.125rem, 0.95rem + 0.5vw, 1.375rem)); }
+.cardDesc { margin-top: 8px; font-size: 0.8125rem; line-height: 1.5; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s $ease-out, opacity $dur; }
+.cardOn {
+  background: $c-yellow; color: $c-ink; border-color: $c-yellow;
+  .cardIcon { background: $c-ink; img { filter: brightness(0) invert(0.82) sepia(1) saturate(4) hue-rotate(5deg); } }
+  .cardDesc { max-height: 120px; opacity: 1; }
+  .cardImg { scale: 1.06; }
+}
+
+// tabs
+.tabsWrap { margin-top: 40px; }
+.tabBar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.tab {
+  display: flex; align-items: center; gap: 8px; flex: 1 0 auto; min-height: 54px;
+  padding: 10px 14px; border: 1px solid rgba(255, 255, 255, 0.12); border-bottom: 0; border-radius: 14px 14px 0 0;
+  background: #383838; color: $c-white; text-align: start;
+  font-family: $f-display; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase;
+  transition: background $dur, color $dur;
+  &:hover { background: #424242; }
+  @include focus-ring;
+}
+.tabNum { opacity: 0.6; font-weight: 500; }
+.tabOn { background: $c-yellow; color: $c-ink; border-color: $c-yellow; &:hover { background: $c-yellow; } }
+.panel {
+  display: grid; overflow: hidden; border-radius: 0 0 20px 20px; background: $c-yellow; color: $c-ink;
+  @include up($bp-md) { grid-template-columns: 1fr 1.08fr; }
+}
+.panelMedia { position: relative; min-height: 280px; overflow: hidden; background: $c-ink-deep; }
+.panelImg { object-fit: cover; }
+.panelCopy { display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 40px); p { max-width: 420px; font-size: 0.9375rem; line-height: 1.55; } }
+.panelTitle { @include display(clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem)); }
+.panelCtas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 32px; }
+.panelGhost { color: $c-ink; }

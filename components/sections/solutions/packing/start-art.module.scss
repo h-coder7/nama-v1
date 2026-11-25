@@ -1,0 +1,25 @@
+@use "tokens" as *;
+
+.art { width: min(100%, 470px); height: auto; overflow: visible; }
+.body { fill: #3d3d3d; stroke: rgba(255, 255, 255, 0.9); stroke-width: 2; }
+.rib { fill: none; stroke: rgba(255, 255, 255, 0.55); stroke-width: 1.5; stroke-linecap: round; }
+.fill { fill: rgba(255, 255, 255, 0.85); }
+.line { fill: none; stroke: rgba(255, 255, 255, 0.9); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.thin { fill: none; stroke: rgba(255, 255, 255, 0.45); stroke-width: 1.5; stroke-linecap: round; }
+.dash { fill: none; stroke: $c-yellow; stroke-width: 1.5; stroke-dasharray: 4 4; }
+.crate { fill: none; stroke: $c-yellow; stroke-width: 2; stroke-dasharray: 6 5; }
+.crateFill { fill: rgba(255, 197, 74, 0.14); stroke: $c-yellow; stroke-width: 2.4; stroke-linejoin: round; }
+.brace { fill: none; stroke: rgba(255, 197, 74, 0.55); stroke-width: 1.5; }
+.dim { fill: none; stroke: $c-yellow; stroke-width: 1.6; stroke-linecap: round; }
+.pill { fill: $c-yellow; }
+.badge { fill: $c-yellow; }
+.badgeLine { fill: none; stroke: $c-ink; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.badgeDot { fill: $c-ink; }
+.cog { fill: $c-yellow; }
+.cogLine { fill: none; stroke: $c-ink; stroke-width: 2; }
+.arrow { fill: none; stroke: $c-yellow; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.sling { fill: none; stroke: rgba(255, 255, 255, 0.8); stroke-width: 1.6; }
+.point { fill: $c-yellow; }
+.wheel { fill: $c-ink; stroke: rgba(255, 255, 255, 0.9); stroke-width: 2; }
+.roadEdge { fill: none; stroke: rgba(255, 255, 255, 0.3); stroke-width: 1.5; }
+.road { fill: none; stroke: rgba(255, 255, 255, 0.55); stroke-width: 3; stroke-dasharray: 24 24; }

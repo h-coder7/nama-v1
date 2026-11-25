@@ -1,0 +1,81 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.facts dd { margin: 0; }
+
+.section {
+  padding: clamp(72px, 7vw, 100px) 0 clamp(72px, 7vw, 80px);
+  background: $c-yellow;
+  color: $c-ink;
+}
+
+/* tabs sit on top of the panel like folder tabs */
+.tabs {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr);
+  gap: 6px;
+  margin-top: clamp(36px, 3.5vw, 44px);
+  overflow-x: auto; scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+  @include down($bp-md) { margin-inline: -16px; padding-inline: 16px; }
+}
+.tab {
+  display: grid; justify-items: start; gap: 6px;
+  padding: 18px 16px 16px;
+  border: 0;
+  border-radius: 14px 14px 0 0;
+  background: rgba(46, 46, 46, 0.08);
+  color: $c-ink;
+  text-align: start;
+  transition: background $dur $ease-out, color $dur $ease-out;
+  strong { font-family: $f-display; font-weight: 600; font-size: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); text-transform: uppercase; }
+  span { font-size: 0.75rem; line-height: 1.35; color: rgba(46, 46, 46, 0.82); transition: color $dur $ease-out; }
+  &:hover { background: rgba(46, 46, 46, 0.14); }
+  @include focus-ring($c-ink);
+}
+.tabOn {
+  background: $c-ink !important; color: $c-yellow;
+  span { color: rgba(255, 255, 255, 0.86); }
+}
+
+.panel {
+  display: grid; gap: clamp(24px, 2.4vw, 28px);
+  padding: clamp(16px, 2.2vw, 26px);
+  border-radius: $radius-lg;
+  background: $c-ink; color: $c-white;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); align-items: center; }
+}
+.panelFirst { border-start-start-radius: 0; }
+.panelLast { @include up($bp-lg) { border-start-end-radius: 0; } }
+.photo {
+  position: relative; overflow: hidden;
+  aspect-ratio: 474 / 322;
+  border-radius: $radius;
+  img { object-fit: cover; }
+}
+.info { display: grid; justify-items: start; padding-inline-end: clamp(0px, 1vw, 4px); }
+.panelTitle {
+  @include display(clamp(1.625rem, 1.2rem + 1.2vw, 2rem));
+  font-weight: 600; line-height: 1.02;
+}
+.facts {
+  width: 100%; margin-top: 16px;
+  border-top: 1px solid $c-line-on-dark;
+  div {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid $c-line-on-dark;
+  }
+  dt { font-size: 0.75rem; color: rgba(255, 255, 255, 0.75); flex: none; }
+  dd { font-family: $f-display; font-weight: 500; font-size: 0.8125rem; text-align: end; }
+}
+.volume {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
+  margin: 18px 0 20px;
+  strong {
+    font-family: $f-display; font-weight: 500;
+    font-size: clamp(2.75rem, 2rem + 2.4vw, 3.5rem); line-height: 1;
+    color: $c-yellow;
+    direction: ltr; unicode-bidi: isolate;
+  }
+  span { font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
+}

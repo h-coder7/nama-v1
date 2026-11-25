@@ -1,0 +1,218 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.accent { color: $c-yellow; }
+.accentInk { color: $c-yellow-deep; }
+.accentWhite { color: $c-white; }
+
+.title { @include display(clamp(2rem, 1.2rem + 2.6vw, 3.5rem)); }
+.head { display: grid; justify-items: start; gap: 20px; max-width: 760px; }
+
+/* ------------------------------------------------------------------ hero */
+.hero { min-height: clamp(600px, 52vw, 740px); display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 0 !important; }
+.heroMedia { position: absolute; inset: 0; img { object-fit: cover; object-position: 70% 50%; } }
+.heroShade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 42%, rgba(46, 46, 46, 0.2) 78%),
+    linear-gradient(0deg, rgba(46, 46, 46, 0.85) 0%, transparent 30%),
+    linear-gradient(180deg, rgba(46, 46, 46, 0.5), transparent 28%);
+  :global([dir="rtl"]) & {
+    background:
+      linear-gradient(270deg, rgba(46, 46, 46, 0.94) 0%, rgba(46, 46, 46, 0.72) 42%, rgba(46, 46, 46, 0.2) 78%),
+      linear-gradient(0deg, rgba(46, 46, 46, 0.85) 0%, transparent 30%),
+      linear-gradient(180deg, rgba(46, 46, 46, 0.5), transparent 28%);
+  }
+}
+// The five stages as a route rail along the foot of the hero.
+.heroRail {
+  position: relative;
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: 26px 0 30px;
+  ol { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  li {
+    position: relative; display: grid; justify-items: start; gap: 6px; padding-top: 22px;
+    font-family: $f-display; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.86);
+    b { font-weight: 500; font-size: 0.6875rem; color: $c-yellow; letter-spacing: 0.08em; }
+  }
+  li:last-child .heroDot { background: $c-yellow; }
+  @include down($bp-md) { display: none; }
+}
+// Stage marker: a diamond centred exactly on the rail line.
+.heroDot {
+  position: absolute; top: -6px; inset-inline-start: 0;
+  width: 12px; height: 12px; rotate: 45deg;
+  border: 1.5px solid $c-yellow; background: $c-ink;
+  box-shadow: 0 0 0 4px rgba(46, 46, 46, 0.6);
+}
+.heroPulse {
+  position: absolute; top: 24px; width: 40px; height: 5px; margin-inline-start: -20px; border-radius: 3px;
+  background: radial-gradient(closest-side, rgba(255, 197, 74, 0.95), transparent);
+  pointer-events: none; opacity: 0;
+}
+.heroRailLine {
+  position: absolute; top: 26px; inset-inline: 0; height: 2px; margin-top: -0.5px;
+  background: linear-gradient(90deg, $c-yellow, rgba(255, 197, 74, 0.25));
+  transform-origin: left center;
+  :global([dir="rtl"]) & { transform-origin: right center; background: linear-gradient(270deg, $c-yellow, rgba(255, 197, 74, 0.25)); }
+}
+
+/* ------------------------------------------------------------------ journey */
+.journey { padding: $section-y 0; background: $c-paper; color: $c-ink; }
+// The route as a road: asphalt band, dashed centre line, a yellow edge that fills
+// behind the truck as it drives (scrubbed with scroll).
+.track {
+  position: relative; height: 104px; margin: clamp(64px, 6vw, 88px) 0 30px;
+  border-radius: 8px;
+  // Asphalt seen from above: two edge lines and a dashed centre line.
+  background:
+    linear-gradient(180deg,
+      transparent 7px, rgba(255, 255, 255, 0.42) 7px 9px, transparent 9px calc(100% - 9px),
+      rgba(255, 255, 255, 0.42) calc(100% - 9px) calc(100% - 7px), transparent calc(100% - 7px)),
+    linear-gradient(180deg, #5b5b5b, #4c4c4c);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+  &::before {
+    content: ""; position: absolute; left: 14px; right: 14px; top: 50%; height: 2px; margin-top: -1px;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0 22px, transparent 22px 40px);
+  }
+  @include down($bp-lg) { display: none; }
+}
+.trackFill {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 4px; border-radius: 0 0 6px 6px; background: $c-yellow;
+  transform-origin: left center;
+  :global([dir="rtl"]) & { transform-origin: right center; }
+}
+.cargo { position: absolute; bottom: 14px; inset-inline-start: 0; z-index: 1; }
+.truck { display: block; width: clamp(320px, 30vw, 420px); height: auto; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3)); :global([dir="rtl"]) & { transform: scaleX(-1); } }
+.cargoBox {
+  display: block; width: 46px; height: 24px; border-radius: 3px;
+  background: $c-yellow;
+  box-shadow: 0 10px 20px -8px rgba(46, 46, 46, 0.55), inset 0 -6px 0 rgba(46, 46, 46, 0.12);
+  // container ribs
+  background-image: repeating-linear-gradient(90deg, transparent 0 6px, rgba(46, 46, 46, 0.18) 6px 7px);
+}
+.stops {
+  display: grid; gap: 28px;
+  margin-top: 30px;
+  @include up($bp-lg) { grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 0; }
+  @include up($bp-lg) { .stop { padding-top: 6px; } }
+}
+.stop {
+  position: relative; display: grid; align-content: start; gap: 10px;
+  padding-top: 30px;
+  @include down($bp-lg) { padding-top: 0; padding-inline-start: 34px; border-inline-start: 1px solid $c-line; padding-bottom: 6px; }
+}
+.stopDot {
+  position: absolute; top: -37px; inset-inline-start: 0; z-index: 1;
+  width: 12px; height: 12px; rotate: 45deg;
+  border: 1.5px solid $c-ink; background: $c-paper;
+  transition: background 0.4s $ease-out, transform 0.4s $ease-out;
+  @include down($bp-lg) { top: 4px; inset-inline-start: -7px; }
+}
+.stopNum { font-family: $f-display; font-weight: 500; font-size: 0.8125rem; color: $c-muted; transition: color 0.4s; }
+.stopTitle { @include display(1.125rem); line-height: 1.2; }
+.stopBody { font-size: 0.875rem; line-height: 1.55; color: $c-muted; max-width: 240px; @include down($bp-lg) { max-width: 520px; } }
+.stopOn {
+  .stopDot { background: $c-yellow; border-color: $c-ink; transform: scale(1.25); }
+  .stopNum { color: $c-ink; }
+}
+
+/* ------------------------------------------------------------------ heavy cargo */
+.heavy { padding: $section-y 0; background: $c-ink; color: $c-white; overflow: hidden; }
+.heavyGrid {
+  display: grid; gap: clamp(36px, 5vw, 72px); align-items: stretch;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+}
+// The photo carries the section: it runs the full height of the copy column.
+.heavyMedia {
+  position: relative; margin: 0;
+  aspect-ratio: 4 / 3; border-radius: $radius-lg; overflow: hidden;
+  @include notch(36px);
+  @include up($bp-lg) { aspect-ratio: auto; min-height: 520px; }
+  img { object-fit: cover; scale: 1.1; }
+}
+// Measurement lines over the photo: the cargo is assessed before anything moves.
+.dimH, .dimH2, .dimV {
+  position: absolute; pointer-events: none;
+  &::before, &::after { content: ""; position: absolute; background: $c-yellow; }
+}
+.dimH, .dimH2 {
+  left: 14%; right: 14%; height: 1px; background: rgba(255, 197, 74, 0.9);
+  transform-origin: center;
+  &::before, &::after { top: -6px; width: 1px; height: 13px; }
+  &::before { left: 0; } &::after { right: 0; }
+}
+.dimH { top: 18%; }
+.dimH2 { bottom: 12%; left: 22%; right: 30%; background: rgba(255, 255, 255, 0.7); &::before, &::after { background: rgba(255, 255, 255, 0.7); } }
+.dimV {
+  top: 18%; bottom: 12%; right: 9%; width: 1px; background: rgba(255, 197, 74, 0.9);
+  transform-origin: center;
+  &::before, &::after { left: -6px; width: 13px; height: 1px; }
+  &::before { top: 0; } &::after { bottom: 0; }
+}
+.heavyCopy { display: grid; align-content: center; gap: 32px; padding-block: 12px; .title { font-size: clamp(2rem, 1.3rem + 2vw, 3rem); } }
+.copyBody { display: grid; gap: 12px; margin-top: 22px; color: $c-muted-on-dark; font-size: $fs-body; line-height: 1.6; max-width: 520px; }
+.handling {
+  position: relative; display: grid; gap: 10px;
+  padding: 24px 26px; border-radius: $radius;
+  background: $c-ink-raise; border: 1px solid $c-line-on-dark;
+  border-inline-start: 3px solid $c-yellow;
+  h3 { @include display(1.125rem); color: $c-yellow; }
+  p { font-size: 0.9375rem; line-height: 1.6; color: rgba(255, 255, 255, 0.82); }
+}
+
+/* ------------------------------------------------------------------ route checklist */
+.route { padding: $section-y 0; background: $c-white; color: $c-ink; }
+.routeGrid {
+  display: grid; gap: clamp(36px, 5vw, 80px);
+  @include up($bp-lg) { grid-template-columns: 0.9fr 1fr; align-items: start; }
+}
+.routeLead { display: grid; gap: 32px; }
+.routeIntro { margin-top: 20px; max-width: 440px; font-size: $fs-lead; line-height: 1.55; }
+.routePhoto {
+  position: relative; margin: 0; aspect-ratio: 560 / 400; max-width: 440px;
+  border-radius: $radius; overflow: hidden;
+  img { object-fit: cover; }
+  @include down($bp-lg) { display: none; }
+}
+.checks { border-top: 3px solid $c-ink; }
+.check {
+  --rule: 1;
+  position: relative; display: grid; grid-template-columns: 52px 1fr 32px; align-items: center; gap: 12px;
+  padding: 24px 0;
+  &::after {
+    content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 1px; background: rgba(46, 46, 46, 0.18);
+    transform: scaleX(var(--rule)); transform-origin: left center;
+  }
+  :global([dir="rtl"]) &::after { transform-origin: right center; }
+}
+.checkNum { font-family: $f-display; font-weight: 500; font-size: 0.875rem; }
+.checkText { @include display(clamp(1.125rem, 0.9rem + 0.8vw, 1.5rem)); line-height: 1.2; }
+.checkMark {
+  width: 28px; height: 28px; padding: 4px; border-radius: 50%; background: $c-yellow;
+  path { fill: none; stroke: $c-ink; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+}
+.routeNote { margin-top: 26px; font-family: $f-display; font-weight: 600; font-size: 0.9375rem; }
+
+/* ------------------------------------------------------------------ four starting steps */
+.start { padding: $section-y 0; background: $c-ink; color: $c-white; }
+.steps {
+  display: grid; gap: 16px; margin-top: clamp(40px, 5vw, 64px);
+  @include up($bp-sm) { grid-template-columns: repeat(2, 1fr); }
+  @include up($bp-lg) { grid-template-columns: repeat(4, 1fr); }
+}
+.step {
+  position: relative; display: grid; align-content: start; gap: 12px;
+  min-height: 250px; padding: 28px 24px 30px;
+  border-radius: $radius; background: $c-ink-raise; overflow: hidden;
+  h3 { margin-top: auto; padding-top: 38px; @include display(1.25rem); line-height: 1.2; }
+  p { font-size: 0.875rem; line-height: 1.55; color: $c-muted-on-dark; }
+  transition: background 0.4s $ease-out, transform 0.4s $ease-out;
+  &:hover { background: #3a3a3a; transform: translateY(-4px); }
+}
+.stepBar {
+  position: absolute; top: 0; inset-inline: 0; height: 3px; background: $c-yellow;
+  transform-origin: left center;
+  :global([dir="rtl"]) & { transform-origin: right center; }
+}
+.stepNum { font-family: $f-display; font-weight: 600; font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem); line-height: 1; color: $c-yellow; }

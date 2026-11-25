@@ -1,0 +1,117 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  --j-ink: #{$c-ink};
+  --j-yellow: #{$c-yellow};
+  --j-shade: #e9e4da;
+  --j-white: #fff;
+  position: relative;
+  background: $c-paper;
+  color: $c-ink;
+  overflow: hidden;
+}
+.pinWrap { padding-bottom: var(--pin-len, 0px); }
+.pin {
+  min-height: 100vh; min-height: 100svh;
+  display: grid; grid-template-rows: auto 1fr auto;
+  padding: clamp(88px, 9vh, 120px) 0 clamp(24px, 4vh, 44px);
+}
+
+/* head: title + live caption */
+.head {
+  display: grid; gap: 20px 48px; align-items: end;
+  @include up($bp-lg) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+.lead { display: grid; justify-items: start; gap: 18px; }
+.title { @include display(clamp(1.875rem, 1.2rem + 2.2vw, 3.25rem)); }
+.accent { color: $c-yellow-deep; }
+// Fixed height so a longer stage title never nudges the landscape below.
+.caption { display: grid; gap: 8px; height: 118px; align-content: end; max-width: 520px; @include up($bp-lg) { justify-self: end; } @include down($bp-lg) { height: 168px; align-content: start; } }
+.capMeta {
+  font-family: $f-display; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: $c-muted;
+  b { color: $c-ink; font-weight: 700; }
+}
+.capTitle { @include display(clamp(1.375rem, 1rem + 1.2vw, 2rem)); line-height: 1.1; }
+.capLine { font-size: 1rem; line-height: 1.55; color: rgba(46, 46, 46, 0.72); }
+
+/* the moving world */
+.stage {
+  --box-x: 38%;
+  :global([dir="rtl"]) & { scale: -1 1; }
+  position: relative; min-height: 0;
+  container-type: size;
+  height: clamp(220px, 42vh, 420px);
+  margin-block: clamp(12px, 3vh, 32px);
+  align-self: center;
+  @include down($bp-md) { --box-x: 34%; height: clamp(200px, 34vh, 300px); }
+}
+.world { position: absolute; inset: 0 auto 0 0; height: 100%; will-change: transform; }
+.scene { display: block; height: 100cqh; width: calc(100cqh * 14.4); max-width: none; overflow: visible; }
+.unit {
+  position: absolute; top: 0; left: var(--box-x);
+  height: 100%; aspect-ratio: 240 / 400; translate: -50% 0;
+  overflow: visible; pointer-events: none;
+  [data-carrier] { opacity: 0; }
+  [data-carrier="0"] { opacity: 1; }
+}
+.hint {
+  position: absolute; right: max(16px, calc((100% - #{$container}) / 2)); top: 0;
+  font-family: $f-display; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: $c-muted;
+  // The stage is mirrored in Arabic: un-mirror the text; its physical right lands on the visual left (the end side).
+  :global([dir="rtl"]) & { scale: -1 1; }
+}
+
+/* stage rail */
+// Follows the reading direction: in Arabic the stage is mirrored and the journey runs right → left.
+.rail {
+  position: relative; display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px;
+  padding-top: 18px;
+}
+.railTrack { position: absolute; top: 0; inset-inline: 0; height: 2px; background: rgba(46, 46, 46, 0.14); }
+.railFill { position: absolute; inset: 0; background: $c-ink; transform: scaleX(0); transform-origin: left center; :global([dir="rtl"]) & { transform-origin: right center; } }
+.dot { position: relative; display: grid; gap: 4px; align-content: start; }
+.dotMark {
+  position: absolute; top: -24px; inset-inline-start: 0;
+  width: 10px; height: 10px; rotate: 45deg;
+  border: 1.5px solid $c-ink; background: $c-paper;
+  transition: background 0.4s $ease-out, scale 0.4s $ease-out;
+}
+.dotNum { font-family: $f-display; font-size: 0.6875rem; font-weight: 600; color: $c-muted; transition: color 0.4s; }
+.dotTitle {
+  font-family: $f-display; font-size: 0.75rem; font-weight: 600; line-height: 1.25; text-transform: uppercase;
+  color: rgba(46, 46, 46, 0.45); transition: color 0.4s;
+  @include down($bp-lg) { display: none; }
+}
+.srLine { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:global(.is-reached) {
+  .dotMark { background: $c-yellow; }
+  .dotNum, .dotTitle { color: $c-ink; }
+}
+.dot:global(.is-now) .dotMark { scale: 1.35; }
+
+/* services along the way */
+.also {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;
+  padding-block: 8px clamp(56px, 7vw, 96px);
+  ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  li {
+    padding: 8px 14px; border: 1px solid $c-line; border-radius: 999px; background: $c-white;
+    font-family: $f-display; font-weight: 600; font-size: 0.75rem; text-transform: uppercase;
+  }
+}
+.alsoLabel { font-family: $f-display; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: $c-yellow-deep; }
+
+/* reduced motion: nothing pins; the landscape scrolls sideways by hand and every stage is listed */
+.section:global(.is-static) {
+  .pinWrap { padding-bottom: 0; }
+  .pin { min-height: 0; }
+  .stage { overflow-x: auto; overflow-y: hidden; }
+  .world { position: relative; }
+  .unit { display: none; }
+  .caption { display: none; }
+  .rail { grid-template-columns: 1fr; gap: 14px; padding-top: 0; @include up($bp-md) { grid-template-columns: repeat(3, 1fr); } }
+  .railTrack, .dotMark { display: none; }
+  .dotTitle { display: block; color: $c-ink; }
+  .srLine { position: static; width: auto; height: auto; clip: auto; white-space: normal; font-size: 0.875rem; color: $c-muted; }
+}
